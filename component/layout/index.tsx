@@ -38,7 +38,7 @@ export default function Layout({
                             <motion.div initial={{ opacity: 0, scale: 0.5 }}
                                 animate={{ opacity: 1, scale: 1.1 }}
                                 className="ef-memoji">
-                                <video autoPlay muted loop>
+                                <video autoPlay muted loop playsInline>
                                     <source src="/memoji.mp4" type="video/mp4" />
                                     <source src="/memoji.webm" type="video/webm" />
                                 </video>
