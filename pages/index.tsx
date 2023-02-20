@@ -12,10 +12,9 @@ export default function Home() {
     <Layout>
       <section className="intro">
         <motion.img
-          initial={{ y: -400, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -400 }}
+          animate={{ y: 0}}
           whileInView={{ scale: 1 }}
-          // transition={{ ease: "linear", duration: 1, repeat: Infinity }}
           transition={{
             default: {
               duration: .8,
@@ -35,8 +34,6 @@ export default function Home() {
         <motion.div
           initial={{ y: 400, }}
           animate={{ y: 200, }}
-          // whileHover={{ scale: 1.1 }}
-          // whileTap={{ scale: 1, }}
           transition={{
             default: {
               duration: .8,
@@ -56,7 +53,6 @@ export default function Home() {
         <motion.img
           initial={{ y: 400, scale: 0 }}
           animate={{ y: 100, scale: .6 }}
-          // whileInView={{ scale: 1 }}
           transition={{
             default: {
               duration: .8,
@@ -74,8 +70,8 @@ export default function Home() {
         >
         </motion.img>
         <motion.img
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
           whileInView={{ scale: 1 }}
           // transition={{ ease: "linear", duration: 1, repeat: Infinity }}
           transition={{

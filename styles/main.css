@@ -599,7 +599,7 @@ i.location {
 .card-resume {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   padding: 8px;
   background: rgba(255, 255, 255, 0.25);
   border-radius: 14px;
@@ -663,7 +663,7 @@ a .card-resume:hover:after {
 .card-content {
   display: flex;
   align-items: center;
-  height: 46px;
+  height: 60px;
 }
 
 .card-content h5 small {
