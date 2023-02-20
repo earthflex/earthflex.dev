@@ -3,7 +3,7 @@ import Head from "next/head";
 const DOMAIN = "https://earthflex.dev";
 
 export default function Meta({
-    title = "EARTHFLEX.DEV",
+    title = "earthflex.dev",
     description = "My name Apiwat Anekboon",
     image = `${DOMAIN}/api/og`,
 }: {
@@ -16,6 +16,7 @@ export default function Meta({
             <title>{title}</title>
             <meta name="description" content={description} />
             <link rel="icon" href="/favicon.ico" />
+            <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
 
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />

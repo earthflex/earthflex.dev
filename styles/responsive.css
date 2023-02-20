@@ -1,0 +1,49 @@
+@media (max-width:768px) {
+    .container-fluid {
+        padding-right: calc(1rem * .5);
+        padding-left: calc(1rem * .5);
+    }
+
+    .resume-content {
+        flex-direction: column;
+    }
+
+    .resume-left {
+        flex-basis: 100%
+    }
+
+    .scroll-l,
+    .scroll-r,
+    .resume-content {
+        max-height: 75% !important;
+        min-height: 75% !important;
+        overflow-x: auto;
+    }
+
+}
+
+@media (min-width:601px) {
+    .d-sm-none {
+        display: none;
+    }
+}
+
+
+@media (max-width:600px) {
+    .ef-logo h1[data-hover] {
+        font-size: 1.5rem;
+        letter-spacing: .6vw;
+    }
+
+    .menu-right button {
+        font-size: 16px;
+    }
+
+    .resume-download {
+        padding: 8px 4px;
+    }
+
+    .d-none {
+        display: none;
+    }
+}
