@@ -33,11 +33,6 @@ export default function dockItem({
                         {title}
                         <Tooltip.Arrow asChild={true} className="tooltip-arrow" width={30} height={15} >
                             <div>
-                                {/* <svg width="24" height="12" viewBox="0 0 24 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 11.5L21.5 1H2L12 11.5Z" fill="#333334" />
-                                    <path d="M23 1H21.7059L12.7498 11.1502C12.3517 11.6014 11.6483 11.6014 11.2502 11.1502L2.29412 1H1" stroke="#404043" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M24 0H0V2H24V0Z" fill="#333334" />
-                                </svg> */}
                                 <TooltipArrowIcon />
                             </div>
                         </Tooltip.Arrow >

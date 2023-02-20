@@ -7,7 +7,7 @@ import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
 import Dock from "../dock/dock";
 // import * as Toast from '@radix-ui/react-toast';
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { DialogCardArrowIcon } from "../Icons";
+import { DialogCardArrowIcon, HoverCardArrowIcon } from "../Icons";
 
 
 export default function Layout({
@@ -98,10 +98,12 @@ export default function Layout({
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 1, }}
                                         >
-                                            <span>
-                                                Let`s talk
-                                            </span>
-                                            <DialogCardArrowIcon />
+                                            <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
+                                                <span>
+                                                    Let`s talk
+                                                </span>
+                                                <DialogCardArrowIcon />
+                                            </Link >
                                         </motion.button>
                                     </motion.div>
                                 </HoverCard.Trigger>
@@ -131,7 +133,9 @@ export default function Layout({
                                                 </div>
                                             </div>
                                         </div>
-                                        <HoverCard.Arrow className="HoverCardArrow" />
+                                        <HoverCard.Arrow asChild={true} className="hovercard-arrow" width={30} height={15} >
+                                            <HoverCardArrowIcon />
+                                        </HoverCard.Arrow>
                                     </HoverCard.Content>
                                 </HoverCard.Portal>
                             </HoverCard.Root>
