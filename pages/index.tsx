@@ -12,13 +12,12 @@ export default function Home() {
     <Layout>
       <section className="intro">
         <motion.img
-          initial={{ y: -400 }}
-          animate={{ y: 0}}
-          whileInView={{ scale: 1 }}
+          initial={{ y: -800, scale: .8 }}
+          animate={{ y: 0, scale: .5 }}
           transition={{
             default: {
-              duration: .8,
-              ease: [0, 0.71, 0.2, 1.01]
+              duration: 1,
+              // ease: [0, 0.71, 0.2, 1.01]
             },
             scale: {
               type: "spring",
@@ -70,9 +69,9 @@ export default function Home() {
         >
         </motion.img>
         <motion.img
-          initial={{ y: -100 }}
+          initial={{ y: -100, scale: .8 }}
           animate={{ y: 0 }}
-          whileInView={{ scale: 1 }}
+          whileInView={{}}
           // transition={{ ease: "linear", duration: 1, repeat: Infinity }}
           transition={{
             default: {

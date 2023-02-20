@@ -38,6 +38,10 @@
     .title-exp{
         background-size: 100%;
     }
+
+    .head-resume{
+        padding: 1rem 0;
+    }
 }
 
 @media (max-width:600px) {
