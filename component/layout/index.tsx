@@ -27,6 +27,7 @@ export default function Layout({
             <Meta {...meta} />
 
             <motion.header
+
                 className="ef-header">
                 <div className="container-fluid">
                     <div className="header-flex">
