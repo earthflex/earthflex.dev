@@ -1,4 +1,10 @@
-@media (max-width:768px) {
+@media (min-width:768px) {
+    .d-sm-none {
+        display: none;
+    }
+}
+
+@media (max-width:767.98px) {
     .container-fluid {
         padding-right: calc(1rem * .5);
         padding-left: calc(1rem * .5);
@@ -13,21 +19,24 @@
     }
 
     .scroll-l,
-    .scroll-r,
+    .scroll-r {
+        max-height: 75% !important;
+        min-height: 75% !important;
+        overflow-y: hidden;
+        padding: .8rem;
+    }
+
     .resume-content {
         max-height: 75% !important;
         min-height: 75% !important;
-        overflow-x: auto;
+        overflow-y: scroll;
     }
 
-}
-
-@media (min-width:601px) {
-    .d-sm-none {
+    .d-none {
         display: none;
     }
-}
 
+}
 
 @media (max-width:600px) {
     .ef-logo h1[data-hover] {
@@ -43,7 +52,7 @@
         padding: 8px 4px;
     }
 
-    .d-none {
-        display: none;
+    .resume-right {
+        padding: 0.2rem;
     }
 }
