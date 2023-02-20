@@ -153,9 +153,9 @@
   z-index: 1 !important;
 }
 
-.hovercard-arrow svg {
+.hovercard-arrow {
   position: relative;
-  top: 10px !important;
+  top: -3px !important;
   z-index: 1 !important;
 }
 
@@ -400,13 +400,13 @@ i.location {
 .scroll-l {
   max-height: 65vh;
   overflow-y: scroll;
-  padding: 14px 4px 14px 14px;
+  padding: 1rem;
 }
 
 .scroll-r {
   max-height: 57vh;
   overflow-y: scroll;
-  padding: 14px 4px 14px 14px;
+  padding: 1rem;
 }
 
 .resume-left {
@@ -415,13 +415,12 @@ i.location {
 
 .resume-right {
   flex-basis: 100%;
-  padding: 14px 0 14px 14px;
   background-color: #282B2B;
   border-radius: 0 12px 12px 0;
 }
 
 .head-resume {
-  padding: 0rem 0.5rem 1rem;
+  padding: 0rem 0 1rem  1.4rem;
   border-bottom: 0.5px solid #787b7c;
 }
 
@@ -447,7 +446,7 @@ i.location {
 
 .resume-download {
   text-align: right;
-  padding: 0 4px;
+  padding: 1rem;
 }
 
 .btn-download {
