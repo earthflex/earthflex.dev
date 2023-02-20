@@ -23,14 +23,14 @@
   background: #555;
 }
 
-::-webkit-scrollbar-track-piece:end {
+.resume-content::-webkit-scrollbar-track-piece:end {
   background: transparent;
-  margin: 0;
+  margin-top: 8px;
 }
 
-::-webkit-scrollbar-track-piece:start {
+.resume-content::-webkit-scrollbar-track-piece:start {
   background: transparent;
-  margin: 0;
+  margin-bottom: 8px;
 }
 
 * {

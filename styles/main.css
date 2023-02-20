@@ -153,6 +153,12 @@
   z-index: 1 !important;
 }
 
+.hovercard-arrow svg {
+  position: relative;
+  top: 10px !important;
+  z-index: 1 !important;
+}
+
 .trash-app {
   border-left: 1px solid #888888;
   padding-left: 8px;
@@ -639,7 +645,6 @@ a .card-resume:hover:after {
   margin-right: .5rem;
 }
 
-
 .icon-card {
   overflow: hidden;
   user-select: none;
@@ -669,8 +674,6 @@ a .card-resume:hover:after {
 .card-content h5 small {
   font-weight: 500;
 }
-
-
 
 .card-content h5 small:nth-child(2) {
   color: #A9C0EC;
@@ -720,7 +723,7 @@ a .card-resume:hover:after {
   }
 }
 
-.hover-card p{
+.hover-card p {
   margin-bottom: .4rem;
 }
 
@@ -755,8 +758,4 @@ a .card-resume:hover:after {
 
 .hover-card[data-side='left'] {
   animation-name: slideRightAndFade;
-}
-
-.HoverCardArrow {
-  fill: white;
 }

@@ -35,7 +35,9 @@
     .d-none {
         display: none;
     }
-
+    .title-exp{
+        background-size: 100%;
+    }
 }
 
 @media (max-width:600px) {
