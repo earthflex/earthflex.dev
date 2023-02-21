@@ -15,7 +15,6 @@ export default function HomeIndex() {
                 transition={{
                     default: {
                         duration: 1,
-                        // ease: [0, 0.71, 0.2, 1.01]
                     },
                     scale: {
                         type: "spring",
