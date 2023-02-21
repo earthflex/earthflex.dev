@@ -65,33 +65,43 @@
     .menu-right button {
         font-size: 16px;
     }
-    .head-resume span{
+
+    .head-resume span {
         display: block;
     }
+
     .head-resume span:after {
         content: '';
     }
-    .head-resume span:last-child{
+
+    .head-resume span:last-child {
         margin: 0;
     }
 
-    .steps-item-title small{
+    .steps-item-title small {
         display: block;
     }
 
-    .steps-exps-2 small:before,.steps-item-title small:after{
+    .steps-exps-2 small:before,
+    .steps-item-title small:after {
         display: none;
+    }
+
+    .earthflex {
+        font-size: 55px;
     }
 }
 
-@media (max-width:425px) {
-  
-}
+@media (max-width:425px) {}
 
 @media (max-width:403px) {
-    
+    .earthflex {
+        font-size: 50px;
+    }
 }
 
-@media (max-width:403px) {
-   
+@media (max-width:320px) {
+    .earthflex {
+        font-size:45px;
+    }
 }
