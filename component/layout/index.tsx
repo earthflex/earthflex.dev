@@ -93,18 +93,19 @@ export default function Layout({
                                     <motion.div
                                         initial={{ opacity: 0, }}
                                         animate={{ opacity: 1, }}>
-                                        <motion.button className="talk"
-                                            initial={{ scale: 1 }}
-                                            whileHover={{ scale: 1.1 }}
-                                            whileTap={{ scale: 1, }}
-                                        >
-                                            <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
+                                        <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
+                                            <motion.button className="talk"
+                                                initial={{ scale: 1 }}
+                                                whileHover={{ scale: 1.1 }}
+                                                whileTap={{ scale: 1, }}
+                                            >
                                                 <span>
                                                     Let`s talk
                                                 </span>
                                                 <DialogCardArrowIcon />
-                                            </Link >
-                                        </motion.button>
+                                            </motion.button>
+                                        </Link >
+
                                     </motion.div>
                                 </HoverCard.Trigger>
                                 <HoverCard.Portal>
@@ -112,9 +113,9 @@ export default function Layout({
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
                                                 <div>
-                                                    <div className="avatar"><img src="/dogdev.png" alt="instagram" /></div>
-                                                    <p>👋 Hello ! ,Sawandee krab</p>
-                                                    <p>I'm Apiwat Anekboon</p>
+                                                    <div className="avatar"><img src="/dogdev.png" className="pe-none" alt="instagram" /></div>
+                                                    <p>👋 Hello !, Sawandee krub 🙏</p>
+                                                    <p>I'm Earth</p>
                                                     <p>FB: <Link href="https://www.facebook.com/apiwat.anekboon" className="text-grey text-italic" >Apiwat Anekboon</Link ></p>
                                                     <p>IG: <Link href="https://www.instagram.com/dogdev.xd/" className="text-grey text-italic" >@dogdev.xd</Link ></p>
                                                 </div>
