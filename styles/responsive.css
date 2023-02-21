@@ -74,6 +74,14 @@
     .head-resume span:last-child{
         margin: 0;
     }
+
+    .steps-item-title small{
+        display: block;
+    }
+
+    .steps-exps-2 small:before,.steps-item-title small:after{
+        display: none;
+    }
 }
 
 @media (max-width:425px) {

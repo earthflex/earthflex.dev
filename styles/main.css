@@ -218,12 +218,18 @@
 .earthflex span {
   -webkit-text-stroke: 1px #fff;
   -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px transparent;
+  background-clip:text;
+  -webkit-background-clip: text;
   color: transparent;
   position: relative;
   font-weight: 700;
   letter-spacing: .2vw;
   line-height: 1;
   text-transform: uppercase;
+  opacity: 1;
+  background-image: url(/grain-animate.gif);
+  background-size: 120%;
 }
 
 .earth {
@@ -326,6 +332,7 @@
   border-radius: 8px;
   padding: 4px 8px;
   margin: 4px 2px;
+  color: #fff;
 }
 
 .chip-d {
@@ -472,15 +479,17 @@ i.location {
 }
 
 .title-exp {
+  background: linear-gradient(to right, #01a5ff 0%, #6A4E9D 25%, #C16AAF 70%);
   background-image: url(/textmask.webp);
   background-size: 60%;
   background-repeat: no-repeat;
-  background-position: 0% 0%;
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all .25 ease;
   margin: 8px 0;
 }
+
 
 .steps_current .steps-item-icon {
   background-color: #e6f4ff;
