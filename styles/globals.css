@@ -59,7 +59,6 @@ body {
   position: relative;
   cursor: url(/default.png), auto;
   background-image: url(/bg-min.jpg);
-  z-index: 1;
 }
 
 .grain-animation {
@@ -81,7 +80,7 @@ body {
   height: 200vh;
   left: -50%;
   top: -50%;
-  opacity: .2;
+  opacity: .16;
   pointer-events: none;
   z-index: 0;
   animation: grain 1s steps(2) infinite;
