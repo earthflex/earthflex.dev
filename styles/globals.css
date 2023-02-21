@@ -94,6 +94,10 @@ img {
   font-style: italic;
 }
 
+.text-white{
+  color: #fff !important; 
+}
+
 .text-grey {
-  color: #bdbdbd;
+  color: #bdbdbd !important;
 }

@@ -35,12 +35,24 @@
     .d-none {
         display: none;
     }
-    .title-exp{
+
+    .title-exp {
         background-size: 100%;
     }
 
-    .head-resume{
-        padding: 1rem 0;
+    .head-resume {
+        padding: 0rem 0 1rem;
+    }
+
+    .resume-right {
+        border-radius: 0;
+        padding: 0.2rem;
+    }
+
+    .resume-download {
+        padding: 8px 4px;
+        margin-bottom: .5rem;
+        text-align: center;
     }
 }
 
@@ -53,12 +65,25 @@
     .menu-right button {
         font-size: 16px;
     }
-
-    .resume-download {
-        padding: 8px 4px;
+    .head-resume span{
+        display: block;
     }
-
-    .resume-right {
-        padding: 0.2rem;
+    .head-resume span:after {
+        content: '';
     }
+    .head-resume span:last-child{
+        margin: 0;
+    }
+}
+
+@media (max-width:425px) {
+  
+}
+
+@media (max-width:403px) {
+    
+}
+
+@media (max-width:403px) {
+   
 }
