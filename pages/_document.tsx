@@ -6,7 +6,8 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <Provider>
-        <body style={{ backgroundImage: `url("/bg-min.jpg")` }}>
+        <body>
+          <div className="grain-animation"></div>
           <Main />
           <NextScript />
         </body>
