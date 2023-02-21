@@ -15,8 +15,10 @@ export default function Meta({
         <Head>
             <title>{title}</title>
             <meta name="description" content={description} />
-            <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-            <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+            <link rel="icon" href="favicon.ico" type="image/x-icon" />
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+            <link rel="icon" type="image/png" href="favicon.png" />
+            <link rel="apple-touch-icon-precomposed" sizes="180x180"  href="/apple-touch-icon-precomposed.png" />
 
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
