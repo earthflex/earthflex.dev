@@ -4,6 +4,9 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --white: #fff;
+  --black: #000;
 }
 
 ::-webkit-scrollbar {
@@ -52,13 +55,13 @@ body {
   max-height: -webkit-fill-available;
   overflow-x: hidden;
   font-family: var(--font-mono);
-  color: #fff;
+  color: var(--white);
   background-color: #000 !important;
   background-size: 100% !important;
   background-position: top !important;
   position: relative;
   cursor: url(/default.png), auto;
-  background-image: linear-gradient(180deg, #000000 -10%, rgba(0, 0, 0, 0) 16%),linear-gradient(0deg, #000000 -10%, rgba(0, 0, 0, 0) 16%), url(/bg-min.jpg);
+  background-image: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 16%), linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 16%), url(/bg-min.jpg);
 }
 
 .grain-animation {
@@ -159,11 +162,16 @@ img {
   display: flex;
 }
 
+.p-element{
+  position: fixed;
+  pointer-events: none;
+}
+
 .pe-none {
   pointer-events: none;
 }
 
-.mbm-lighten{
+.mbm-lighten {
   mix-blend-mode: lighten;
 }
 
@@ -172,7 +180,7 @@ img {
 }
 
 .text-white {
-  color: #fff !important;
+  color: var(--white) !important;
 }
 
 .text-grey {
@@ -236,8 +244,15 @@ img {
   }
 }
 
-.loader-page {
+.loader-percecnt:after{
+  content: '%';
+  margin-left: 4px;
+}
+
+.loader-page{
   height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -265,10 +280,9 @@ img {
 }
 
 .loader-page h1 {
-  display: inline-block;
   margin: 0;
   font-size: 28px;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 40px;
   letter-spacing: 1px;
 }

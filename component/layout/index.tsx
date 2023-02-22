@@ -48,7 +48,7 @@ export default function Layout({
                                         <source src="/memoji.mp4" type="video/mp4" />
                                         <source src="/memoji.webm" type="video/webm" />
                                     </video>
-                                    <Image className="memoji-hover" src="/memoji-hover.png" width={200} height={140} alt={"earthflex"} />
+                                    <img className="memoji-hover" src="/memoji-hover.png" />
                                 </motion.div >
                                 <h1
                                     data-hover="I'M">
@@ -97,19 +97,17 @@ export default function Layout({
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                     >
-                                        <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
-                                            <motion.button className="talk"
-                                                variants={ButtonScale}
-                                                initial="initial"
-                                                whileHover="whileHover"
-                                                whileTap="whileTap"
-                                            >
-                                                <span>
-                                                    Let`s talk
-                                                </span>
-                                                <DialogCardArrowIcon />
-                                            </motion.button>
-                                        </Link >
+                                        <motion.button className="talk"
+                                            variants={ButtonScale}
+                                            initial="initial"
+                                            whileHover="whileHover"
+                                            whileTap="whileTap"
+                                        >
+                                            <span>
+                                                Let`s talk
+                                            </span>
+                                            <DialogCardArrowIcon />
+                                        </motion.button>
                                     </motion.div>
                                 </HoverCard.Trigger>
                                 <HoverCard.Portal>
