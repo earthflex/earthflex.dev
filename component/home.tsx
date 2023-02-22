@@ -1,5 +1,5 @@
 import Layout from '@/component/layout'
-import { earth, earthWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/constants';
+import { earth, earthflexText, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
 import { motion, useScroll } from 'framer-motion'
 
 export default function HomeIndex() {
@@ -12,72 +12,22 @@ export default function HomeIndex() {
             initial="initial"
             animate="animate"
         >
-            <motion.img
-                initial={{ y: -800, scale: .8 }}
-                animate={{ y: 0, scale: .5 }}
-                transition={{
-                    default: {
-                        duration: 1,
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
-                src="/element/missile-min.png"
-                className="pe-none missile"
-            >
-            </motion.img>
             <motion.div
-                initial={{ y: 400, }}
-                animate={{ y: 200, }}
-                transition={{
-                    default: {
-                        duration: .8,
-                        ease: [0, 0.71, 0.2, 1.01]
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
-                className="earthflex"
-            >
-                EARTH<span>FLEX</span>
-            </motion.div>
-            <motion.div
-                variants={earthWrapper}
+                variants={missileWrapper}
                 initial="initial"
                 animate="animate"
-                className="pe-none earth"
+                className="pe-none missile"
             >
                 <motion.img
-                    variants={earth}
+                    variants={missile}
                     initial="initial"
                     animate="animate"
-                    src="/element/earth-desktop-min.png"
-                />
+                    src="/element/missile-min.png" />
             </motion.div>
             <motion.div
                 variants={saturnWrapper}
                 initial="initial"
                 animate="animate"
-                // transition={{
-                //     default: {
-                //         duration: 1,
-                //         ease: [0, 0.71, 0.2, 1.01]
-                //     },
-                //     scale: {
-                //         type: "spring",
-                //         damping: 2,
-                //         stiffness: 100,
-                //         restDelta: 0.001
-                //     }
-                // }}
                 className="pe-none saturn"
             >
                 <motion.img
@@ -86,6 +36,28 @@ export default function HomeIndex() {
                     animate="animate"
                     src="/element/saturn-min.png" />
             </motion.div>
+            <motion.div
+                variants={earthflexText}
+                initial="initial"
+                animate="animate"
+                className="earthflex"
+            >
+                EARTH<span>FLEX</span>
+            </motion.div>
+            <motion.div
+                className="pe-none earth"
+                variants={earthWrapper}
+                initial="initial"
+                animate="animate"
+            >
+                <motion.img
+                    variants={earth}
+                    initial="initial"
+                    animate="animate"
+                    src="/element/earth-desktop-min.png"
+                />
+            </motion.div>
+
 
             {/* <div className="computer">
           <motion.img

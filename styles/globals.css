@@ -74,7 +74,6 @@ body {
   z-index: 0;
   animation: grain 1s steps(2) infinite;
   opacity: .4;
-  /* mix-blend-mode: soft-light; */
   mix-blend-mode: overlay;
 }
 
@@ -187,7 +186,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(rgb(0 0 0 / 65%), transparent);
+  background-image: radial-gradient(rgb(0 0 0 / 40%), transparent);
 }
 
 .error-text {
@@ -244,7 +243,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(rgb(0 0 0 / 65%), transparent);
+  background-image: radial-gradient(rgb(0 0 0 / 40%), transparent);
 }
 
 .loader-page .ef-memoji,
