@@ -1,6 +1,5 @@
 import HomeIndex from '@/component/home'
 import Layout from '@/component/layout'
-import { AppProps } from 'next/app';
 import React from 'react';
 import SplashScreen from './splash-screen'
 

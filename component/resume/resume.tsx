@@ -216,13 +216,9 @@ export default function ResumeDialog() {
                         <button className="control-g"></button>
                     </div>
                     <div className="scroll-l">
-                        <div>
-
-                            <div className="avatar-profile">
-                                <img src="/img-profile.png" alt="" />
-                            </div>
-                        </div >
-
+                        <div className="avatar-profile">
+                            <img src="/img-profile.png" alt="" />
+                        </div>
                         <div className="head-resume d-sm-none">
                             <HeadResume />
                         </div>
@@ -302,7 +298,7 @@ export default function ResumeDialog() {
                 <Toast.Root className="toast-root" open={open} onOpenChange={setOpen}>
                     <Toast.Title className="toast-title">🔔 Portfolio Currently <br /> Being Updated.</Toast.Title>
                     <Toast.Description asChild>
-                        
+
                     </Toast.Description>
                     <Toast.Action className="toast-action" asChild altText="Goto schedule to undo">
                         <button className="toast-button">close</button>
