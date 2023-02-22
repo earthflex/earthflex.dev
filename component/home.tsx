@@ -16,25 +16,13 @@ export default function HomeIndex() {
                 variants={missileWrapper}
                 initial="initial"
                 animate="animate"
-                className="pe-none missile"
+                className="p-element missile"
             >
                 <motion.img
                     variants={missile}
                     initial="initial"
                     animate="animate"
                     src="/element/missile-min.png" />
-            </motion.div>
-            <motion.div
-                variants={saturnWrapper}
-                initial="initial"
-                animate="animate"
-                className="pe-none saturn"
-            >
-                <motion.img
-                    variants={saturn}
-                    initial="initial"
-                    animate="animate"
-                    src="/element/saturn-min.png" />
             </motion.div>
             <motion.div
                 variants={earthflexText}
@@ -45,7 +33,20 @@ export default function HomeIndex() {
                 EARTH<span>FLEX</span>
             </motion.div>
             <motion.div
-                className="pe-none earth"
+                variants={saturnWrapper}
+                initial="initial"
+                animate="animate"
+                className="p-element saturn"
+            >
+                <motion.img
+                    variants={saturn}
+                    initial="initial"
+                    animate="animate"
+                    src="/element/saturn-min.png" />
+            </motion.div>
+
+            <motion.div
+                className="p-element earth"
                 variants={earthWrapper}
                 initial="initial"
                 animate="animate"

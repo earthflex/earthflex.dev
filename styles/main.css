@@ -52,7 +52,7 @@
 }
 
 .ef-logo h1[data-hover] {
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px var(--white);
   -webkit-text-fill-color: transparent;
   color: transparent;
   display: block;
@@ -73,8 +73,8 @@
   overflow: hidden;
   white-space: nowrap;
   -webkit-text-stroke: 0;
-  -webkit-text-fill-color: #fff;
-  color: #000;
+  -webkit-text-fill-color: var(--white);
+  color: var(--black);
   -webkit-transition: all .3s;
   transition: all .3s;
   text-transform: uppercase;
@@ -87,8 +87,8 @@
 }
 
 .ef-logo h1 span:nth-child(2) {
-  -webkit-text-stroke: 1px #fff !important;
-  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 1px var(--white) !important;
+  -webkit-text-fill-color: var(--white);
 }
 
 .ef-logo h1:hover::before {
@@ -97,7 +97,7 @@
 }
 
 .menu-right button {
-  color: rgb(255, 255, 255);
+  color: var(--white);
   font-style: normal;
   text-align: center;
   white-space: normal;
@@ -155,10 +155,10 @@
   border: 1px solid #404043;
   background-color: #333334;
   background-image: linear-gradient(135deg, rgba(56, 57, 58, .6), rgba(31, 32, 35, .1));
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 5px var(--black);
   text-align: center;
   font-size: 16px;
-  color: #fff;
+  color: var(--white);
   text-align: center;
   border-radius: 6px;
   z-index: 200;
@@ -239,7 +239,7 @@
 }
 
 .earthflex span {
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px var(--white);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px transparent;
   background-clip: text;
@@ -250,17 +250,16 @@
   letter-spacing: .2vw;
   line-height: 1;
   text-transform: uppercase;
-  opacity: 1;
+  opacity: .9;
   background-image: url(/grain-animate.gif);
   background-size: 120%;
 }
 
-.earth {
-  position: absolute;
+.missile-loader {
+  z-index: 100;
 }
 
 .missile {
-  position: absolute;
   left: 10%;
 }
 
@@ -304,7 +303,7 @@
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgOSA5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNS4yOTY0NCA0LjUyNTFMOC40NjI5OSAxLjI0MzI0QzguNjY5MDYgMS4wMjk3NiA4LjY2OTA2IDAuNjg0NjEgOC40NjI5OSAwLjQ3MTEzOUM4LjI1NzAxIDAuMjU3NjY3IDcuOTIzOTcgMC4yNTc2NjcgNy43MTggMC40NzExMzlMNC41NTEzNSAzLjc1M0wxLjM4NDgxIDAuNDcxMTM5QzEuMTc4NzMgMC4yNTc2NjcgMC44NDU3OTIgMC4yNTc2NjcgMC42Mzk4MTUgMC40NzExMzlDMC40MzM3NDIgMC42ODQ2MSAwLjQzMzc0MiAxLjAyOTc2IDAuNjM5ODE1IDEuMjQzMjRMMy44MDYzNiA0LjUyNTFMMC42Mzk4MTUgNy44MDY5NkMwLjQzMzc0MiA4LjAyMDQzIDAuNDMzNzQyIDguMzY1NTggMC42Mzk4MTUgOC41NzkwNkMwLjc0MjQ2NiA4LjY4NTU0IDAuODc3NDM2IDguNzM5MDMgMS4wMTIzMSA4LjczOTAzQzEuMTQ3MTggOC43MzkwMyAxLjI4MjA2IDguNjg1NTQgMS4zODQ4MSA4LjU3OTA2TDQuNTUxMzUgNS4yOTcxOUw3LjcxOCA4LjU3OTA2QzcuODIwNzQgOC42ODU1NCA3Ljk1NTYyIDguNzM5MDMgOC4wOTA0OSA4LjczOTAzQzguMjI1MzYgOC43MzkwMyA4LjM2MDI0IDguNjg1NTQgOC40NjI5OSA4LjU3OTA2QzguNjY5MDYgOC4zNjU1OCA4LjY2OTA2IDguMDIwNDMgOC40NjI5OSA3LjgwNjk2TDUuMjk2NDQgNC41MjUxWiIgZmlsbD0iIzhCMUUwRCIvPgo8L3N2Zz4K);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTExLjcyNDcgMTAuMzk5N0w4LjMyNSA3TDExLjcyNDcgMy42MDAyOUMxMi4wOTE4IDMuMjMzMjQgMTIuMDkxOCAyLjY0MjMzIDExLjcyNDcgMi4yNzUyOEMxMS4zNTc3IDEuOTA4MjQgMTAuNzY2OCAxLjkwODI0IDEwLjM5OTcgMi4yNzUyOEw3IDUuNjc1TDMuNjAwMjkgMi4yNzUyOEMzLjIzMzI0IDEuOTA4MjQgMi42NDIzMyAxLjkwODI0IDIuMjc1MjggMi4yNzUyOEMxLjkwODI0IDIuNjQyMzMgMS45MDgyNCAzLjIzMzI0IDIuMjc1MjggMy42MDAyOUw1LjY3NSA3TDIuMjc1MjggMTAuMzk5N0MxLjkwODI0IDEwLjc2NjggMS45MDgyNCAxMS4zNTc3IDIuMjc1MjggMTEuNzI0N0MyLjY0MjMzIDEyLjA5MTggMy4yMzMyNCAxMi4wOTE4IDMuNjAwMjkgMTEuNzI0N0w3IDguMzI1TDEwLjM5OTcgMTEuNzI0N0MxMC43NjY4IDEyLjA5MTggMTEuMzU3NyAxMi4wOTE4IDExLjcyNDcgMTEuNzI0N0MxMi4wODkyIDExLjM1NzcgMTIuMDg5MiAxMC43NjQyIDExLjcyNDcgMTAuMzk5N1oiIGZpbGw9IiM4QjFFMEQiLz4KPC9zdmc+Cg==);
   height: 12px;
   width: 12px;
   left: 3px;
@@ -349,7 +348,7 @@
   border-radius: 8px;
   padding: 4px 8px;
   margin: 4px 2px;
-  color: #fff;
+  color: var(--white);
 }
 
 .chip-d {
@@ -828,7 +827,7 @@ a .card-resume:hover:after {
   border: 1px solid #404043;
   background-color: #333334;
   background-image: linear-gradient(135deg, rgba(56, 57, 58, .6), rgba(31, 32, 35, .1));
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 5px var(--black);
   border-radius: 6px;
   padding: 20px;
   width: 280px;
@@ -878,7 +877,7 @@ a .card-resume:hover:after {
   border: 1px solid #404043;
   background-color: #333334;
   background-image: linear-gradient(135deg, rgba(56, 57, 58, .6), rgba(31, 32, 35, .1));
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 5px var(--black);
   border-radius: 6px;
   padding: 15px;
   display: grid;
@@ -947,14 +946,14 @@ a .card-resume:hover:after {
   grid-area: title;
   margin-bottom: 5px;
   font-weight: 500;
-  color: #fff;
+  color: var(--white);
   font-size: 16px;
 }
 
 .toast-description {
   grid-area: description;
   margin: 0;
-  color: #fff;
+  color: var(--white);
   font-size: 13px;
   line-height: 1.3;
 }

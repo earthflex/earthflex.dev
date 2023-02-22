@@ -11,7 +11,6 @@ export const staggerContainer: Variants = {
     }
 }
 
-
 export const earthflexText: Variants = {
     initial: {
         y: 800,
