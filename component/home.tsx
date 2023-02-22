@@ -1,10 +1,9 @@
-import Layout from '@/component/layout'
-import { earth, earthflexText, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
+import { earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
 import { motion, useScroll } from 'framer-motion'
 
 export default function HomeIndex() {
 
-    const { scrollYProgress } = useScroll();
+    // const { scrollYprogress } = useScroll();
 
     return (
         <motion.div className="intro"
@@ -58,18 +57,19 @@ export default function HomeIndex() {
                     src="/element/earth-desktop-min.png"
                 />
             </motion.div>
-
-
-            {/* <div className="computer">
-          <motion.img
-            src="/element/computer-min.png"
-          >
-          </motion.img>
-          <motion.img
-            src="/element/earth-main.gif"
-          >
-          </motion.img>
-        </div > */}
+            {/* <motion.div
+                variants={earthTv}
+                initial="initial"
+                animate="animate"
+                className="p-element group-computer">
+                <motion.img
+                    className="pe-none computer"
+                    src="/element/computer-min.png"
+                />
+                <motion.div
+                    className="pe-none earth-main "
+                />
+            </motion.div > */}
         </motion.div>
 
     )

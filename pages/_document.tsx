@@ -7,9 +7,11 @@ export default function Document() {
       <Head />
       <Provider>
         <body>
-          <div className="grain-animation"></div>
-          <Main />
-          <NextScript />
+         <div className="wrapper-main">
+            <div className="grain-animation"></div>
+            <Main />
+            <NextScript />
+         </div>
         </body>
       </Provider>
     </Html>
