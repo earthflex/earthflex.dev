@@ -9,7 +9,7 @@ export default function Dock() {
 
     const [container, setContainer] = React.useState(null);
     return (
-        <motion.div className="dock-absolute"
+        <motion.div className="dock-fixed"
             initial={{ y: 100 }}
             animate={{ y: 0 }}
             transition={{
@@ -17,7 +17,6 @@ export default function Dock() {
                 default: { ease: "linear" }
             }}
         >
-            
             <div className="dock">
                 <div className="app-icons"
                 >
@@ -26,14 +25,18 @@ export default function Dock() {
                             <Tooltip title="Resume" classicon="bg-resume" icon="/resume.svg" />
                         </Dialog.Trigger>
                         <Dialog.Portal>
-                            <Dialog.Overlay className="DialogOverlay" />
+                            <Dialog.Overlay className="dialog-overlay" />
                             <ResumeDialog />
                         </Dialog.Portal>
                     </Dialog.Root>
 
-                    <Link href="https://github.com/earthflex/" target="_blank">
-                        <Tooltip title="Github" classicon="bg-github" icon="/github.svg" />
+                    <Link href="/project">
+                        <Tooltip title="Project" classicon="bg-project" icon="/project.svg" />
                     </Link>
+
+                    {/* <Link href="https://github.com/earthflex/" target="_blank">
+                        <Tooltip title="Github" classicon="bg-github" icon="/github.svg" />
+                    </Link> */}
                     <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
                         <Tooltip title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" />
                     </Link>

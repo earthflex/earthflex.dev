@@ -6,7 +6,7 @@ import SplashScreen from './splash-screen'
 
 export default function Home() {
 
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     setTimeout(() => setLoading(true), 2400);
@@ -15,11 +15,9 @@ export default function Home() {
   return (
     <>
       {loading ? (
-        <React.Fragment>
-          <Layout>
-            <HomeIndex />
-          </Layout >
-        </React.Fragment>
+        <Layout>
+          <HomeIndex />
+        </Layout >
       ) : (
         <SplashScreen />
       )}

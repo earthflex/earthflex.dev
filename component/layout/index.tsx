@@ -3,11 +3,11 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Meta from "./meta";
-import { FADE_DOWN_ANIMATION_VARIANTS } from "@/lib/constants";
+import { ButtonScale, FadeIn } from "@/lib/constants";
 import Dock from "../dock/dock";
-// import * as Toast from '@radix-ui/react-toast';
 import * as HoverCard from '@radix-ui/react-hover-card';
 import { DialogCardArrowIcon, HoverCardArrowIcon } from "../Icons";
+import Image from "next/image";
 
 
 export default function Layout({
@@ -32,9 +32,11 @@ export default function Layout({
                     <div className="header-flex">
                         <Link href="/" >
                             <motion.div className="ef-logo"
-                                initial={{ scale: 1 }}
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 1 }}>
+                                variants={ButtonScale}
+                                initial="initial"
+                                whileHover="whileHover"
+                                whileTap="whileTap"
+                            >
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.5 }}
                                     animate={{ opacity: 1, scale: 1 }}
@@ -46,6 +48,7 @@ export default function Layout({
                                         <source src="/memoji.mp4" type="video/mp4" />
                                         <source src="/memoji.webm" type="video/webm" />
                                     </video>
+                                    <Image className="memoji-hover" src="/memoji-hover.png" width={200} height={140} alt={"earthflex"} />
                                 </motion.div >
                                 <h1
                                     data-hover="I'M">
@@ -91,13 +94,15 @@ export default function Layout({
                             <HoverCard.Root openDelay={0} closeDelay={0}>
                                 <HoverCard.Trigger asChild>
                                     <motion.div
-                                        initial={{ opacity: 0, }}
-                                        animate={{ opacity: 1, }}>
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                    >
                                         <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
                                             <motion.button className="talk"
-                                                initial={{ scale: 1 }}
-                                                whileHover={{ scale: 1.1 }}
-                                                whileTap={{ scale: 1, }}
+                                                variants={ButtonScale}
+                                                initial="initial"
+                                                whileHover="whileHover"
+                                                whileTap="whileTap"
                                             >
                                                 <span>
                                                     Let`s talk
@@ -105,7 +110,6 @@ export default function Layout({
                                                 <DialogCardArrowIcon />
                                             </motion.button>
                                         </Link >
-
                                     </motion.div>
                                 </HoverCard.Trigger>
                                 <HoverCard.Portal>
@@ -144,7 +148,6 @@ export default function Layout({
                     </div >
                 </div>
             </motion.header>
-
             <Dock />
 
             <main>

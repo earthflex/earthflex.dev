@@ -1,15 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Custom404() {
     return (
         <div className="error-page">
-            <div className="ef-memoji">
-                <video autoPlay muted loop playsInline>
-                    <source src="/memoji.mp4" type="video/mp4" />
-                    <source src="/memoji.webm" type="video/webm" />
-                </video>
-            </div>
+            <Image className="mbm-lighten" src="/error.png" width={200} height={100} alt={"error page"} />
             <div className="d-flex error-text">
                 <motion.h1
                     initial={{ x: 100, opacity: 0 }}
