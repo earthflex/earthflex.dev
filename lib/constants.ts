@@ -1,15 +1,20 @@
-export const FADE_IN_ANIMATION_SETTINGS = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.2 },
+import { Variants } from "framer-motion";
+
+export const FadeIn = (direction: "up" | "down" = "up"): Variants => {
+  return {
+    initial: {
+      y: direction === "up" ? 40 : -60,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+    }
+  };
 };
 
-export const FADE_DOWN_ANIMATION_VARIANTS = {
-  hidden: { opacity: 0, y: -10 },
-  show: { opacity: 1, y: 0, transition: { type: "spring" } },
-};
-
-export const FADE_UP_ANIMATION_VARIANTS = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { type: "spring" } },
+export const ButtonScale: Variants = {
+  initial: { scale: 1 },
+  whileHover: { scale: 1.1 },
+  whileTap: { scale: 1 },
 };

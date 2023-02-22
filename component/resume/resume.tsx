@@ -64,8 +64,8 @@ export default function ResumeDialog() {
         {
             icon: '/re-phone-call.png',
             title: 'phone',
-            detail: "0621292875",
-            link: 'tel:0621292875',
+            detail: "+66(0)6121292875",
+            link: 'tel:+666121292875',
             traget: '_blank',
         },
         {

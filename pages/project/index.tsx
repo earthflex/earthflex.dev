@@ -2,21 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function Custom404() {
+export default function Project() {
     return (
         <div className="error-page">
-             <Image className="mbm-lighten" src="/error.png" width={200} height={100} alt={"error page"} />
+            <Image className="mbm-lighten" src="/error.png" width={200} height={100} alt={"error page"} />
             <div className="d-flex error-text">
                 <motion.h1
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                 >
-                    404
+                    🔔
                 </motion.h1>
                 <motion.h2
                     initial={{ x: -200, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}>
-                    This page could not be found 😅
+                    Portfolio is currently being updated.
                 </motion.h2>
             </div>
             <motion.div

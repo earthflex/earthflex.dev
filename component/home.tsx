@@ -1,91 +1,64 @@
 import Layout from '@/component/layout'
+import { earth, earthflexText, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
 import { motion, useScroll } from 'framer-motion'
-import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/constants'
-
 
 export default function HomeIndex() {
 
     const { scrollYProgress } = useScroll();
 
     return (
-        <section className="intro">
-            <motion.img
-                initial={{ y: -800, scale: .8 }}
-                animate={{ y: 0, scale: .5 }}
-                transition={{
-                    default: {
-                        duration: 1,
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
-                src="/element/missile-min.png"
+        <motion.div className="intro"
+            variants={staggerContainer}
+            initial="initial"
+            animate="animate"
+        >
+            <motion.div
+                variants={missileWrapper}
+                initial="initial"
+                animate="animate"
                 className="pe-none missile"
             >
-            </motion.img>
+                <motion.img
+                    variants={missile}
+                    initial="initial"
+                    animate="animate"
+                    src="/element/missile-min.png" />
+            </motion.div>
             <motion.div
-                initial={{ y: 400, }}
-                animate={{ y: 200, }}
-                transition={{
-                    default: {
-                        duration: .8,
-                        ease: [0, 0.71, 0.2, 1.01]
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
+                variants={saturnWrapper}
+                initial="initial"
+                animate="animate"
+                className="pe-none saturn"
+            >
+                <motion.img
+                    variants={saturn}
+                    initial="initial"
+                    animate="animate"
+                    src="/element/saturn-min.png" />
+            </motion.div>
+            <motion.div
+                variants={earthflexText}
+                initial="initial"
+                animate="animate"
                 className="earthflex"
             >
                 EARTH<span>FLEX</span>
             </motion.div>
-            <motion.img
-                initial={{ y: 400, scale: 0 }}
-                animate={{ y: 100, scale: .6 }}
-                transition={{
-                    default: {
-                        duration: .8,
-                        ease: [0, 0.71, 0.2, 1.01]
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
-                src="/element/earth-desktop-min.png"
+            <motion.div
                 className="pe-none earth"
+                variants={earthWrapper}
+                initial="initial"
+                animate="animate"
             >
-            </motion.img>
-            <motion.img
-                initial={{ y: -100, scale: .8 }}
-                animate={{ y: 0 }}
-                whileInView={{}}
-                // transition={{ ease: "linear", duration: 1, repeat: Infinity }}
-                transition={{
-                    default: {
-                        duration: 1,
-                        ease: [0, 0.71, 0.2, 1.01]
-                    },
-                    scale: {
-                        type: "spring",
-                        damping: 2,
-                        stiffness: 100,
-                        restDelta: 0.001
-                    }
-                }}
-                src="/element/saturn-min.png"
-                className="pe-none saturn"
-            >
-            </motion.img>
+                <motion.img
+                    variants={earth}
+                    initial="initial"
+                    animate="animate"
+                    src="/element/earth-desktop-min.png"
+                />
+            </motion.div>
+
+
             {/* <div className="computer">
           <motion.img
             src="/element/computer-min.png"
@@ -96,7 +69,7 @@ export default function HomeIndex() {
           >
           </motion.img>
         </div > */}
+        </motion.div>
 
-        </section>
     )
 }
