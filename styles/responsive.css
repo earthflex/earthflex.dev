@@ -1,3 +1,10 @@
+@media (min-width:1600px) {
+    .scroll-r{
+        max-height: calc(56vh - 14px);
+    }
+}
+
+
 @media (max-width:1024px) {
     .p-top,.project-content{
         height: 60vh;

@@ -97,17 +97,19 @@ export default function Layout({
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                     >
-                                        <motion.button className="talk"
-                                            variants={ButtonScale}
-                                            initial="initial"
-                                            whileHover="whileHover"
-                                            whileTap="whileTap"
-                                        >
-                                            <span>
-                                                Let`s talk
-                                            </span>
-                                            <DialogCardArrowIcon />
-                                        </motion.button>
+                                            <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
+                                                <motion.button className="talk"
+                                                    variants={ButtonScale}
+                                                    initial="initial"
+                                                    whileHover="whileHover"
+                                                    whileTap="whileTap"
+                                                >
+                                                    <span>
+                                                        Let`s talk
+                                                    </span>
+                                                    <DialogCardArrowIcon />
+                                                </motion.button>
+                                            </Link >
                                     </motion.div>
                                 </HoverCard.Trigger>
                                 <HoverCard.Portal>

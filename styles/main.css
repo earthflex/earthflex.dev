@@ -437,7 +437,7 @@ i.location {
 }
 
 .scroll-r {
-  max-height: calc(56vh - 20px);
+  max-height: calc(53vh - 20px);
   overflow-y: scroll;
   padding: 1rem;
 }
@@ -587,7 +587,7 @@ i.location {
 .steps-exps-2:before {
   content: "";
   position: absolute;
-  left: calc(-1.2rem - 1px / 2);
+  left: calc(-1.1rem - 0px / 2);
   top: calc(calc(0rem + 0.1rem) + 0.4rem + 0.8rem);
   height: calc(100% - (1 * 0.8rem));
   width: 2px;
