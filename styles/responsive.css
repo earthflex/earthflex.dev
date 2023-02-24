@@ -1,3 +1,9 @@
+@media (max-width:1024px) {
+    .p-top,.project-content{
+        height: 60vh;
+    }
+}
+
 @media (min-width:768px) {
     .d-sm-none {
         display: none;
@@ -66,7 +72,7 @@
     }
 
     .p-top,.project-content{
-        height: 50vh;
+        height: 35vh;
     }
 }
 

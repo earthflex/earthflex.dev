@@ -1063,26 +1063,26 @@ a .card-resume:hover:after {
 }
 
 .fuji {
-  bottom: 46%;
+  bottom: 40%;
   left: 0;
   width: 50%;
 }
 
 .flamingo {
-  bottom: 54%;
+  bottom: 45%;
   left: 0;
   width: 35%;
 }
 
 .cloud {
-  bottom: 40%;
+  bottom: 50%;
   right: 15%;
   width: 40%;
 }
 
 .group-building{
   position: absolute;
-  bottom: 38%;
+  bottom: 50%;
   right: 0;
   display: flex;
   justify-content: end;
