@@ -76,10 +76,10 @@ export default function HomeIndex() {
                 <div className="container">
                     <div className="about-detail">
                         <h3>Hi there </h3>
-                        <h2>My name Apiwat Anekboon <br />
-                            I'm a Front-end Developer based in Thailand
-                            with 5 years of experience in the Web Developer industry.
-                            In my spare time,  <br />
+                        <h2>My name is Apiwat Anekboon. <br />
+                            I'm a front-end developer based in Thailand with 5 years of experience in the web development industry. 
+                            <br />
+                            In my spare time,
                             I enjoy exploring art.
                         </h2>
                     </div>
