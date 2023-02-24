@@ -124,7 +124,7 @@
   top: auto;
   right: 0;
   bottom: 8px;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,10 +225,11 @@
 }
 
 .intro {
-  position: relative;
   display: flex;
   justify-content: center;
   height: 100%;
+  position: relative;
+  z-index: 9;
 }
 
 .earth {
@@ -265,30 +266,32 @@
 }
 
 .missile {
-  left: calc(10%);
+  left: 10%;
 }
 
 .saturn {
   position: absolute;
-  right: calc(10%);
+  right: 10%;
 }
 
 .group-computer {
   position: relative;
+  pointer-events: none;
 }
 
 .earth-main {
   background-image: url(/element/earth-main.gif);
-  width: calc(100% / 2.4);
-  height: calc(100%/ 2.4);
+  width: calc(100% / 2.5);
+  height: calc(100%/ 2.5);
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
-  left: 28%;
+  left: 30%;
   top: 12%;
 }
 
 .computer {
+  pointer-events: none;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -850,10 +853,12 @@ a .card-resume:hover:after {
   position: relative;
   padding: 20px;
   width: 280px;
+  transform-origin: var(--radix-hover-card-content-transform-origin);
+  animation: scaleIn 0.5s ease-out;
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
-  animation-duration: 400ms;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /* animation-duration: 400ms; */
+  /* animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); */
   will-change: transform,
     opacity;
 }
@@ -990,4 +995,141 @@ a .card-resume:hover:after {
   border-radius: 8px;
   border: 0.5px solid #787b7c;
   font-size: 12px;
+}
+
+.about-content {
+  position: relative;
+  z-index: 0;
+  margin: 14rem 0 0;
+  padding-bottom: 2rem;
+}
+
+.about-content h3 {
+  font-weight: 300;
+  padding: .6rem 1rem;
+  font-size: 34px;
+  margin-bottom: 1rem;
+}
+
+.about-content h3:after {
+  content: '';
+  background-image: url(/hi.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  z-index: 11;
+  transform: translate(10px, -14px);
+}
+
+.about-content h2 {
+  font-weight: 400;
+  font-size: 40px;
+  padding: 1.4rem 1.4rem;
+  background: linear-gradient(268.11deg, rgba(255, 255, 255, 0) 1.46%, rgba(255, 255, 255, 0.16) 49.45%, rgba(255, 255, 255, 0) 95.03%);
+}
+
+.project-content {
+  /* background-image: url(/element/project-bg-min.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  z-index: 0; */
+}
+
+.project-content {
+  position: relative;
+  height: 100vh;
+}
+
+.p-top {
+  position: relative;
+  height: 100vh;
+}
+
+.p-center {
+  position: relative;
+  top: 20%;
+  height: 50vh;
+}
+
+.project-bg {
+  top: 0;
+  left: 0;
+}
+
+.fuji {
+  bottom: 40%;
+  left: 0;
+  width: 50%;
+}
+
+.flamingo {
+  bottom: 45%;
+  left: 0;
+  width: 35%;
+}
+
+.cloud {
+  bottom: 50%;
+  right: 15%;
+  width: 40%;
+}
+
+.group-building{
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+
+.group-building img{
+  width: 60px;
+}
+
+.building-1 {
+  bottom: 0;
+  right: 0;
+}
+
+.building-2 {
+  bottom: 0;
+  right: 0;
+}
+
+.building-3 {
+  bottom: 0;
+  right: 0;
+}
+
+.mount-road {
+  bottom: 16%;
+  right: 0;
+  width: 100%;
+}
+
+.river-valley {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.mount-road img,
+.river-valley img,
+.sunflowers-footer img,
+.project-bg img {
+  width: 100%;
+}
+
+.sunflowers-footer {
+  bottom: 0;
+  right: 0;
+  width: 100%;
 }

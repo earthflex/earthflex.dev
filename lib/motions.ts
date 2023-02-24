@@ -33,11 +33,13 @@ export const earthflexText: Variants = {
 export const earthWrapper: Variants = {
     initial: {
         y: 400,
+        x:0,
         scale: 0
     },
     animate: {
         y: 100,
-        scale: .7,
+        x:0,
+        scale: .6,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
@@ -139,7 +141,7 @@ export const earthTv: Variants = {
         y: 260,
         scale: .8,
         transition: {
-            delay:1,
+            delay:.5,
             duration: 1,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {

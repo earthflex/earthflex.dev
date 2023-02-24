@@ -1,6 +1,22 @@
+@media (max-width:1024px) {
+    .p-top,.project-content{
+        height: 60vh;
+    }
+}
+
 @media (min-width:768px) {
     .d-sm-none {
         display: none;
+    }
+}
+
+@media (max-width:991.98px) {
+    .about-content h3 {
+        font-size: 24px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
     }
 }
 
@@ -54,6 +70,10 @@
         margin-bottom: .5rem;
         text-align: center;
     }
+
+    .p-top,.project-content{
+        height: 35vh;
+    }
 }
 
 @media (max-width:600px) {
@@ -90,6 +110,11 @@
     .earthflex {
         font-size: 55px;
     }
+
+    .about-content h3:after {
+        height: 50px;
+        width: 50px;
+    }
 }
 
 @media (max-width:425px) {}
@@ -102,6 +127,6 @@
 
 @media (max-width:320px) {
     .earthflex {
-        font-size:45px;
+        font-size: 45px;
     }
 }

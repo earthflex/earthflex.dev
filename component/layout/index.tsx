@@ -124,16 +124,6 @@ export default function Layout({
                                                 <p>
                                                     I will haunt your dreams.
                                                 </p>
-                                                <div style={{ display: 'flex', gap: 15 }}>
-                                                    <div style={{ display: 'flex', gap: 5 }}>
-                                                        <p>0</p>
-                                                        <p className="text-grey">Following</p>
-                                                    </div>
-                                                    <div style={{ display: 'flex', gap: 5 }}>
-                                                        <p>0</p>
-                                                        <p className="text-grey">Followers</p>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <HoverCard.Arrow asChild={true} className="hovercard-arrow" width={30} height={15} >
