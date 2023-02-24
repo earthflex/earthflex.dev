@@ -4,6 +4,16 @@
     }
 }
 
+@media (max-width:991.98px) {
+    .about-content h3 {
+        font-size: 24px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
+    }
+}
+
 @media (max-width:767.98px) {
     .container-fluid {
         padding-right: calc(1rem * .5);
@@ -54,6 +64,10 @@
         margin-bottom: .5rem;
         text-align: center;
     }
+
+    .p-top,.project-content{
+        height: 50vh;
+    }
 }
 
 @media (max-width:600px) {
@@ -90,6 +104,11 @@
     .earthflex {
         font-size: 55px;
     }
+
+    .about-content h3:after {
+        height: 50px;
+        width: 50px;
+    }
 }
 
 @media (max-width:425px) {}
@@ -102,6 +121,6 @@
 
 @media (max-width:320px) {
     .earthflex {
-        font-size:45px;
+        font-size: 45px;
     }
 }
