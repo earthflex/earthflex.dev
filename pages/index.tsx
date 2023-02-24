@@ -5,7 +5,7 @@ import SplashScreen from './splash-screen'
 
 export default function Home() {
 
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     setTimeout(() => setLoading(true), 2200);

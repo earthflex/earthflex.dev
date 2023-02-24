@@ -78,11 +78,11 @@ body {
   left: -50%;
   top: -50%;
   pointer-events: none;
-  z-index: 0;
+  z-index: 11;
   animation: grain 1s steps(2) infinite;
   opacity: .3;
-  mix-blend-mode: soft-light;
-  /* mix-blend-mode: overlay; */
+  /* mix-blend-mode: soft-light; */
+  mix-blend-mode: overlay;
 }
 
 
