@@ -102,7 +102,7 @@ export default function ResumeDialog() {
                 {
                     position: 'Front-end Developer, Leader UX&UI Designer',
                     detail: [
-                        'Develop Website using HTML, CSS, React, Vue, Responsive',
+                        'Develop Website using HTML, CSS,Javascript, React, Vue, Responsive',
                         'Be in charge of all projects in part consultant of UX/UI'
                     ],
                     date: 'Jun. 2022 - Present',
