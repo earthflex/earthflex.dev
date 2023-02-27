@@ -1,3 +1,4 @@
+import Video from "@/component/video-logo";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
@@ -70,10 +71,7 @@ export default function SplashScreen() {
                     src="/element/missile-min.png" />
             </motion.div>
             <div className="ef-memoji">
-                <video autoPlay muted loop playsInline>
-                    <source src="/memoji.mp4" type="video/mp4" />
-                    <source src="/memoji.webm" type="video/webm" />
-                </video>
+                <Video src="/memoji.mp4" />
             </div>
             <div className="d-flex loader-text">
                 <motion.div
