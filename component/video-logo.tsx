@@ -4,12 +4,12 @@ import { VideoProps } from "@/types";
 const Video: React.FC<VideoProps> = ({ src }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-        const video = videoRef.current;
-        if (video && video.paused) {
-            video.play();
-        }
-    }, [videoRef]); 
+    // useEffect(() => {
+    //     const video = videoRef.current;
+    //     if (video && video.paused) {
+    //         video.play();
+    //     }
+    // }, [videoRef]); 
 
     return (
         <video
