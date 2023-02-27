@@ -102,7 +102,7 @@ export default function ResumeDialog() {
                 {
                     position: 'Front-end Developer, Leader UX&UI Designer',
                     detail: [
-                        'Develop Website using HTML, CSS, React, Vue, Responsive',
+                        'Develop Website using HTML, CSS,Javascript, React, Vue, Responsive',
                         'Be in charge of all projects in part consultant of UX/UI'
                     ],
                     date: 'Jun. 2022 - Present',
@@ -224,7 +224,7 @@ export default function ResumeDialog() {
                         </div>
                         <div className="resume-box">
                             <h4>Apply for</h4>
-                            <p>status : <span className="chip-active">Finding a new job </span></p>
+                            <p>status : <span className="chip-active">Working full-time</span></p>
                         </div>
                         <div className="resume-box">
                             <h4>Skills</h4>
