@@ -64,8 +64,8 @@ export default function ResumeDialog() {
         {
             icon: '/re-phone-call.png',
             title: 'phone',
-            detail: "+66(0)6121292875",
-            link: 'tel:+666121292875',
+            detail: "+66(0)621292875",
+            link: 'tel:+66621292875',
             traget: '_blank',
         },
         {
@@ -103,7 +103,7 @@ export default function ResumeDialog() {
                     position: 'Front-end Developer, Leader UX&UI Designer',
                     detail: [
                         'Develop Website using HTML, CSS,Javascript, React, Vue, Responsive',
-                        'Be in charge of all projects in part consultant of UX/UI'
+                        'Be in charge of all projects in part of UX/UI consultant'
                     ],
                     date: 'Jun. 2022 - Present',
                 }
