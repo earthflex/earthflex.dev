@@ -9,7 +9,7 @@ const Video: React.FC<VideoProps> = ({ src }) => {
         if (video && video.paused) {
             video.play();
         }
-    }, [videoRef]);
+    }, [videoRef]); 
 
     return (
         <video
