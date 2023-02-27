@@ -224,7 +224,7 @@ export default function ResumeDialog() {
                         </div>
                         <div className="resume-box">
                             <h4>Apply for</h4>
-                            <p>status : <span className="chip-active">Finding a new job </span></p>
+                            <p>status : <span className="chip-active">Working full-time</span></p>
                         </div>
                         <div className="resume-box">
                             <h4>Skills</h4>

@@ -4,7 +4,7 @@ const DOMAIN = "https://earthflex.dev";
 
 export default function Meta({
     title = "earthflex.dev",
-    description = "My name Apiwat Anekboon",
+    description = "My name is Apiwat Anekboon.",
     image = `${DOMAIN}/api/og`,
 }: {
     title?: string;
