@@ -121,7 +121,7 @@ export default function Layout({
                                                     <p>👋 Hello !, Sawandee krub 🙏</p>
                                                     <p>I'm Earth</p>
                                                     <p>FB: <Link target="_blank" href="https://www.facebook.com/apiwat.anekboon" className="text-grey text-italic" >Apiwat Anekboon</Link ></p>
-                                                    <p>IG: <Link target="_blank" href="https://www.instagram.com/dogdev.xd/" className="text-grey text-italic" >@dogdev.xd</Link ></p>
+                                                    <p>IG: <Link target="_blank" href="https://www.instagram.com/earthflex.xd/" className="text-grey text-italic" >@dogdev.xd</Link ></p>
                                                 </div>
                                                 <p>
                                                     I will haunt your dreams.
