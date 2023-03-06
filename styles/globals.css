@@ -195,6 +195,11 @@ img {
   color: #bdbdbd !important;
 }
 
+.error-page img{
+  position: relative;
+  z-index: 12;
+}
+
 .error-page {
   height: 100vh;
   text-align: center;
