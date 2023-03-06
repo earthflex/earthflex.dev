@@ -13,6 +13,8 @@
   display: flex;
   align-items: center;
   mix-blend-mode: lighten;
+  position: relative;
+  z-index: 12;
 }
 
 .ef-memoji {
@@ -21,7 +23,7 @@
   overflow: hidden;
   mix-blend-mode: lighten;
   position: relative;
-  z-index: 10;
+  z-index: 12;
 }
 
 .ef-header .ef-logo:hover .ef-memoji video {
