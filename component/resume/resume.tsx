@@ -43,6 +43,7 @@ export default function ResumeDialog() {
         'Figma',
         'Notion',
         'Jira',
+        'Wordpress Elementor',
         'Adobe PS,AI,AE,PR',
         'Affinity Photo,Design',
     ];
