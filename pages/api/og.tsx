@@ -1,15 +1,19 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
+export const config = {
+  runtime: "experimental-edge",
+};
+
 const clashDisplay = fetch(
   new URL("../../styles/fonts/clashdisplay/fonts/ClashDisplay-Semibold.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
-  const [sclashDisplayData] = await Promise.all([clashDisplay]);
+  const [clashDisplayData] = await Promise.all([clashDisplay]);
 
   const { searchParams } = req.nextUrl;
-  const title = searchParams.get("title") || "earthflex";
+  const title = searchParams.get("title") || "Earthflex";
 
   return new ImageResponse(
     (
@@ -27,13 +31,13 @@ export default async function handler(req: NextRequest) {
         }}
       >
         <img
-          src={new URL("../../public/favicon.png", import.meta.url).toString()}
+          src={new URL("../../public/logo.png", import.meta.url).toString()}
           alt="earthflex"
         />
         <h1
           style={{
             fontSize: "100px",
-            fontFamily: "clashdisplay",
+            fontFamily: "clashDisplay",
             background:
               "linear-gradient(to bottom right, #000000 21.66%, #78716c 86.47%)",
             backgroundClip: "text",
@@ -51,10 +55,10 @@ export default async function handler(req: NextRequest) {
       height: 630,
       fonts: [
         {
-          name: "clashdisplay",
-          data: sclashDisplayData,
+          name: "clashDisplay",
+          data: clashDisplayData,
         },
       ],
     },
-  )
+  );
 }
