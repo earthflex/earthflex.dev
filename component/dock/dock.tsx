@@ -34,9 +34,9 @@ export default function Dock() {
                         <Tooltip title="Project" classicon="bg-project" icon="/project.svg" />
                     </Link>
 
-                    {/* <Link href="https://github.com/earthflex/" target="_blank">
+                    <Link href="https://github.com/earthflex/" target="_blank">
                         <Tooltip title="Github" classicon="bg-github" icon="/github.svg" />
-                    </Link> */}
+                    </Link>
                     <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
                         <Tooltip title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" />
                     </Link>
