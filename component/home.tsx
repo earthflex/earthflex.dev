@@ -16,7 +16,7 @@ export default function HomeIndex() {
                     variants={missileWrapper}
                     initial="initial"
                     animate="animate"
-                    className="p-element missile"
+                    className="p-element missile aura"
                 >
                     <motion.img
                         variants={missile}
@@ -28,7 +28,7 @@ export default function HomeIndex() {
                     variants={earthflexText}
                     initial="initial"
                     animate="animate"
-                    className="earthflex"
+                    className="earthflex "
                 >
                     EARTH<span>FLEX</span>
                 </motion.div>
@@ -36,8 +36,9 @@ export default function HomeIndex() {
                     variants={saturnWrapper}
                     initial="initial"
                     animate="animate"
-                    className="p-element saturn"
+                    className="p-element saturn aura"
                 >
+                    
                     <motion.img
                         variants={saturn}
                         initial="initial"
@@ -62,13 +63,10 @@ export default function HomeIndex() {
                     variants={earthTv}
                     initial="initial"
                     animate="animate"
-                    className="p-element group-computer">
+                    className="p-element group-computer aura">
                     <motion.img
                         className="pe-none computer"
-                        src="/element/computer-min.png"
-                    />
-                    <motion.div
-                        className="pe-none earth-main "
+                        src="/element/computer-earth.gif"
                     />
                 </motion.div>
             </motion.div>
@@ -121,21 +119,21 @@ export default function HomeIndex() {
                     </motion.div>
                     <div className="group-building">
                         <motion.div
-                            className=" building-3"
+                            className="building-3"
                         >
                             <motion.img
                                 src="/element/statue-liberty-min.png"
                             />
                         </motion.div>
                         <motion.div
-                            className=" building-1"
+                            className="building-1"
                         >
                             <motion.img
                                 src="/element/building-1-min.png"
                             />
                         </motion.div>
                         <motion.div
-                            className=" building-2"
+                            className="building-2"
                         >
                             <motion.img
                                 src="/element/building-2-min.png"

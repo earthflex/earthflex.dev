@@ -1,4 +1,3 @@
-
 .header-flex {
   display: flex;
   align-items: center;
@@ -132,6 +131,7 @@
 .dock {
   display: flex;
   padding: 8px;
+  max-width: 100%;
   justify-content: center;
   align-items: center;
   border: 1px solid #404043;
@@ -226,9 +226,9 @@
 .intro {
   display: flex;
   justify-content: center;
-  height: 100%;
   position: relative;
   z-index: 9;
+  min-height: calc(100vh - 130px);
 }
 
 .earth {
@@ -273,12 +273,18 @@
   right: 10%;
 }
 
+.group-computer img {
+  /* filter:
+    drop-shadow(10px -4px 10px violet) drop-shadow( -10px 4px 10px #0ff);
+  ; */
+}
+
 .group-computer {
   position: relative;
   pointer-events: none;
 }
 
-.earth-main {
+/* .earth-main {
   background-image: url(/element/earth-main.gif);
   width: calc(100% / 2.5);
   height: calc(100%/ 2.5);
@@ -287,7 +293,7 @@
   position: absolute;
   left: 30%;
   top: 12%;
-}
+} */
 
 .computer {
   pointer-events: none;
@@ -710,7 +716,7 @@ a .card-resume:hover:after {
   height: 24px;
   width: 24px;
   right: 10px;
-  top: 20px;
+  top: 30px;
 }
 
 .avatar {
@@ -1077,7 +1083,7 @@ a .card-resume:hover:after {
   width: 40%;
 }
 
-.group-building{
+.group-building {
   position: absolute;
   bottom: 50%;
   right: 0;
@@ -1086,7 +1092,7 @@ a .card-resume:hover:after {
   justify-content: flex-end;
 }
 
-.group-building img{
+.group-building img {
   width: 60px;
 }
 
@@ -1122,6 +1128,10 @@ a .card-resume:hover:after {
 .sunflowers-footer img,
 .project-bg img {
   width: 100%;
+}
+
+.project-bg img {
+  width: 100vw;
 }
 
 .sunflowers-footer {
