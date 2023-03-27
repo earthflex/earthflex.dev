@@ -2,7 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
 const clashDisplay = fetch(
-  new URL("../../styles/fonts/clashdisplay/fonts/ClashDisplay-Semibold.woff2", import.meta.url),
+  new URL("../../styles/fonts/clashdisplay/fonts/ClashDisplay-Semibold.ttf", import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
