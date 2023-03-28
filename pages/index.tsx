@@ -6,9 +6,7 @@ import SplashScreen from './splash-screen'
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(true);
-
-
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => setLoading(true), 2300);
