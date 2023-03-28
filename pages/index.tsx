@@ -6,7 +6,7 @@ import SplashScreen from './splash-screen'
 
 export default function Home() {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
 
 
