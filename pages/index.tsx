@@ -8,8 +8,6 @@ export default function Home() {
 
   const [loading, setLoading] = useState(false);
 
-
-
   useEffect(() => {
     setTimeout(() => setLoading(true), 2300);
   }, []);
