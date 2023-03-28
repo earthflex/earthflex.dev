@@ -23,7 +23,7 @@ export default function Meta({
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta itemProp="image" content={image} />
-            <meta property="og:logo" content={`${DOMAIN}/favicon.png`}></meta>
+            <meta property="og:logo" content={`${DOMAIN}/logo.png`}></meta>
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
