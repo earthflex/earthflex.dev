@@ -2,9 +2,6 @@ import { earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, s
 import { motion, useScroll } from 'framer-motion'
 
 export default function HomeIndex() {
-
-    // const { scrollYprogress } = useScroll();
-
     return (
         <>
             <motion.div className="intro"
@@ -167,6 +164,5 @@ export default function HomeIndex() {
                 </div>
             </div>
         </>
-
     )
 }
