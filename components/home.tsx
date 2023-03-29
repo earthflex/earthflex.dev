@@ -27,7 +27,7 @@ export default function HomeIndex() {
                     animate="animate"
                     className="earthflex "
                 >
-                    EARTH<span>FLEX</span>
+                    {/* EARTH<span>FLEX</span> */}
                 </motion.div>
                 <motion.div
                     variants={saturnWrapper}
