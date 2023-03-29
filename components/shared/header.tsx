@@ -2,7 +2,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ButtonScale } from "@/lib/constants";
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { DialogCardArrowIcon, HoverCardArrowIcon } from "../Icons";
+import { DialogCardArrowIcon, HoverCardArrowIcon } from "./Icons";
 
 export default function Header() {
     return (

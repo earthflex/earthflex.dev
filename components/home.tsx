@@ -38,7 +38,7 @@ export default function HomeIndex() {
                     animate="animate"
                     className="p-element saturn aura"
                 >
-                    
+
                     <motion.img
                         variants={saturn}
                         initial="initial"
