@@ -1,7 +1,7 @@
 import Head from "next/head";
 
-const DOMAIN = "https://d8e3-49-49-233-191.ap.ngrok.io";
-// const DOMAIN = "https://earthflex.dev";
+// const DOMAIN = "https://d8e3-49-49-233-191.ap.ngrok.io";
+const DOMAIN = "https://earthflex.dev"; /* #production */
 
 export default function Meta({
     title = "Earthflex.dev",
