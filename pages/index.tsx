@@ -16,7 +16,7 @@ export default function Home() {
       {loading ? (
         <Suspense fallback={<Loading />}>
           <Layout>
-            {/* <HomeIndex /> */}
+            <HomeIndex />
           </Layout >
         </Suspense>
       ) : (
