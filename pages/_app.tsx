@@ -1,7 +1,9 @@
 import type { AppProps } from 'next/app'
-import '../styles/globals.css'
-import '../styles/main.css'
-import '../styles/responsive.css'
+import { Provider as RWBProvider } from "react-wrap-balancer";
+import { Analytics } from "@vercel/analytics/react";
+import '@/styles/globals.css'
+import '@/styles/main.css'
+import '@/styles/responsive.css'
 import localFont from '@next/font/local'
 
 const clashdisplay = localFont({
@@ -15,10 +17,15 @@ const clashdisplay = localFont({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-
   return (
-    <div className={clashdisplay.className} >
-      <Component {...pageProps} />
-    </div>
+    <RWBProvider>
+      <div className={clashdisplay.className} >
+        <div className="wrapper-main">
+          <div className="grain-animation"></div>
+          <Component {...pageProps} />
+        </div>
+      </div>
+      <Analytics />
+    </RWBProvider>
   )
 }

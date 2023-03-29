@@ -1,4 +1,4 @@
-import { IconProps } from '../types'
+import { IconProps } from '@/types'
 
 export const DialogCardArrowIcon = ({ height = 24, width = 24, ...props }: IconProps) => {
   return (

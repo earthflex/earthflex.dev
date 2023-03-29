@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
-export default function SplashScreen() {
+export default function Loading() {
 
     // const loadingtext = "LOADING..."
 
@@ -70,7 +70,6 @@ export default function SplashScreen() {
                     src="/element/missile-min.png" />
             </motion.div>
             <div className="ef-memoji">
-                {/* <Video src="/memoji.mp4" /> */}
                 <video autoPlay muted loop playsInline>
                     <source src="/memoji.mp4" type="video/mp4" />
                     <source src="/memoji.webm" type="video/webm" />

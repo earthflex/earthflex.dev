@@ -1,8 +1,7 @@
-import HomeIndex from '@/component/home'
-import Layout from '@/component/layout'
-import RotateLandscape from '@/component/shared/rotate-landscape';
-import React, { useEffect, useState } from 'react';
-import SplashScreen from './splash-screen'
+import HomeIndex from '@/components/home';
+import Layout from '@/components/layout'
+import { Suspense, useEffect, useState } from 'react';
+import Loading from './loading';
 
 export default function Home() {
 
@@ -14,18 +13,15 @@ export default function Home() {
 
   return (
     <>
-    {/* <RotateLandscape /> */}
       {loading ? (
-        <Layout>
-          
-          <HomeIndex />
-        </Layout >
+        <Suspense fallback={<Loading />}>
+          <Layout>
+            <HomeIndex />
+          </Layout >
+        </Suspense>
       ) : (
-        <SplashScreen />
+        <Loading />
       )}
     </>
-
-  );
+  )
 }
-
-
