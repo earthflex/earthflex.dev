@@ -13,15 +13,15 @@ export default function Home() {
 
   return (
     <>
-      {loading ? (
-        <Suspense fallback={<Loading />}>
-          <Layout>
+      <Layout>
+        {loading ? (
+          <Suspense fallback={<Loading />}>
             <HomeIndex />
-          </Layout >
-        </Suspense>
-      ) : (
-        <Loading />
-      )}
+          </Suspense>
+        ) : (
+          <Loading />
+        )}
+      </Layout>
     </>
   )
 }
