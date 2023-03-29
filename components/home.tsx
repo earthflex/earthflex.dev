@@ -27,7 +27,7 @@ export default function HomeIndex() {
                     animate="animate"
                     className="earthflex "
                 >
-                    EARTH<span>FLEX</span>
+                    {/* EARTH<span>FLEX</span> */}
                 </motion.div>
                 <motion.div
                     variants={saturnWrapper}
@@ -67,10 +67,10 @@ export default function HomeIndex() {
                     />
                 </motion.div>
             </motion.div>
-            <div className="about-content">
+            {/* <div className="about-content">
                 <div className="container">
                     <div className="about-detail">
-                        <h3>Hi there </h3>
+                        <h3>Hi there</h3>
                         <h2>My name is Apiwat Anekboon.
                             <br />
                             I'm a front-end developer from Thailand with 4 years of expertise in web development.
@@ -81,7 +81,7 @@ export default function HomeIndex() {
                         </h2>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="project-content">
                 <motion.div
