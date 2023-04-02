@@ -27,6 +27,7 @@ export default function ResumeDialog() {
         'Sanity',
         'MUI',
         'Vuetify',
+        'TailwindCSS',
         'Bootstrap',
         'Radix-ui',
         'Chakra-ui',
