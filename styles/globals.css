@@ -49,6 +49,7 @@
 
 html,
 body {
+  color-scheme: dark;
   scroll-behavior: smooth;
   max-width: 100vw;
   height: 100%;
@@ -64,7 +65,7 @@ body {
 }
 
 .wrapper-main {
-  background-image: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 10%),linear-gradient(00deg, #000000 0%, rgba(0, 0, 0, 0) 10%);
+  background-image: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 10%), linear-gradient(00deg, #000000 0%, rgba(0, 0, 0, 0) 10%);
 
 }
 
@@ -174,8 +175,8 @@ img {
   /* filter: drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5)); */
 }
 
-.aura{
-   filter: drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5));
+.aura {
+  filter: drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5));
 }
 
 .pe-none {
@@ -198,7 +199,7 @@ img {
   color: #bdbdbd !important;
 }
 
-.error-page img{
+.error-page img {
   position: relative;
   z-index: 12;
 }
@@ -303,13 +304,13 @@ img {
   letter-spacing: 1px;
 }
 
-.rotate-landscape{
+.rotate-landscape {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
-.rotate-landscape img{
+.rotate-landscape img {
   max-width: 80px;
 }
