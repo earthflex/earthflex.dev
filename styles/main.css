@@ -373,6 +373,7 @@
   padding: 4px 8px;
   margin: 4px 2px;
   color: var(--white);
+  box-shadow: 0 0 1.425rem #3966bb;
 }
 
 .chip-d {
@@ -386,6 +387,7 @@
 
 .chip-d:hover {
   background: linear-gradient(160deg, #C16AAF -160%, #6A4E9D 40%, #213C85 80%, #000000 160%);
+  box-shadow: 0 0 1.425rem #6A4E9D;
 }
 
 .list-contact {
@@ -661,6 +663,7 @@ i.location {
   height: 160px;
   border-radius: 100%;
   background: linear-gradient(360deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%);
+  box-shadow: 0 0 1.425rem #6A4E9D;
   /* background-size: 400% 400%; 
   animation: gradient-profile 6s ease infinite; */
 }
