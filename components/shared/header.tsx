@@ -2,7 +2,15 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ButtonScale } from "@/lib/constants";
 import * as HoverCard from '@radix-ui/react-hover-card';
-import { DialogCardArrowIcon, HoverCardArrowIcon } from "./Icons";
+import { DialogCardArrowIcon, FacebookIcon, GhostIcon, HoverCardArrowIcon, InstargramIcon, LineIcon } from "./Icons";
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+import {
+    HamburgerMenuIcon,
+    DotFilledIcon,
+    CheckIcon,
+    ChevronRightIcon,
+} from '@radix-ui/react-icons';
+import React from "react";
 
 export default function Header() {
     return (
@@ -30,7 +38,7 @@ export default function Header() {
                                         <source src="/memoji.webm" type="video/webm" />
                                     </video>
                                     <img className="memoji-hover" src="/memoji-hover.png" />
-                                </motion.div >
+                                </motion.div>
                                 <h1
                                     data-hover="I'M">
                                     <motion.span
@@ -72,49 +80,58 @@ export default function Header() {
                             </motion.div >
                         </Link>
                         <div className="menu-right">
-                            <HoverCard.Root openDelay={0} closeDelay={0}>
-                                <HoverCard.Trigger asChild>
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
+                            <DropdownMenu.Root>
+                                <DropdownMenu.Trigger asChild>
+                                    <motion.button className="talk"
+                                        variants={ButtonScale}
+                                        initial="initial"
+                                        whileHover="whileHover"
+                                        whileTap="whileTap"
                                     >
-                                        <Link href="https://line.me/ti/p/ge0-5qPNP4" target="_blank">
-                                            <motion.button className="talk"
-                                                variants={ButtonScale}
-                                                initial="initial"
-                                                whileHover="whileHover"
-                                                whileTap="whileTap"
-                                            >
-                                                <span>
-                                                    Let`s talk
-                                                </span>
-                                                <DialogCardArrowIcon />
-                                            </motion.button>
-                                        </Link >
-                                    </motion.div>
-                                </HoverCard.Trigger>
-                                <HoverCard.Portal>
-                                    <HoverCard.Content className="hover-card" sideOffset={5}>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
+                                        <span>
+                                            Let`s talk
+                                        </span>
+                                        <DialogCardArrowIcon />
+                                    </motion.button>
+                                </DropdownMenu.Trigger>
+
+                                <DropdownMenu.Portal>
+                                    <DropdownMenu.Content className="DropdownMenuContent " sideOffset={5}>
+                                        <div className="hover-card" style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
                                                 <div>
                                                     <div className="avatar"><img src="/dogdev.png" className="pe-none" alt="instagram" /></div>
-                                                    <p>👋 Hello !, Sawandee krub 🙏</p>
-                                                    <p>I'm Earth</p>
-                                                    <p>FB: <Link target="_blank" href="https://www.facebook.com/apiwat.anekboon" className="text-grey text-italic" >Apiwat Anekboon</Link ></p>
-                                                    <p>IG: <Link target="_blank" href="https://www.instagram.com/earthflex.xd/" className="text-grey text-italic" >@earthflex.xd</Link ></p>
+                                                    <p className="text-center">👋 Hello !, Sawandee krub 🙏</p>
+                                                    <p className="text-center">I'm Earth</p>
                                                 </div>
-                                                <p>
-                                                    I will haunt your dreams.
-                                                </p>
                                             </div>
                                         </div>
-                                        <HoverCard.Arrow asChild={true} className="hovercard-arrow" width={30} height={15} >
-                                            <HoverCardArrowIcon />
-                                        </HoverCard.Arrow>
-                                    </HoverCard.Content>
-                                </HoverCard.Portal>
-                            </HoverCard.Root>
+                                        <DropdownMenu.Separator className="DropdownMenuSeparator" />
+                                        <DropdownMenu.Item
+                                            className="DropdownMenuItem"
+                                        >
+                                            <FacebookIcon /><Link target="_blank" href="https://www.facebook.com/apiwat.anekboon" className="list-talk">FB: Apiwat Anekboon</Link >
+                                        </DropdownMenu.Item>
+                                        <DropdownMenu.Item
+                                            className="DropdownMenuItem"
+                                        >
+                                            <InstargramIcon /><Link target="_blank" href="https://www.instagram.com/earthflex.xd/" className="list-talk">IG: @earthflex.xd</Link >
+                                        </DropdownMenu.Item>
+                                        <DropdownMenu.Item
+                                            className="DropdownMenuItem"
+                                        >
+                                            <LineIcon /><Link target="_blank" href="https://line.me/ti/p/ge0-5qPNP4" className="list-talk">Line : earthz1355</Link >
+                                        </DropdownMenu.Item>
+                                        <DropdownMenu.Separator className="DropdownMenuSeparator" />
+                                        <DropdownMenu.Item
+                                            className="DropdownMenuItem"
+                                        >
+                                            <GhostIcon /> <span className="list-talk"> I will haunt your dreams.</span>
+                                        </DropdownMenu.Item>
+                                    </DropdownMenu.Content>
+                                </DropdownMenu.Portal>
+                            </DropdownMenu.Root>
+
                         </div>
                     </div >
                 </div>

@@ -87,6 +87,7 @@ body {
 }
 
 
+
 @keyframes grain {
   0% {
     transform: translate3d(0, 9rem, 0)
@@ -162,6 +163,10 @@ img {
   padding-left: calc(2rem * .5);
   margin-right: auto;
   margin-left: auto;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .d-flex {
