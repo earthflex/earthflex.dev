@@ -43,13 +43,14 @@ export default function HomeIndex() {
                         src="/element/saturn-min.png" />
                 </motion.div>
                 <motion.div
-                    className="p-element earth"
+                    className="p-element "
                     variants={earthWrapper}
                     initial="initial"
                     animate="animate"
                 >
                     <motion.img
                         variants={earth}
+                        className="earth"
                         initial="initial"
                         animate="animate"
                         src="/element/earth-desktop-min.png"
