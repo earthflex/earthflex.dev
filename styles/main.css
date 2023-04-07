@@ -107,7 +107,7 @@
   touch-action: manipulation;
 }
 
-.list-talk{
+.list-talk {
   margin-left: .4rem;
 }
 
@@ -237,7 +237,12 @@
 }
 
 .earth {
-  filter: drop-shadow(0px -4px 10px #fff) !important;
+  filter:
+    drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5))
+    drop-shadow(0px -4px 50px rgba(109, 199, 255, 0.7))
+    drop-shadow(0 -4px 5px rgb(13, 37, 106))
+    drop-shadow(0 -4px 15px rgb(106, 78, 157))
+      ;
 }
 
 .earthflex {
