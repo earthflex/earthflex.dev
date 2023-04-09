@@ -138,6 +138,9 @@
         width: 50px;
         height: 50px;
     }
+    .menu-right .talk{
+        font-size: 20px;
+    }
 }
 
 @media (max-width:425px) {}
@@ -145,6 +148,9 @@
 @media (max-width:403px) {
     .earthflex {
         font-size: 50px;
+    }
+    .menu-right .talk{
+        font-size: 18px;
     }
 }
 
