@@ -2,8 +2,19 @@ import HomeIndex from '@/components/home';
 import Layout from '@/components/layout'
 import { Suspense, useEffect, useState } from 'react';
 import Loading from './loading';
+import Meta from '@/components/layout/meta';
 
-export default function Home() {
+export default function Home({
+  meta,
+}: {
+  meta?: {
+    title?: string;
+    description?: string;
+    author?: string;
+    keyword?: string;
+    image?: string;
+  };
+}) {
 
   const [loading, setLoading] = useState(false);
 
@@ -13,15 +24,18 @@ export default function Home() {
 
   return (
     <>
-      <Layout>
-        {loading ? (
+      {loading ? (
+        <Layout>
           <Suspense fallback={<Loading />}>
             <HomeIndex />
           </Suspense>
-        ) : (
+        </Layout>
+      ) : (
+        <>
+          <Meta />
           <Loading />
-        )}
-      </Layout>
+        </>
+      )}
     </>
   )
 }
