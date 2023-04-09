@@ -82,17 +82,24 @@ export default function Header() {
                         <div className="menu-right">
                             <DropdownMenu.Root>
                                 <DropdownMenu.Trigger asChild>
-                                    <motion.button className="talk"
-                                        variants={ButtonScale}
-                                        initial="initial"
-                                        whileHover="whileHover"
-                                        whileTap="whileTap"
-                                    >
-                                        <span>
-                                            Let`s talk
-                                        </span>
-                                        <DialogCardArrowIcon />
-                                    </motion.button>
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{
+                                            delay: 0.1,
+                                        }}>
+                                        <motion.button className="talk"
+                                            variants={ButtonScale}
+                                            initial="initial"
+                                            whileHover="whileHover"
+                                            whileTap="whileTap"
+                                        >
+                                            <span>
+                                                Let`s talk
+                                            </span>
+                                            <DialogCardArrowIcon />
+                                        </motion.button>
+                                    </motion.div>
                                 </DropdownMenu.Trigger>
 
                                 <DropdownMenu.Portal>
