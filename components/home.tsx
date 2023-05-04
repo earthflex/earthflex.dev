@@ -1,5 +1,5 @@
 import { earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
-import { motion, useScroll } from 'framer-motion'
+import { motion, useScroll, useAnimation } from 'framer-motion'
 
 export default function HomeIndex() {
     return (
@@ -27,7 +27,8 @@ export default function HomeIndex() {
                     animate="animate"
                     className="earthflex "
                 >
-                    EARTH<span>FLEX</span>
+                    <span className="glitch">EARTH</span>
+                    <span className='grain'>FLEX</span>
                 </motion.div>
                 <motion.div
                     variants={saturnWrapper}
