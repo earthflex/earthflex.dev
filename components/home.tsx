@@ -1,5 +1,5 @@
 import { letter, sentence } from '@/lib/constants';
-import { textAnimate, earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
+import { earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
 import { motion, useScroll, useAnimation } from 'framer-motion'
 
 export default function HomeIndex() {
@@ -81,12 +81,11 @@ export default function HomeIndex() {
                         transition={{ staggerChildren: 0.5 }}
                     >
                         <motion.h3
-                            variants={textAnimate}
+
                         >Hi there
                         </motion.h3>
 
                         <motion.h2
-                            variants={textAnimate}
                         >My name is Apiwat Anekboon.
                             <br />
                             I'm a front-end developer from Thailand with 4 years of expertise in web development.
