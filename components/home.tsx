@@ -1,7 +1,9 @@
+import { letter, sentence } from '@/lib/constants';
 import { earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer } from '@/lib/motions';
 import { motion, useScroll, useAnimation } from 'framer-motion'
 
 export default function HomeIndex() {
+
     return (
         <>
             <motion.div className="intro"
@@ -71,17 +73,28 @@ export default function HomeIndex() {
             </motion.div>
             <div className="about-content">
                 <div className="container">
-                    <div className="about-detail">
-                        <h3>Hi there</h3>
-                        <h2>My name is Apiwat Anekboon.
+                    <motion.div
+                        className="about-detail"
+                        initial={"offscreen"}
+                        whileInView={"onscreen"}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ staggerChildren: 0.5 }}
+                    >
+                        <motion.h3
+
+                        >Hi there
+                        </motion.h3>
+
+                        <motion.h2
+                        >My name is Apiwat Anekboon.
                             <br />
                             I'm a front-end developer from Thailand with 4 years of expertise in web development.
                             During the past several years,
                             <br /> I've concentrated on front-end development using HTML, CSS, and JavaScript.
                             <br />
                             In my leisure time, I like to explore art.
-                        </h2>
-                    </div>
+                        </motion.h2>
+                    </motion.div>
                 </div>
             </div>
 

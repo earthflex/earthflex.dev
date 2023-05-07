@@ -18,3 +18,25 @@ export const ButtonScale: Variants = {
   whileHover: { scale: 1.1 },
   whileTap: { scale: 1 },
 };
+
+
+export const sentence: Variants = {
+  hidden: { opacity: 1, scale: .5 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      deley: .5,
+      staggerChildren: 0.08,
+    },
+  }
+}
+
+export const letter: Variants = {
+  hidden: { opacity: 0, y: 50, scale: .5 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0
+  }
+}

@@ -284,10 +284,12 @@
 }
 
 .earthflex .glitch {
-  animation: glitch 500ms infinite, glitch2 2s ease infinite 2s alternate-reverse;
+  animation:  glitch2 2s ease infinite 2s alternate-reverse;
   position: relative;
+  /* glitch 500ms infinite, */
 }
 
+/* 
 .earthflex .glitch:before {
   content: 'EARTH';
   animation: glitch 600ms infinite;
@@ -306,7 +308,7 @@
   clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
   transform: translate(0.0125em, 0.025em);
   opacity: 0.8;
-}
+} */
 
 /* @keyframes glitch {
   0% {
@@ -450,27 +452,16 @@
   right: 10%;
 }
 
-.group-computer img {
-  /* filter:
+/* .group-computer img {
+  filter:
     drop-shadow(10px -4px 10px violet) drop-shadow( -10px 4px 10px #0ff);
-  ; */
-}
+  ;
+} */
 
 .group-computer {
   position: relative;
   pointer-events: none;
 }
-
-/* .earth-main {
-  background-image: url(/element/earth-main.gif);
-  width: calc(100% / 2.5);
-  height: calc(100%/ 2.5);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  position: absolute;
-  left: 30%;
-  top: 12%;
-} */
 
 .computer {
   pointer-events: none;
