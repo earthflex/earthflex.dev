@@ -3,29 +3,6 @@ import { useEffect } from "react";
 
 export default function Loading() {
 
-    // const loadingtext = "LOADING..."
-
-    // const sentence = {
-    //     hidden: { opacity: 1, scale: .5 },
-    //     visible: {
-    //         scale: 1,
-    //         opacity: 1,
-    //         transition: {
-    //             deley: .5,
-    //             staggerChildren: 0.08,
-    //         },
-    //     }
-    // }
-
-    // const letter = {
-    //     hidden: { opacity: 0, y: 50, scale: .5 },
-    //     visible: {
-    //         opacity: 1,
-    //         scale: 1,
-    //         y: 0
-    //     }
-    // }
-
     const missileLoader = {
         initial: {
             y: 800,
