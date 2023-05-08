@@ -1,11 +1,6 @@
 
 import { Variants } from "framer-motion";
 
-export const headerFixed: Variants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-}
-
 export const staggerContainer: Variants = {
     initial: {},
     animate: {

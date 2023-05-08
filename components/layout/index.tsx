@@ -6,6 +6,7 @@ import React from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
+import Topbar from "../shared/top-bar";
 
 export default function Layout({
     meta,
@@ -35,6 +36,7 @@ export default function Layout({
     return (
         <>
             <Meta {...meta} />
+            <Topbar />
             <Header />
             <Dock />
             <Particles
