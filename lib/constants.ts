@@ -15,8 +15,14 @@ export const FadeIn = (direction: "up" | "down" = "up"): Variants => {
 
 export const ButtonScale: Variants = {
   initial: { scale: 1 },
-  whileHover: { scale: 1.1 },
+  whileHover: { scale: 1.05 },
   whileTap: { scale: 1 },
+};
+
+export const headerHover: Variants = {
+  initial: { scale: .97 },
+  whileHover: { scale: 1 },
+  whileTap: { scale: .97 },
 };
 
 
