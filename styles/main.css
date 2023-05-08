@@ -85,7 +85,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0 1rem;
+  padding: 0 1rem 0 .8rem;
 }
 
 .ef-header:hover .header-flex {
@@ -108,6 +108,37 @@
   -webkit-backdrop-filter: blur(11px);
   backdrop-filter: blur(11px);
   transition: box-shadow .4s;
+  height: 80px;
+  padding: 0 0.6rem;
+}
+
+
+.header--bg .ef-logo h1[data-hover],
+.header--bg .ef-logo h1:before {
+  font-size: 1.4rem;
+}
+
+.ef-header:hover .ef-memoji {
+  background: linear-gradient(360deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%);
+  box-shadow: 0 0 1.425rem #6A4E9D;
+  border-radius: 50px;
+  margin-right: .4rem;
+  padding: 0 0.1rem;
+}
+
+
+.header--bg .ef-memoji {
+  height: 60px;
+  width: 60px;
+  background: linear-gradient(360deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%);
+  box-shadow: 0 0 1.425rem #6A4E9D;
+  border-radius: 50px;
+  margin-right: .4rem;
+  padding: 0 0.1rem;
+}
+
+.header--bg .menu-right .talk {
+  height: 42px;
 }
 
 .ef-logo h1[data-hover] {
@@ -137,6 +168,7 @@
   -webkit-transition: all .3s;
   transition: all .3s;
   text-transform: uppercase;
+  font-size: 2rem;
   width: 0;
   height: auto;
 }
@@ -160,16 +192,18 @@
   font-style: normal;
   text-align: center;
   white-space: normal;
-  margin-right: 4px;
   transition: all .25 ease;
   font-size: 24px;
   display: flex;
   align-items: center;
   touch-action: manipulation;
-  border: 1px solid var(--white);
-  border-radius: 50px;
+  height: 50px;
+  border-radius: 100px;
   padding: .4rem .4rem .4rem 1.6rem;
   position: relative;
+  z-index: 1;
+  box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 0px 2px;
+  background-color: #141415;
 }
 
 .menu-right .talk:before {
@@ -195,6 +229,25 @@
   100% {
     transform: scale(1);
   }
+}
+
+.ef-header:hover .bg-talk {
+  opacity: 1;
+  /* animation: gradient-animation 1s infinite linear; */
+}
+
+.menu-right .bg-talk {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(8px);
+  opacity: 0;
 }
 
 .list-talk {
@@ -1076,7 +1129,7 @@ a .card-resume:hover:after {
 }
 
 .hover-card {
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 6px;
   z-index: 100;
   position: relative;
@@ -1550,7 +1603,7 @@ a .card-resume:hover:after {
   pointer-events: none;
 }
 
-.MenubarTrigger strong{
+.MenubarTrigger strong {
   font-size: 15px;
 }
 

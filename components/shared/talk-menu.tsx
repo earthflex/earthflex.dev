@@ -6,6 +6,21 @@ import { ButtonScale } from "@/lib/constants";
 import Link from "next/link";
 
 export default function TallkMenu() {
+
+    const [angle, setAngle] = React.useState(360);
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setAngle((prevAngle) => (prevAngle === 0 ? 360 : prevAngle - 90));
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const animation = {
+        background: `linear-gradient(${angle}deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)`,
+    };
+
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
@@ -15,17 +30,28 @@ export default function TallkMenu() {
                     transition={{
                         delay: 0.1,
                     }}>
-                    <motion.button className="talk"
-                        variants={ButtonScale}
-                        initial="initial"
-                        whileHover="whileHover"
-                        whileTap="whileTap"
-                    >
-                        <span>
-                            Let`s talk
-                        </span>
-                        <DialogCardArrowIcon />
-                    </motion.button>
+                    <div className="p-relative">
+                        <motion.button className="talk"
+                            variants={ButtonScale}
+                            initial="initial"
+                            whileHover="whileHover"
+                            whileTap="whileTap"
+                        >
+                            <span>
+                                Let`s talk
+                            </span>
+                            <DialogCardArrowIcon />
+                        </motion.button>
+                        <motion.div
+                            className="bg-talk"
+                            initial={{ background: animation.background }}
+                            animate={animation}
+                            transition={{
+                                ease: "linear",
+                                duration: 2,
+                            }}
+                        />
+                    </div>
                 </motion.div>
             </DropdownMenu.Trigger>
 
@@ -36,7 +62,6 @@ export default function TallkMenu() {
                             <div>
                                 <div className="avatar"><img src="/dogdev.png" className="pe-none" alt="instagram" /></div>
                                 <p className="text-center">👋 Hello !, Sawandee krub 🙏</p>
-                                <p className="text-center">I'm Earth</p>
                             </div>
                         </div>
                     </div>

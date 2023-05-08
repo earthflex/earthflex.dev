@@ -10,6 +10,8 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = React.useState(false);
     const controls = useAnimation();
     const headerBgControls = useAnimation();
+    const textlogoControls = useAnimation();
+    const emojiControls = useAnimation();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -30,6 +32,7 @@ export default function Header() {
                         }
                     }
                 });
+                emojiControls.start({});
             } else {
                 setIsScrolled(false);
                 controls.start({ y: '4%' });
@@ -46,6 +49,7 @@ export default function Header() {
                         }
                     }
                 });
+                emojiControls.start({});
             }
         };
 
@@ -64,6 +68,7 @@ export default function Header() {
                 whileHover="whileHover"
                 whileTap="whileTap"
             >
+                <div className="line-grow"></div>
                 <motion.div
                     className={`header-flex ${isScrolled ? 'header--bg' : ''}`}
                     animate={headerBgControls}

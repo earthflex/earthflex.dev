@@ -173,6 +173,10 @@ img {
   display: flex;
 }
 
+.p-relative{
+  position: relative;
+}
+
 .p-element {
   position: absolute;
   user-select: none;
