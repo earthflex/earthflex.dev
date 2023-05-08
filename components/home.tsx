@@ -1,5 +1,5 @@
 import { letter, sentence } from '@/lib/constants';
-import { textAnimate, earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer, imageAnimate } from '@/lib/motions';
+import { textAnimate, earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer, imageAnimate, oldMan, speechText } from '@/lib/motions';
 import { motion, useScroll, useAnimation } from 'framer-motion'
 
 export default function HomeIndex() {
@@ -71,114 +71,126 @@ export default function HomeIndex() {
                     />
                 </motion.div>
             </motion.div>
-            <div className="about-content">
-                <div className="container">
-                    <motion.div
-                        className="about-detail"
-                        initial={"offscreen"}
-                        whileInView={"onscreen"}
-                        viewport={{ once: false, amount: 0.5 }}
-                        transition={{ staggerChildren: 0.5 }}
-                    >
-                        <motion.h3
-                            variants={imageAnimate}
-                        >Hi there
-                        </motion.h3>
+            <motion.div
+                initial={"offscreen"}
+                whileInView={"onscreen"}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ staggerChildren: 0.5 }}>
+                <div className="about-content">
+                    <div className="container">
+                        <div className="about-detail"
+                        >
+                            <motion.h3
+                                variants={imageAnimate}
+                            >Hi there
+                            </motion.h3>
 
-                        <motion.h2
-                            variants={textAnimate}
-                        >My name is Apiwat Anekboon.
-                            <br />
-                            I'm a front-end developer from Thailand with 4 years of expertise in web development.
-                            During the past several years,
-                            <br /> I've concentrated on front-end development using HTML, CSS, and JavaScript.
-                            <br />
-                            In my leisure time, I like to explore art.
-                        </motion.h2>
-                    </motion.div>
+                            <motion.h2
+                                variants={textAnimate}
+                            >My name is Apiwat Anekboon.
+                                <br />
+                                I'm a front-end developer from Thailand with 4 years of expertise in web development.
+                                During the past several years,
+                                <br /> I've concentrated on front-end development using HTML, CSS, and JavaScript.
+                                <br />
+                                In my leisure time, I like to explore art.
+                            </motion.h2>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div className="project-content">
-                <motion.div
-                    className="p-element project-bg"
-                >
-                    <motion.img
-                        src="/element/project-bg-min.png"
-                    />
-                </motion.div>
-                <div className="p-top">
-
+                <div className="project-content">
                     <motion.div
-                        className="p-element flamingo"
+                        className="p-element project-bg"
                     >
                         <motion.img
-                            src="/element/flamingo-min.png"
+                            src="/element/project-bg-min.png"
                         />
                     </motion.div>
-                    <motion.div
-                        className="p-element fuji"
-                    >
-                        <motion.img
-                            src="/element/mount-fuji-min.png"
-                        />
-                    </motion.div>
-                    <motion.div
-                        className="p-element cloud"
-                    >
-                        <motion.img
-                            src="/element/cloud-min.png"
-                        />
-                    </motion.div>
-                    <div className="group-building">
+                    <div className="p-top">
                         <motion.div
-                            className="building-3"
+                            className="p-element flamingo"
                         >
                             <motion.img
-                                src="/element/statue-liberty-min.png"
+                                src="/element/flamingo-min.png"
                             />
                         </motion.div>
                         <motion.div
-                            className="building-1"
+                            className="p-element fuji"
                         >
                             <motion.img
-                                src="/element/building-1-min.png"
+                                src="/element/mount-fuji-min.png"
                             />
                         </motion.div>
                         <motion.div
-                            className="building-2"
+                            className="p-element cloud"
                         >
                             <motion.img
-                                src="/element/building-2-min.png"
+                                src="/element/cloud-min.png"
+                            />
+                        </motion.div>
+                        <div className="group-building">
+                            <motion.div
+                                className="building-3"
+                            >
+                                <motion.img
+                                    src="/element/statue-liberty-min.png"
+                                />
+                            </motion.div>
+                            <motion.div
+                                className="building-1"
+                            >
+                                <motion.img
+                                    src="/element/building-1-min.png"
+                                />
+                            </motion.div>
+                            <motion.div
+                                className="building-2"
+                            >
+                                <motion.img
+                                    src="/element/building-2-min.png"
+                                />
+                            </motion.div>
+                        </div>
+
+                        <motion.div
+                            className="p-element mount-road"
+                        >
+                            <motion.img
+                                src="/element/mount-road-min.png"
+                            />
+                        </motion.div>
+
+                        <motion.div
+                            className="p-element river-valley"
+                        >
+                            <motion.img
+                                src="/element/river-valley-min.png"
+                            />
+                        </motion.div>
+                        <motion.div className="p-element old-main">
+                            <motion.img
+                                variants={oldMan}
+                                src="/element/old-man.png"
+                            />
+                        </motion.div>
+                        <motion.div
+                            variants={speechText}
+                            className="p-element speech-bubble"
+
+                        >
+                            <div className="speech-text"> I will haunt your dreams.</div>
+                        </motion.div>
+                        <motion.div
+                            className="p-element sunflowers-footer"
+                        >
+                            <motion.img
+                                src="/element/sunflowers-footer-min.png"
                             />
                         </motion.div>
                     </div>
-
-                    <motion.div
-                        className="p-element mount-road"
-                    >
-                        <motion.img
-                            src="/element/mount-road-min.png"
-                        />
-                    </motion.div>
-
-                    <motion.div
-                        className="p-element river-valley"
-                    >
-                        <motion.img
-                            src="/element/river-valley-min.png"
-                        />
-                    </motion.div>
-
-                    <motion.div
-                        className="p-element sunflowers-footer"
-                    >
-                        <motion.img
-                            src="/element/sunflowers-footer-min.png"
-                        />
-                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </>
     )
 }
