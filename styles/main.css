@@ -1,3 +1,22 @@
+.ef-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 14;
+  height: 45px;
+  padding: 0 .6rem;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+  background-image: linear-gradient(135deg, rgb(37 33 32 / 80%), rgb(37 33 32 / 80%));
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 5%), 0 10px 16px -3px rgb(0 0 0 / 10%);
+  -webkit-backdrop-filter: blur(11px);
+  backdrop-filter: blur(11px);
+}
+
 .ef-logo {
   display: flex;
   align-items: center;
@@ -18,13 +37,14 @@
 .ef-header {
   position: relative;
   transform-origin: top;
+  top: 48px;
   z-index: 12;
   padding: .4rem;
 }
 
 .header--fixed {
   position: fixed;
-  top: 0;
+  top: 48px;
   left: 0;
   right: 0;
 }
@@ -307,8 +327,7 @@
 }
 
 .earth {
-  filter:
-    drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5)) drop-shadow(0px -4px 5px rgba(109, 199, 255, 0.7));
+  filter: drop-shadow(0px -4px 10px rgba(255, 255, 255, 0.5)) drop-shadow(0px -4px 5px rgba(109, 199, 255, 0.7));
 }
 
 @media (min-width:1200px) {
@@ -441,15 +460,13 @@
 
 @keyframes glitch2 {
   0% {
-    text-shadow:
-      -4px 5px 0 rgb(13, 37, 106),
+    text-shadow: -4px 5px 0 rgb(13, 37, 106),
       4px -5px 0 rgb(106, 78, 157);
     transform: translate(var(--glitch-translate));
   }
 
   2% {
-    text-shadow:
-      4px -5px 0 rgb(13, 37, 106),
+    text-shadow: 4px -5px 0 rgb(13, 37, 106),
       -4px 5px 0 rgb(106, 78, 157);
   }
 
@@ -1347,7 +1364,8 @@ a .card-resume:hover:after {
 
 .DropdownMenuContent,
 .DropdownMenuSubContent {
-  min-width: 180px;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  min-width: 200px;
   padding: 8px;
   border: 1px solid #404043;
   background-image: linear-gradient(135deg, rgba(56, 57, 58, .6), rgba(31, 32, 35, .1));
@@ -1453,13 +1471,7 @@ a .card-resume:hover:after {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--violet11);
   background-color: white;
-  box-shadow: 0 2px 10px var(--blackA7);
-}
-
-.IconButton:hover {
-  background-color: var(--violet3);
 }
 
 .IconButton:focus {
@@ -1469,7 +1481,6 @@ a .card-resume:hover:after {
 .RightSlot {
   margin-left: auto;
   padding-left: 20px;
-  color: var(--mauve11);
 }
 
 [data-highlighted]>.RightSlot {
@@ -1477,7 +1488,7 @@ a .card-resume:hover:after {
 }
 
 [data-disabled] .RightSlot {
-  color: var(--mauve8);
+  color: rgb(200, 199, 203);
 }
 
 @keyframes slideUpAndFade {
@@ -1526,4 +1537,175 @@ a .card-resume:hover:after {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.MenubarRoot {
+  display: flex;
+  padding: 3px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px var(--blackA7);
+}
+
+.MenubarTrigger img {
+  pointer-events: none;
+}
+
+.MenubarTrigger strong{
+  font-size: 15px;
+}
+
+.MenubarTrigger {
+  padding: 8px 12px;
+  font-size: 14px;
+  outline: none;
+  user-select: none;
+  font-weight: 400;
+  line-height: 1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.MenubarTrigger[data-highlighted],
+.MenubarTrigger[data-state='open'] {
+  background-color: #4B4848;
+}
+
+.MenubarContent,
+.MenubarSubContent {
+  min-width: 220px;
+  padding: 8px;
+  border: 1px solid #404043;
+  background-image: linear-gradient(135deg, rgba(56, 57, 58, .6), rgba(31, 32, 35, .1));
+  -webkit-backdrop-filter: blur(11px);
+  backdrop-filter: blur(11px);
+  border-radius: 6px;
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  position: relative;
+  z-index: 20;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.MenubarItem,
+.MenubarSubTrigger,
+.MenubarCheckboxItem,
+.MenubarRadioItem {
+  all: unset;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 10px;
+  position: relative;
+  z-index: 13;
+  user-select: none;
+}
+
+.MenubarItem.inset,
+.MenubarSubTrigger.inset,
+.MenubarCheckboxItem.inset,
+.MenubarRadioItem.inset {
+  padding-left: 20px;
+}
+
+.MenubarItem[data-state='open'],
+.MenubarSubTrigger[data-state='open'] {
+  background-color: #4B4848;
+  color: var(--white);
+}
+
+.MenubarItem[data-highlighted],
+.MenubarSubTrigger[data-highlighted],
+.MenubarCheckboxItem[data-highlighted],
+.MenubarRadioItem[data-highlighted] {
+  color: var(--white);
+  background: #3966BB;
+  box-shadow: 0 0 1.425rem #3966bb;
+}
+
+.MenubarItem[data-disabled],
+.MenubarSubTrigger[data-disabled],
+.MenubarCheckboxItem[data-disabled],
+.MenubarRadioItem[data-disabled] {
+  color: rgb(200, 199, 203);
+  pointer-events: none;
+}
+
+.MenubarItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 13;
+}
+
+.MenubarSeparator {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 5px;
+}
+
+.RightSlot {
+  margin-left: auto;
+  padding-left: 20px;
+}
+
+[data-highlighted]>.RightSlot {
+  color: white;
+}
+
+[data-disabled]>.RightSlot {
+  color: rgb(200, 199, 203);
+}
+
+.runcat {
+  filter: invert(1);
+  margin: 0 5px;
+}
+
+.MenubarContent--visible {
+  display: block !important;
+}
+
+.btn-topbar:hover {
+  background-color: #4B4848;
+  color: var(--white);
+}
+
+.MenubarContent.spotify-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  z-index: 14;
+  padding: 0;
+  box-shadow: none;
+  border: 0;
+  height: auto;
+  background: none;
+}
+
+.overlay-spotify {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 13;
+}
+
+.overlay-spotify.show {
+  display: block;
 }
