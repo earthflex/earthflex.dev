@@ -1,148 +1,73 @@
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ButtonScale } from "@/lib/constants";
-import * as HoverCard from '@radix-ui/react-hover-card';
-import { DialogCardArrowIcon, FacebookIcon, GhostIcon, HoverCardArrowIcon, InstargramIcon, LineIcon } from "./Icons";
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import {
-    HamburgerMenuIcon,
-    DotFilledIcon,
-    CheckIcon,
-    ChevronRightIcon,
-} from '@radix-ui/react-icons';
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
+import { headerFixed } from "@/lib/motions";
+import Logo from "./logo";
+import TallkMenu from "./talk-menu";
 
 export default function Header() {
+
+    const [isScrolled, setIsScrolled] = React.useState(false);
+    const controls = useAnimation();
+
+    // React.useEffect(() => {
+    //     const handleScroll = () => {
+    //         setIsScrolled(window.scrollY > 50);
+    //     };
+
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
+
+    let lastScrollTop = 0;
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollTop =
+                window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down
+                setIsScrolled(true);
+                controls.start({ y: "0%" });
+            } else {
+                // Scrolling up
+                setIsScrolled(false);
+                if (!isScrolled && lastScrollTop > 100) {
+                    controls.start({ y: "-100%" }); // Slide up to hide
+                } else {
+                    controls.start({ y: "0%" }); // Slide down to show
+                }
+            }
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <>
-            <motion.header
-                className="ef-header">
-                <div className="container-fluid">
-                    <div className="header-flex">
-                        <Link href="/" >
-                            <motion.div className="ef-logo"
-                                variants={ButtonScale}
-                                initial="initial"
-                                whileHover="whileHover"
-                                whileTap="whileTap"
-                            >
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.5 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{
-                                        delay: 0.1,
-                                    }}
-                                    className="ef-memoji">
-                                    <video autoPlay muted loop playsInline>
-                                        <source src="/memoji.mp4" type="video/mp4" />
-                                        <source src="/memoji.webm" type="video/webm" />
-                                    </video>
-                                    <img className="memoji-hover" src="/memoji-hover.png" />
-                                </motion.div>
-                                <h1
-                                    data-hover="I'M">
-                                    <motion.span
-                                        initial={{ opacity: 0, y: 30 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            default: {
-                                                duration: 1,
-                                                ease: [0, 0.71, 0.2, 1.01]
-                                            },
-                                            scale: {
-                                                type: "spring",
-                                                damping: 5,
-                                                stiffness: 100,
-                                                restDelta: 0.001
-                                            }
-                                        }}
-                                    >
-                                        I'M
-                                    </motion.span>
-                                    <motion.span
-                                        initial={{ opacity: 0, y: -30 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{
-                                            default: {
-                                                duration: 1,
-                                                ease: [0, 0.71, 0.2, 1.01]
-                                            },
-                                            scale: {
-                                                type: "spring",
-                                                damping: 5,
-                                                stiffness: 100,
-                                                restDelta: 0.001
-                                            }
-                                        }}>
-                                        EARTH
-                                    </motion.span>
-                                </h1>
-                            </motion.div >
-                        </Link>
+        <React.Fragment>
+            <motion.div viewport={{ once: true }}>
+                <motion.header
+                    className={`ef-header ${isScrolled ? "header--fixed" : ""} `}
+                    variants={headerFixed}
+                    animate={controls}
+                    transition={{ duration: 0.25 }}
+                >
+                    <div
+                        className={`header-flex ${isScrolled ? 'header--bg' : ''}`}
+                    >
+                        <Logo />
                         <div className="menu-right">
-                            <DropdownMenu.Root>
-                                <DropdownMenu.Trigger asChild>
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{
-                                            delay: 0.1,
-                                        }}>
-                                        <motion.button className="talk"
-                                            variants={ButtonScale}
-                                            initial="initial"
-                                            whileHover="whileHover"
-                                            whileTap="whileTap"
-                                        >
-                                            <span>
-                                                Let`s talk
-                                            </span>
-                                            <DialogCardArrowIcon />
-                                        </motion.button>
-                                    </motion.div>
-                                </DropdownMenu.Trigger>
-
-                                <DropdownMenu.Portal>
-                                    <DropdownMenu.Content className="DropdownMenuContent " sideOffset={5}>
-                                        <div className="hover-card" style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
-                                                <div>
-                                                    <div className="avatar"><img src="/dogdev.png" className="pe-none" alt="instagram" /></div>
-                                                    <p className="text-center">👋 Hello !, Sawandee krub 🙏</p>
-                                                    <p className="text-center">I'm Earth</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <DropdownMenu.Separator className="DropdownMenuSeparator" />
-                                        <DropdownMenu.Item
-                                            className="DropdownMenuItem"
-                                        >
-                                            <FacebookIcon /><Link target="_blank" href="https://www.facebook.com/apiwat.anekboon" className="list-talk">FB: Apiwat Anekboon</Link >
-                                        </DropdownMenu.Item>
-                                        <DropdownMenu.Item
-                                            className="DropdownMenuItem"
-                                        >
-                                            <InstargramIcon /><Link target="_blank" href="https://www.instagram.com/earthflex.xd/" className="list-talk">IG: @earthflex.xd</Link >
-                                        </DropdownMenu.Item>
-                                        <DropdownMenu.Item
-                                            className="DropdownMenuItem"
-                                        >
-                                            <LineIcon /><Link target="_blank" href="https://line.me/ti/p/ge0-5qPNP4" className="list-talk">Line : earthz1355</Link >
-                                        </DropdownMenu.Item>
-                                        <DropdownMenu.Separator className="DropdownMenuSeparator" />
-                                        <DropdownMenu.Item
-                                            className="DropdownMenuItem"
-                                        >
-                                            <GhostIcon /> <span className="list-talk"> I will haunt your dreams.</span>
-                                        </DropdownMenu.Item>
-                                    </DropdownMenu.Content>
-                                </DropdownMenu.Portal>
-                            </DropdownMenu.Root>
-
+                            <TallkMenu />
                         </div>
-                    </div >
-                </div>
-            </motion.header>
-        </>
+                    </div>
+                </motion.header>
+            </motion.div>
+        </React.Fragment>
     );
 }
