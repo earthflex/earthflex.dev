@@ -1,6 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimationControls } from "framer-motion";
 import { ButtonScale } from "@/lib/constants";
+
+
 
 export default function Logo() {
     return (
@@ -10,6 +12,7 @@ export default function Logo() {
             initial="initial"
             whileHover="whileHover"
             whileTap="whileTap"
+
         >
             <motion.div className="ef-logo"
                 variants={ButtonScale}
@@ -31,8 +34,9 @@ export default function Logo() {
                         </video> */}
                     <img className="memoji-hover" src="/memoji-hover.png" />
                 </motion.div>
-                <h1
-                    data-hover="I'M">
+                <motion.h1
+                    data-hover="I'M"
+                >
                     <motion.span
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -68,7 +72,7 @@ export default function Logo() {
                         }}>
                         EARTH
                     </motion.span>
-                </h1>
+                </motion.h1>
             </motion.div >
         </motion.div>
     );

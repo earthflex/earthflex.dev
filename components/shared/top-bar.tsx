@@ -1,38 +1,13 @@
 import Link from "next/link";
 import * as Menubar from '@radix-ui/react-menubar';
+import * as Dialog from '@radix-ui/react-dialog';
 import { CheckIcon, ChevronRightIcon, DotFilledIcon } from '@radix-ui/react-icons';
 import React from "react";
 import Image from "next/image";
 import { SpotifyEmbed } from "./spotify-embed";
+import ResumeDialog from "../resume";
 
 export default function Topbar() {
-
-    // const handleCmdOrCtrlT = React.useCallback((event: KeyboardEvent) => {
-    //     const isCmdOrCtrl = event.metaKey || event.ctrlKey;
-    //     const isTKey = event.code === 'KeyT';
-
-    //     if (isCmdOrCtrl && isTKey) {
-    //         event.preventDefault();
-    //         console.log('Command + T or Ctrl + T pressed');
-    //     }
-    // }, []);
-
-    // React.useEffect(() => {
-    //     document.addEventListener('keydown', handleCmdOrCtrlT);
-
-    //     return () => {
-    //         document.removeEventListener('keydown', handleCmdOrCtrlT);
-    //     };
-    // }, [handleCmdOrCtrlT]);
-
-    // const handleButtonClick = () => {
-    //     const fakeEvent = new KeyboardEvent('keydown', {
-    //         code: 'KeyT',
-    //         ctrlKey: true,
-    //     });
-
-    //     handleCmdOrCtrlT(fakeEvent);
-    // };
 
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -47,9 +22,19 @@ export default function Topbar() {
                             </Menubar.Trigger>
                             <Menubar.Portal>
                                 <Menubar.Content className="MenubarContent" align="start" sideOffset={5} alignOffset={-3}>
-                                    <Menubar.Item className="MenubarItem">
-                                        About This Banana Mac
-                                    </Menubar.Item>
+                                    <Dialog.Root>
+                                        <Dialog.Trigger>
+                                            <Menubar.Item className="MenubarItem">
+                                                About This Banana Mac
+                                            </Menubar.Item>
+                                        </Dialog.Trigger>
+                                        <Dialog.Portal>
+                                            <Dialog.Overlay className="dialog-overlay" />
+                                            <Dialog.Content className="dialog-content">
+                                                11111
+                                            </Dialog.Content>
+                                        </Dialog.Portal>
+                                    </Dialog.Root>
                                     <Menubar.Separator className="MenubarSeparator" />
                                     <Menubar.Item className="MenubarItem" disabled>
                                         System Settings...
@@ -75,7 +60,7 @@ export default function Topbar() {
                                         </Menubar.Portal>
                                     </Menubar.Sub>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem">
+                                    <Menubar.Item className="MenubarItem" disabled>
                                         Sleep <div className="RightSlot">⌘ S</div>
                                     </Menubar.Item>
                                 </Menubar.Content>
@@ -95,17 +80,17 @@ export default function Topbar() {
                                         New Incognito Window
                                     </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem">
+                                    <Menubar.Item className="MenubarItem" disabled>
                                         Resume
                                     </Menubar.Item>
-                                    <Menubar.Item className="MenubarItem">
+                                    <Menubar.Item className="MenubarItem" disabled>
                                         Project
                                     </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem">
+                                    <Menubar.Item className="MenubarItem" disabled>
                                         Github
                                     </Menubar.Item>
-                                    <Menubar.Item className="MenubarItem">
+                                    <Menubar.Item className="MenubarItem" disabled>
                                         Linkedin
                                     </Menubar.Item>
                                 </Menubar.Content>
