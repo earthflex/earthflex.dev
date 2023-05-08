@@ -11,33 +11,6 @@ export const staggerContainer: Variants = {
     }
 }
 
-export const imageAnimate: Variants = {
-    offscreen: { x: -100, opacity: 0 },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        rotate: [0, 10, 0],
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 1
-        }
-    }
-}
-
-export const textAnimate: Variants = {
-    offscreen: { y: 100, opacity: 0 },
-    onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 1
-        }
-    }
-}
-
 export const earthflexText: Variants = {
     initial: {
         y: 800,
@@ -180,3 +153,63 @@ export const earthTv: Variants = {
         }
     }
 }
+
+export const imageAnimate: Variants = {
+    offscreen: { x: -100, opacity: 0 },
+    onscreen: {
+        x: 0,
+        opacity: 1,
+        rotate: [0, 10, 0],
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1
+        }
+    }
+}
+
+export const textAnimate: Variants = {
+    offscreen: { y: 100, opacity: 0 },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1
+        }
+    }
+}
+
+export const oldMan: Variants = {
+    offscreen: { y: 200, scale: 0 },
+    onscreen: {
+        scale: .8,
+        y: 0,
+        transition: {
+            type: "spring",
+            duration: 1
+        }
+    }
+}
+
+export const speechText: Variants = {
+    offscreen: { y: 100, x: 140, scale: 0, opacity: 0 },
+    onscreen: {
+        scale: .9,
+        y: 0,
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+                restDelta: 0.001,
+            }
+        }
+    }
+}
+

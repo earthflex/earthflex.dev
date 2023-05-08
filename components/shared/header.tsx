@@ -63,25 +63,28 @@ export default function Header() {
         <React.Fragment>
             <motion.header
                 className={`ef-header ${isScrolled ? "header--fixed" : ""} `}
-                variants={headerHover}
-                initial="initial"
-                whileHover="whileHover"
-                whileTap="whileTap"
             >
-                <div className="line-grow"></div>
                 <motion.div
-                    className={`header-flex ${isScrolled ? 'header--bg' : ''}`}
-                    animate={headerBgControls}
-                    transition={{
-                        type: "spring",
-                        bounce: 0.4,
-                        duration: 0.8
-                    }}
+                    variants={headerHover}
+                    initial="initial"
+                    whileHover="whileHover"
+                    whileTap="whileTap"
                 >
-                    <Logo />
-                    <div className="menu-right">
-                        <TallkMenu />
-                    </div>
+                    <div className="line-grow"></div>
+                    <motion.div
+                        className={`header-flex ${isScrolled ? 'header--bg' : ''}`}
+                        animate={headerBgControls}
+                        transition={{
+                            type: "spring",
+                            bounce: 0.4,
+                            duration: 0.8
+                        }}
+                    >
+                        <Logo />
+                        <div className="menu-right">
+                            <TallkMenu />
+                        </div>
+                    </motion.div>
                 </motion.div>
             </motion.header>
         </React.Fragment>

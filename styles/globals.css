@@ -62,6 +62,7 @@ body {
   position: relative;
   cursor: url(/default.png), auto;
   background-image: url(/bg-min.jpg);
+
 }
 
 .wrapper-main {
