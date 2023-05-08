@@ -32,6 +32,11 @@
   mix-blend-mode: lighten;
   position: relative;
   z-index: 12;
+  margin-right: 0.4rem;
+  padding: 0 0.1rem;
+  transition: all .25s ease;
+  backdrop-filter: blur(11px);
+  border-radius: 100px;
 }
 
 .ef-header {
@@ -1770,7 +1775,7 @@ a .card-resume:hover:after {
   z-index: 1;
 }
 
-.old-main img{
+.old-main img {
   transform-origin: bottom right;
 }
 
