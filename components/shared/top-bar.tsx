@@ -117,12 +117,12 @@ export default function Topbar() {
                     <Menubar.Root className="MenubarRoot" >
                         <Menubar.Menu>
                             <button className="MenubarTrigger btn-topbar" >
-                                <Image src="/cat.png" className="runcat" width={34} height={34} alt="runcat" />
+                                <img src="/cat.png" className="runcat" width={32} height={32} alt="runcat" />
                             </button >
                         </Menubar.Menu>
                         <Menubar.Menu>
                             <button className="MenubarTrigger btn-topbar" onClick={() => setIsVisible(!isVisible)}>
-                                <Image src="/play-circle.png" width={24} height={24} alt="spotify" />
+                                <Image src="/play-circle.png" width={22} height={22} alt="spotify" />
                             </button>
                             <div className={`MenubarContent spotify-menu ${isVisible ? 'MenubarContent--visible' : ''}`}>
                                 <SpotifyEmbed type="playlist" id="11ajFqcCuzOZyAvw6B1K0W" />
@@ -130,7 +130,7 @@ export default function Topbar() {
                             <div className={`overlay-spotify  ${isVisible ? 'show' : ''}`} onClick={() => setIsVisible(!isVisible)}></div>
                         </Menubar.Menu>
                         <Menubar.Menu>
-                            <button className="MenubarTrigger btn-topbar">
+                            <button className="MenubarTrigger btn-topbar mobile-location">
                                 <Image src="/navigation.png" width={14} height={14} alt="location" />
                                 &nbsp;&nbsp;Ladprao, BKK
                             </button>
