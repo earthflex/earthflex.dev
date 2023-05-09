@@ -100,13 +100,13 @@ export default function HomeIndex() {
                     </div>
                 </div>
                 <div className="project-content">
-                    <motion.div
+                    {/* <motion.div
                         className="p-element project-bg"
                     >
                         <motion.img
                             src="/element/project-bg-min.png"
                         />
-                    </motion.div>
+                    </motion.div> */}
                     <div className="p-top">
                         <motion.div
                             className="p-element flamingo"

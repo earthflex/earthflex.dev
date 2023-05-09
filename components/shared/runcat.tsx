@@ -99,7 +99,7 @@ const RunCat: React.FC = () => {
     return (
         <>
             <Menubar.Menu>
-                <Menubar.Trigger className="MenubarTrigger btn-topbar">
+                <Menubar.Trigger className="MenubarTrigger btn-topbar btn-runcat">
                     <img src={selectedItem ? selectedItem.img : loadingImage} className="runcat" width={32} height={32} alt="runcat" />
                 </Menubar.Trigger>
                 <Menubar.Portal>

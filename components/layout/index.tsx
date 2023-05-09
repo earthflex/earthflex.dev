@@ -7,6 +7,7 @@ import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import Topbar from "../shared/top-bar";
+import Cookies from "../shared/cookies";
 
 export default function Layout({
     meta,
@@ -98,6 +99,7 @@ export default function Layout({
                     detectRetina: true,
                 }}
             />
+            <Cookies />
             <main>
                 {children}
             </main>
