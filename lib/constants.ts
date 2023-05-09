@@ -13,10 +13,12 @@ export const FadeIn = (direction: "up" | "down" = "up"): Variants => {
   };
 };
 
-export const ButtonScale: Variants = {
-  initial: { scale: 1 },
-  whileHover: { scale: 1.05 },
-  whileTap: { scale: 1 },
+export const ButtonScale = (direction: "up" | "down" = "up"): Variants => {
+  return {
+    initial: { scale: direction === "up" ? .95 : 1, },
+    whileHover: { scale: direction === "up" ? 1 : .95, },
+    whileTap: { scale: direction === "up" ? .95 : 1, },
+  };
 };
 
 export const headerHover: Variants = {
@@ -24,7 +26,6 @@ export const headerHover: Variants = {
   whileHover: { scale: .99 },
   whileTap: { scale: 1 },
 };
-
 
 export const sentence: Variants = {
   hidden: { opacity: 1, scale: .5 },

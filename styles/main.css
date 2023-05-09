@@ -1746,8 +1746,20 @@ a .card-resume:hover:after {
 }
 
 .mobile-location:hover img {
-  transform: rotate(45deg);
-  transition: transform .2s;
+  animation-name: location;
+  animation-duration: .4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes location {
+  0% {
+    transform: scale(.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .btn-topbar:hover {
@@ -1864,6 +1876,10 @@ a .card-resume:hover:after {
   color: #fff;
   padding: 1rem;
   border-radius: 24px;
+}
+
+.speech-cookies button:hover {
+  background-color: #141415;
 }
 
 .overlay-cookie {
