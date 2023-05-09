@@ -6,6 +6,8 @@ import React from "react";
 import Image from "next/image";
 import { SpotifyEmbed } from "./spotify-embed";
 import ResumeDialog from "../resume";
+import RunCat from "./runcat";
+
 
 export default function Topbar() {
 
@@ -100,11 +102,7 @@ export default function Topbar() {
                 </div>
                 <div>
                     <Menubar.Root className="MenubarRoot" >
-                        <Menubar.Menu>
-                            <button className="MenubarTrigger btn-topbar" >
-                                <img src="/cat.png" className="runcat" width={32} height={32} alt="runcat" />
-                            </button >
-                        </Menubar.Menu>
+                        <RunCat />
                         <Menubar.Menu>
                             <button className="MenubarTrigger btn-topbar" onClick={() => setIsVisible(!isVisible)}>
                                 <Image src="/play-circle.png" width={22} height={22} alt="spotify" />

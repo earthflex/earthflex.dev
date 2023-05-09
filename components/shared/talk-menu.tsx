@@ -7,11 +7,11 @@ import Link from "next/link";
 
 export default function TallkMenu() {
 
-    const [angle, setAngle] = React.useState(360);
+    const [angle, setAngle] = React.useState(180);
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            setAngle((prevAngle) => (prevAngle === 0 ? 360 : prevAngle - 90));
+            setAngle((prevAngle) => (prevAngle === 0 ? 180 : prevAngle - 90));
         }, 1000);
 
         return () => clearInterval(interval);
@@ -81,14 +81,6 @@ export default function TallkMenu() {
                     >
                         <LineIcon /><Link target="_blank" href="https://line.me/ti/p/ge0-5qPNP4" className="list-talk">Line : earthz1355</Link >
                     </DropdownMenu.Item>
-                    {/* <DropdownMenu.Separator className="DropdownMenuSeparator" />
-                    <DropdownMenu.Item
-                        className="DropdownMenuItem"
-                    >
-                        <GhostIcon />
-                        <span className="list-talk"> I will haunt your dreams.
-                        </span>
-                    </DropdownMenu.Item> */}
                 </DropdownMenu.Content>
             </DropdownMenu.Portal>
         </DropdownMenu.Root>

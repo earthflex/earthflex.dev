@@ -20,9 +20,9 @@ export const ButtonScale: Variants = {
 };
 
 export const headerHover: Variants = {
-  initial: { scale: .97 },
-  whileHover: { scale: 1 },
-  whileTap: { scale: .97 },
+  initial: { scale: 1},
+  whileHover: { scale: .99 },
+  whileTap: { scale: 1 },
 };
 
 

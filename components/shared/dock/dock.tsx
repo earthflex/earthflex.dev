@@ -36,9 +36,9 @@ export default function Dock() {
                     <Link href="https://github.com/earthflex/" target="_blank">
                         <Dockitem title="Github" classicon="bg-github" icon="/github.svg" />
                     </Link>
-                    {/* <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
+                    <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
                         <Dockitem title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" />
-                    </Link> */}
+                    </Link>
                     <Link href="https://twitter.com/earthflexible" target="_blank">
                         <Dockitem title="Twitter" classicon="bg-twitter" icon="/twitter.svg" />
                     </Link>
