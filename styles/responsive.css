@@ -164,6 +164,9 @@
     .menu-right .talk {
         font-size: 20px;
     }
+    .header-flex{
+        padding: 0 .7rem 0 0.5rem;
+    }
 }
 
 @media (max-width:425px) {}
