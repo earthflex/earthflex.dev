@@ -32,7 +32,7 @@ export default function TallkMenu() {
                     }}>
                     <div className="p-relative">
                         <motion.button className="talk"
-                            variants={ButtonScale}
+                            variants={ButtonScale("up")}
                             initial="initial"
                             whileHover="whileHover"
                             whileTap="whileTap"

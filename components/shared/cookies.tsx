@@ -1,16 +1,8 @@
 import React from "react";
 import { motion } from 'framer-motion'
+import { ButtonScale } from "@/lib/constants";
 
 const Cookies: React.FC = () => {
-
-    const [overlayVisible, setOverlayVisible] = React.useState(false);
-    const handleMouseEnter = () => {
-        setOverlayVisible(true);
-    };
-    const handleMouseLeave = () => {
-        setOverlayVisible(false);
-    };
-
 
     const [cookiesAccepted, setCookiesAccepted] = React.useState(false);
     // React.useEffect(() => {
@@ -29,9 +21,7 @@ const Cookies: React.FC = () => {
         <React.Fragment>
             {!cookiesAccepted && (
                 <div
-                    className="wrapper-cookies"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}>
+                    className="wrapper-cookies">
                     <motion.img
                         className="sloth-cookies aura"
                         initial={{ y: 30, opacity: 0 }}
@@ -67,14 +57,20 @@ const Cookies: React.FC = () => {
 
                     >
                         <p>The sloth desires cookies.</p>
-                        <button onClick={handleAcceptCookies}>Accept</button>
+                        <motion.button
+                            onClick={handleAcceptCookies}
+                            variants={ButtonScale("down")}
+                            initial="initial"
+                            whileHover="whileHover"
+                            whileTap="whileTap"
+                        >Accept
+                        </motion.button>
                     </motion.div>
                     <motion.div
-                        onMouseEnter={handleMouseLeave}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{
-                            delay: 2.6,
+                            delay: 1.8,
                             duration: 1,
                             ease: [0, 0.71, 0.2, 1.01],
                             scale: {
@@ -84,7 +80,7 @@ const Cookies: React.FC = () => {
                                 restDelta: 0.001,
                             }
                         }}
-                        className={`overlay-cookie ${overlayVisible ? "show" : ""}`} />
+                        className="overlay-cookie" />
                 </div>
             )}
         </React.Fragment>

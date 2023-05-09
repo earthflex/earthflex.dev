@@ -8,17 +8,13 @@ export default function Logo() {
     return (
         <motion.div
             className="ef-logo"
-            variants={ButtonScale}
+            variants={ButtonScale("down")}
             initial="initial"
             whileHover="whileHover"
             whileTap="whileTap"
 
         >
             <motion.div className="ef-logo"
-                variants={ButtonScale}
-                initial="initial"
-                whileHover="whileHover"
-                whileTap="whileTap"
             >
                 <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
