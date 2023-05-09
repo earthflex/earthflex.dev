@@ -1,12 +1,12 @@
 import Link from "next/link";
 import * as Menubar from '@radix-ui/react-menubar';
 import * as Dialog from '@radix-ui/react-dialog';
-import { CheckIcon, ChevronRightIcon, DotFilledIcon } from '@radix-ui/react-icons';
 import React from "react";
 import Image from "next/image";
 import { SpotifyEmbed } from "./spotify-embed";
 import ResumeDialog from "../resume";
 import RunCat from "./runcat";
+import RecentItems from "./recent-items";
 
 
 export default function Topbar() {
@@ -45,22 +45,7 @@ export default function Topbar() {
                                         Banana Store
                                     </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Sub>
-                                        <Menubar.SubTrigger className="MenubarSubTrigger">
-                                            Recent Items
-                                            <div className="RightSlot">
-                                                <ChevronRightIcon />
-                                            </div>
-                                        </Menubar.SubTrigger>
-                                        <Menubar.Portal>
-                                            <Menubar.SubContent className="MenubarSubContent" alignOffset={-5}>
-                                                <Menubar.Item className="MenubarItem">Figma</Menubar.Item>
-                                                <Menubar.Item className="MenubarItem">Notion</Menubar.Item>
-                                                <Menubar.Item className="MenubarItem">Visual Studio Code</Menubar.Item>
-                                                <Menubar.Item className="MenubarItem">ChatGPT</Menubar.Item>
-                                            </Menubar.SubContent>
-                                        </Menubar.Portal>
-                                    </Menubar.Sub>
+                                    <RecentItems />
                                     <Menubar.Separator className="MenubarSeparator" />
                                     <Menubar.Item className="MenubarItem" disabled>
                                         Sleep <div className="RightSlot">⌘ S</div>

@@ -1,7 +1,6 @@
 import * as Menubar from '@radix-ui/react-menubar';
 import { DotFilledIcon } from '@radix-ui/react-icons';
 import React from "react";
-import Image from "next/image";
 
 interface RadioCatItem {
     id: string;
@@ -101,7 +100,7 @@ const RunCat: React.FC = () => {
         <>
             <Menubar.Menu>
                 <Menubar.Trigger className="MenubarTrigger btn-topbar">
-                    <Image src={selectedItem ? selectedItem.img : loadingImage} className="runcat" width={32} height={32} alt="runcat" />
+                    <img src={selectedItem ? selectedItem.img : loadingImage} className="runcat" width={32} height={32} alt="runcat" />
                 </Menubar.Trigger>
                 <Menubar.Portal>
                     <Menubar.Content
@@ -116,7 +115,7 @@ const RunCat: React.FC = () => {
                                     <Menubar.ItemIndicator className="MenubarItemIndicator">
                                         <DotFilledIcon />
                                     </Menubar.ItemIndicator>
-                                    <Image src={item.img} className="runcat" width={22} height={22} alt="spotify" />&nbsp;{item.name}
+                                    <img src= {item.img}className="runcat" width={22} height={22} alt={item.name} />&nbsp;{item.name}
                                 </Menubar.RadioItem>
                             ))}
                         </Menubar.RadioGroup>
