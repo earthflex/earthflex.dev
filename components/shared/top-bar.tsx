@@ -105,7 +105,7 @@ export default function Topbar() {
                         <RunCat />
                         <Menubar.Menu>
                             <button className="MenubarTrigger btn-topbar" onClick={() => setIsVisible(!isVisible)}>
-                                <Image src="/play-circle.png" width={22} height={22} alt="spotify" />
+                                <img src="/play-circle.png" width={22} height={22} alt="spotify" />
                             </button>
                             <div className={`MenubarContent spotify-menu ${isVisible ? 'MenubarContent--visible' : ''}`}>
                                 <SpotifyEmbed type="playlist" id="11ajFqcCuzOZyAvw6B1K0W" />
