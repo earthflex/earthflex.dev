@@ -66,7 +66,7 @@ const RecentItems: React.FC = () => {
                     <Menubar.SubContent className="MenubarSubContent" alignOffset={-5}>
                         {APP_ITEMS.map((item) => (
                             <Menubar.Item className="MenubarItem" key={item.id}>
-                                <Image className="app-item" src={item.img} width={18} height={18} alt={item.name} />{item.name}
+                                <img className="app-item" src={item.img} width={16} height={16} alt={item.name} />{item.name}
                             </Menubar.Item>
                         ))}
                     </Menubar.SubContent>

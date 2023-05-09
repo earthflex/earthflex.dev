@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
 interface SpotifyEmbedProps {
     type: 'track' | 'album' | 'playlist';
     id: string;
