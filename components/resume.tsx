@@ -23,14 +23,18 @@ export default function ResumeDialog() {
         'Javascript',
         'Typescript',
         'React.js',
+        'Next.js',
         'Vue.js',
-        'Sanity',
+        'Nuxt.js',
+        // 'Sanity',
         'MUI',
         'Vuetify',
         'TailwindCSS',
         'Bootstrap',
         'Radix-ui',
         'Chakra-ui',
+        'GSAP',
+        'Framer-Motion'
     ];
 
     const listCodes = codes.map((code, index) =>
@@ -198,7 +202,7 @@ export default function ResumeDialog() {
         return (
             <>
                 <div className="resume-download">
-                    <Link className="btn-download" href="resume_apiwat-anekboon.pdf" target="_blank">Download Resume</Link>
+                    <Link className="btn-download" href="resume-apiwat_anekboon.pdf" target="_blank">Download Resume</Link>
                 </div>
                 <h2>Apiwat Anekboon</h2><span>Front-end Developer</span><span>City, Bangkok</span>
             </>
@@ -227,7 +231,7 @@ export default function ResumeDialog() {
                         </div>
                         <div className="resume-box">
                             <h4>Apply for</h4>
-                            <p>status : <span className="chip-active">Working full-time</span></p>
+                            <p>Status : <span className="chip-active">Finding a new job</span></p>
                         </div>
                         <div className="resume-box">
                             <h4>Skills</h4>

@@ -154,6 +154,98 @@ export const earthTv: Variants = {
     }
 }
 
+
+export const artcraft: Variants = {
+    initial: {
+        y:100,
+        x: -800,
+        scale: .7,
+    },
+    animate: {
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+                restDelta: 0.001
+            }
+        }
+    }
+}
+
+
+export const swimming: Variants = {
+    initial: {
+        y: 800,
+        x: -800,
+        scale: .6,
+    },
+    animate: {
+        y: 100,
+        x: -100,
+        scale: .8,
+        transition: {
+            delay: .4,
+            duration: 1,
+            ease: [0, 0.71, 0.2, 1.01],
+            scale: {
+                type: "spring",
+                damping: 12,
+                stiffness: 100,
+                restDelta: 0.001
+            }
+        }
+    }
+}
+
+
+export const scaleAbout: Variants = {
+    offscreen: { scale: 0, opacity: 0 },
+    onscreen: {
+        scale: 1,
+        opacity: 1,
+        transformOrigin: 'top',
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1
+        }
+    }
+}
+
+
+export const statusAnimate: Variants = {
+    offscreen: { y: 50, opacity: 0, scale: 0 },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        transformOrigin: 'bottom left',
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1
+        }
+    }
+}
+
+export const hithereAnimate: Variants = {
+    offscreen: { y: -100, opacity: 0 },
+    onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            delay: .2,
+            type: "spring",
+            bounce: 0.4,
+            duration: 1
+        }
+    }
+}
+
 export const imageAnimate: Variants = {
     offscreen: { x: -100, opacity: 0 },
     onscreen: {
@@ -161,6 +253,7 @@ export const imageAnimate: Variants = {
         opacity: 1,
         rotate: [0, 10, 0],
         transition: {
+            delay: .2,
             type: "spring",
             bounce: 0.4,
             duration: 1
@@ -174,6 +267,7 @@ export const textAnimate: Variants = {
         y: 0,
         opacity: 1,
         transition: {
+            delay: .3,
             type: "spring",
             bounce: 0.4,
             duration: 1

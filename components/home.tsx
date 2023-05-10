@@ -1,6 +1,6 @@
-import { letter, sentence } from '@/lib/constants';
-import { textAnimate, earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer, imageAnimate, oldMan, speechText } from '@/lib/motions';
-import { motion, useScroll, useAnimation } from 'framer-motion'
+import { FadeIn, letter, sentence } from '@/lib/constants';
+import { textAnimate, earth, earthflexText, earthTv, earthWrapper, missile, missileWrapper, saturn, saturnWrapper, staggerContainer, imageAnimate, oldMan, speechText, hithereAnimate, scaleAbout, statusAnimate, swimming, artcraft } from '@/lib/motions';
+import { motion, useScroll, useAnimation, useInView } from 'framer-motion'
 
 export default function HomeIndex() {
 
@@ -70,33 +70,84 @@ export default function HomeIndex() {
                         src="/element/computer-earth.gif"
                     />
                 </motion.div>
+{/* 
+                <motion.div
+                    variants={artcraft}
+                    initial="initial"
+                    animate="animate"
+                    className="p-element aura"
+                >
+                    <motion.img
+                        className="pe-none aircraft"
+                        src="/element/aircraft-min.png"
+                    />
+                </motion.div> */}
+
+                <motion.div
+                    variants={swimming}
+                    initial="initial"
+                    animate="animate"
+                    className="p-element aura"
+                >
+                    <motion.img
+                        className="pe-none swim"
+                        src="/element/sport-swimming-min.png"
+                    />
+                </motion.div>
             </motion.div>
-            <motion.div
-                initial={"offscreen"}
-                whileInView={"onscreen"}
-                viewport={{ once: false, amount: 0.5 }}
-                transition={{ staggerChildren: 0.5 }}>
+            <motion.div>
                 <div className="about-content">
                     <div className="container">
-                        <div className="about-detail"
+                        <motion.div className="about-detail"
+                            initial={"offscreen"}
+                            whileInView={"onscreen"}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ staggerChildren: 0.5 }}
                         >
-                            <motion.h3
-                                variants={imageAnimate}
-                            >Hi there
-                            </motion.h3>
-
-                            <motion.h2
-                                variants={textAnimate}
-                            >My name is Apiwat Anekboon.
-                                <br />
-                                I'm a front-end developer from Thailand with 4 years of expertise in web development.
-                                During the past several years,
-                                <br /> I've concentrated on front-end development using HTML, CSS, and JavaScript.
-                                <br />
-                                In my leisure time, I like to explore art.
-                            </motion.h2>
-
-                        </div>
+                            <motion.div
+                                variants={statusAnimate}>
+                                <motion.div
+                                    className="wrap-chip"
+                                    animate={{
+                                        background: [
+                                            "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                            "linear-gradient(135deg, #60CAFC, #2F65FF, #A56CFF, #5D2EFF)",
+                                        ],
+                                    }
+                                    }
+                                    transition={{
+                                        ease: "linear",
+                                        duration: 2,
+                                        repeat: Infinity,
+                                    }}
+                                >
+                                    <span className="chip-status">Finding a new job</span>
+                                </motion.div>
+                            </motion.div>
+                            <motion.div
+                                className="wrap-about"
+                                variants={scaleAbout}
+                            >
+                                <div className="about-shadow" />
+                                <div className="about-me">
+                                    <motion.h3
+                                        variants={hithereAnimate}
+                                    >Hi there
+                                    </motion.h3>
+                                    <motion.h2
+                                        variants={textAnimate}
+                                    >My name is Apiwat Anekboon.
+                                        <br />
+                                        I am a front-end developer from Thailand, with 4 years of experience in web development.
+                                        <br />Over the past few years,
+                                        <br /> I have focused on front-end development using HTML, CSS, and JavaScript.
+                                        <br /> I am passionate about creating beautiful micro-interactions and minor details in interface design.
+                                        <br />
+                                        In my leisure time, I like to explore art, music, tattoos, and vintage shopping.
+                                    </motion.h2>
+                                </div>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
                 <div className="project-content">
@@ -107,7 +158,12 @@ export default function HomeIndex() {
                             src="/element/project-bg-min.png"
                         />
                     </motion.div> */}
-                    <div className="p-top">
+                    <motion.div
+                        className="p-top"
+                        initial={"offscreen"}
+                        whileInView={"onscreen"}
+                        viewport={{ once: false, amount: 0.5 }}
+                        transition={{ staggerChildren: 0.5 }}>
                         <motion.div
                             className="p-element flamingo"
                         >
@@ -179,7 +235,7 @@ export default function HomeIndex() {
                             className="p-element speech-bubble"
 
                         >
-                            <div className="speech-text"> I will haunt your dreams.</div>
+                            <div className="speech-text">let’s make something special</div>
                         </motion.div>
                         <motion.div
                             className="p-element sunflowers-footer"
@@ -188,7 +244,7 @@ export default function HomeIndex() {
                                 src="/element/sunflowers-footer-min.png"
                             />
                         </motion.div>
-                    </div>
+                    </motion.div>
                 </div>
             </motion.div>
         </>
