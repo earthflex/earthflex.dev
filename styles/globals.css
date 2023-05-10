@@ -174,6 +174,10 @@ img {
   display: flex;
 }
 
+.p-fixed{
+  position: fixed;
+}
+
 .p-relative{
   position: relative;
 }

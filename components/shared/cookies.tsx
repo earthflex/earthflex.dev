@@ -24,8 +24,8 @@ const Cookies: React.FC = () => {
                     className="wrapper-cookies">
                     <motion.img
                         className="sloth-cookies aura"
-                        initial={{ y: 30, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
+                        initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
+                        animate={{ y: 0, opacity: 1, scale: 1 }}
                         transition={{
                             delay: 2.5,
                             duration: 1,

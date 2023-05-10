@@ -13,12 +13,15 @@ export const staggerContainer: Variants = {
 
 export const earthflexText: Variants = {
     initial: {
-        y: 800,
+        y: 80,
+        opacity: 0,
     },
     animate: {
-        y: 150,
+        y: 60,
+        opacity: 1,
         transition: {
-            duration: 0.8,
+            delay: .2,
+            duration: 1.2,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
                 type: "spring",
@@ -39,7 +42,7 @@ export const earthWrapper: Variants = {
     animate: {
         y: 100,
         x: 0,
-        scale: .6,
+        scale: 1.8,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
@@ -58,7 +61,7 @@ export const earth: Variants = {
     animate: {
         y: [30, 0, 30],
         transition: {
-            duration: 1.6,
+            duration: 15,
             ease: "linear",
             repeat: Infinity,
         }
@@ -157,7 +160,7 @@ export const earthTv: Variants = {
 
 export const artcraft: Variants = {
     initial: {
-        y:100,
+        y: 100,
         x: -800,
         scale: .7,
     },
@@ -207,7 +210,7 @@ export const scaleAbout: Variants = {
     onscreen: {
         scale: 1,
         opacity: 1,
-        transformOrigin: 'top',
+        transformOrigin: 'left top',
         transition: {
             type: "spring",
             bounce: 0.4,
@@ -238,7 +241,7 @@ export const hithereAnimate: Variants = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: .2,
+            delay: .4,
             type: "spring",
             bounce: 0.4,
             duration: 1
@@ -253,7 +256,7 @@ export const imageAnimate: Variants = {
         opacity: 1,
         rotate: [0, 10, 0],
         transition: {
-            delay: .2,
+            delay: .6,
             type: "spring",
             bounce: 0.4,
             duration: 1
