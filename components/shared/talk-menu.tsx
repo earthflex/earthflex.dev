@@ -33,11 +33,11 @@ export default function TallkMenu() {
                             className="bg-talk"
                             animate={{
                                 background: [
-                                    "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(20deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
                                     "linear-gradient(45deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
                                     "linear-gradient(90deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
                                     "linear-gradient(45deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
-                                    "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(20deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
                                 ]
                             }}
                             transition={{

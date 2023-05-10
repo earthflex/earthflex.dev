@@ -64,8 +64,8 @@ export default function ResumeDialog() {
         {
             icon: '/re-email.png',
             title: 'email',
-            detail: "earthflexible@gmail.com",
-            link: 'mailto:earthflexible@gmail.com',
+            detail: "apiwat.anekboon@gmail.com",
+            link: 'mailto:apiwat.anekboon@gmail.com',
             traget: '_blank',
         },
         {
