@@ -42,7 +42,7 @@ export const earthWrapper: Variants = {
     animate: {
         y: 100,
         x: 0,
-        scale: 1.8,
+        scale: .8,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
