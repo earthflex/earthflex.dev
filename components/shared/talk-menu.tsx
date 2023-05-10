@@ -7,20 +7,6 @@ import Link from "next/link";
 
 export default function TallkMenu() {
 
-    const [angle, setAngle] = React.useState(180);
-
-    React.useEffect(() => {
-        const interval = setInterval(() => {
-            setAngle((prevAngle) => (prevAngle === 0 ? 180 : prevAngle - 90));
-        }, 1000);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const animation = {
-        background: `linear-gradient(${angle}deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)`,
-    };
-
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
@@ -30,28 +16,37 @@ export default function TallkMenu() {
                     transition={{
                         delay: 0.1,
                     }}>
-                    <div className="p-relative">
-                        <motion.button className="talk"
-                            variants={ButtonScale("up")}
-                            initial="initial"
-                            whileHover="whileHover"
-                            whileTap="whileTap"
+                    <motion.div
+                        variants={ButtonScale("up")}
+                        initial="initial"
+                        whileHover="whileHover"
+                        whileTap="whileTap"
+                        className="p-relative">
+                        <button className="talk"
                         >
                             <span>
                                 Let`s talk
                             </span>
                             <DialogCardArrowIcon />
-                        </motion.button>
+                        </button>
                         <motion.div
                             className="bg-talk"
-                            initial={{ background: animation.background }}
-                            animate={animation}
+                            animate={{
+                                background: [
+                                    "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(45deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(90deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(45deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                    "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%)",
+                                ]
+                            }}
                             transition={{
                                 ease: "linear",
                                 duration: 2,
+                                repeat: Infinity,
                             }}
                         />
-                    </div>
+                    </motion.div>
                 </motion.div>
             </DropdownMenu.Trigger>
 

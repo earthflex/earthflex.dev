@@ -60,6 +60,11 @@ const RADIO_CAT: RadioCatItem[] = [
         img: '/runcat/coffee.png',
     },
     {
+        id: 'vespa',
+        name: 'Vespa',
+        img: '/runcat/vespa.png',
+    },
+    {
         id: 'rocket',
         name: 'Rocket',
         img: '/runcat/rocket.png',
@@ -115,7 +120,7 @@ const RunCat: React.FC = () => {
                                     <Menubar.ItemIndicator className="MenubarItemIndicator">
                                         <DotFilledIcon />
                                     </Menubar.ItemIndicator>
-                                    <img src= {item.img}className="runcat" width={22} height={22} alt={item.name} />&nbsp;{item.name}
+                                    <img src={item.img} className="runcat" width={22} height={22} alt={item.name} />&nbsp;{item.name}
                                 </Menubar.RadioItem>
                             ))}
                         </Menubar.RadioGroup>

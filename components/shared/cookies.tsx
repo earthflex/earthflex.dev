@@ -56,7 +56,10 @@ const Cookies: React.FC = () => {
                         className="speech-cookies"
 
                     >
-                        <p>The sloth desires cookies.</p>
+                        <p>
+                            {/* The sloth would like to collect cookies from you. */}
+                            The sloth would like cookies.
+                        </p>
                         <motion.button
                             onClick={handleAcceptCookies}
                             variants={ButtonScale("down")}
