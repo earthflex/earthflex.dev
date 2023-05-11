@@ -5,7 +5,7 @@ export default function Project() {
     return (
         <div className="error-page">
             <img className="mbm-lighten pe-none" src="/error.png" width={200} alt={"error page"} />
-            <div className="d-flex error-text">
+            <div className="flex error-text">
                 <motion.h1
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
