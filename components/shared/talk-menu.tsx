@@ -21,7 +21,7 @@ export default function TallkMenu() {
                         initial="initial"
                         whileHover="whileHover"
                         whileTap="whileTap"
-                        className="p-relative">
+                        className="relative">
                         <button className="talk"
                         >
                             <span>

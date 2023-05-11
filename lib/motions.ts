@@ -204,29 +204,33 @@ export const swimming: Variants = {
     }
 }
 
-
-export const scaleAbout: Variants = {
-    offscreen: { scale: 0, opacity: 0 },
+export const scaleCard: Variants = {
+    offscreen: { y: 20, scale: .9, opacity: .9 },
     onscreen: {
+        y: 0,
         scale: 1,
         opacity: 1,
-        transformOrigin: 'left top',
+        transformOrigin: 'top',
         transition: {
             type: "spring",
             bounce: 0.4,
-            duration: 1
+            duration: 1,
         }
     }
 }
-
 
 export const statusAnimate: Variants = {
-    offscreen: { y: 50, opacity: 0, scale: 0 },
+    offscreen: {
+        y: 0,
+        opacity: .9,
+        scale: .9,
+        transformOrigin: 'left bottom',
+    },
     onscreen: {
         y: 0,
         opacity: 1,
         scale: 1,
-        transformOrigin: 'bottom left',
+        transformOrigin: 'left bottom',
         transition: {
             type: "spring",
             bounce: 0.4,
@@ -235,11 +239,12 @@ export const statusAnimate: Variants = {
     }
 }
 
-export const hithereAnimate: Variants = {
-    offscreen: { y: -100, opacity: 0 },
+export const headerCartAnimate: Variants = {
+    offscreen: { y: 0, opacity: .9, scale: .9, transformOrigin: 'center' },
     onscreen: {
         y: 0,
         opacity: 1,
+        scale: 1,
         transition: {
             delay: .4,
             type: "spring",
@@ -249,23 +254,8 @@ export const hithereAnimate: Variants = {
     }
 }
 
-export const imageAnimate: Variants = {
-    offscreen: { x: -100, opacity: 0 },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        rotate: [0, 10, 0],
-        transition: {
-            delay: .6,
-            type: "spring",
-            bounce: 0.4,
-            duration: 1
-        }
-    }
-}
-
 export const textAnimate: Variants = {
-    offscreen: { y: 100, opacity: 0 },
+    offscreen: { x: 10, opacity: 0, transformOrigin: 'bottom' },
     onscreen: {
         y: 0,
         opacity: 1,
@@ -273,7 +263,7 @@ export const textAnimate: Variants = {
             delay: .3,
             type: "spring",
             bounce: 0.4,
-            duration: 1
+            duration: .5
         }
     }
 }

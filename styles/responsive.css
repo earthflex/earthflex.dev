@@ -34,13 +34,13 @@
 }
 
 @media (max-width:991.98px) {
-    .about-content h3 {
-        font-size: 24px;
+    /* .about-content h3 {
+        font-size: 18;
     }
 
     .about-content h2 {
         font-size: 28px;
-    }
+    } */
 }
 
 @media (max-width:767.98px) {
@@ -155,11 +155,11 @@
     }
 
     .about-content h3 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .about-content h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     .icon-item {
@@ -173,6 +173,10 @@
 
     .header-flex {
         padding: 0 .7rem 0 0.5rem;
+    }
+    
+    .grid-about{
+        grid-template-columns: auto;
     }
 }
 

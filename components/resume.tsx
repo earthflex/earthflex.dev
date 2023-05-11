@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Toast from '@radix-ui/react-toast';
+import ToastMain from './shared/toast';
 
 export default function ResumeDialog() {
 
@@ -156,13 +157,13 @@ export default function ResumeDialog() {
                         {exp.role.length <= 1 &&
                             exp.role.map((role, index) => (
                                 <div key={index}>
-                                    <h4>
+                                    <h5 className='font-bold text-md'>
                                         {role.position}
-                                    </h4>
+                                    </h5>
                                     <div>
                                         <h5><small>{exp.company}</small><small> {role.date}</small></h5>
                                         <div className="steps-item-description">
-                                            <ul>
+                                            <ul className="list-disc">
                                                 {role.detail.map(detail => (
                                                     <li key={detail}>{detail}</li>
                                                 ))}
@@ -174,14 +175,14 @@ export default function ResumeDialog() {
                         }
                         {exp.role.length > 1 &&
                             <>
-                                <h4> {exp.company}</h4>
+                                <h4 className='font-bold text-md'> {exp.company}</h4>
                                 {
                                     exp.role.map((role, index) => (
                                         <div className="steps-exps-2" key={index}>
                                             <div className="steps-item-icon"></div>
-                                            <h5>{role.position}<small>{role.date}</small></h5>
+                                            <h5 className='font-bold text-sm'>{role.position}<small>{role.date}</small></h5>
                                             <div className="steps-item-description">
-                                                <ul>
+                                                <ul className="list-disc">
                                                     {role.detail.map(detail => (
                                                         <li key={detail}>{detail}</li>
                                                     ))}
@@ -200,19 +201,21 @@ export default function ResumeDialog() {
 
     const HeadResume = () => {
         return (
-            <>
+            <React.Fragment>
                 <div className="resume-download">
                     <Link className="btn-download" href="resume-apiwat_anekboon.pdf" target="_blank">Download Resume</Link>
                 </div>
-                <h2>Apiwat Anekboon</h2><span>Front-end Developer</span><span>City, Bangkok</span>
-            </>
+                <h2 className="font-bold text-2xl">Apiwat Anekboon</h2>
+                <span>Front-end Developer</span>
+                <span>City, Bangkok</span>
+            </React.Fragment>
         )
     }
 
     const [open, setOpen] = React.useState(false);
 
     return (
-        <>
+        <React.Fragment>
             <Dialog.Content className="resume-content">
                 <div className="resume-left">
                     <div className="window-control">
@@ -230,30 +233,30 @@ export default function ResumeDialog() {
                             <HeadResume />
                         </div>
                         <div className="resume-box">
-                            <h4>Apply for</h4>
+                            <h4 className="font-bold text-sm">Apply for</h4>
                             <p>Status : <span className="chip-active">Finding a new job</span></p>
                         </div>
                         <div className="resume-box">
-                            <h4>Skills</h4>
+                            <h4 className="font-bold text-sm">Skills</h4>
                             <p>
                                 {listSkills}
                             </p>
                         </div>
                         <div className="resume-box">
-                            <h4>Code</h4>
+                            <h4 className="font-bold text-sm">Code</h4>
                             <p>
                                 {listCodes}
                             </p>
                         </div>
                         <div className="resume-box">
-                            <h4>Tools</h4>
+                            <h4 className="font-bold text-sm">Tools</h4>
                             <p>
                                 {listTools}
                             </p>
                         </div>
 
                         <div className="resume-box">
-                            <h4>Contact</h4>
+                            <h4 className="font-bold text-sm">Contact</h4>
                             <ul className="list-contact">
                                 {listContacts}
                             </ul>
@@ -267,16 +270,16 @@ export default function ResumeDialog() {
                     <div className="scroll-r">
                         <div className="resume-box">
                             <div className="box-exp">
-                                <h2 className="title-exp">Work Experience</h2>
+                                <h2 className="title-exp font-bold text-xl">Work Experience</h2>
                                 {listExps}
                             </div>
                         </div>
                         <div className="resume-box">
-                            <h4>Educations</h4>
+                            <h4 className="font-bold text-md">Educations</h4>
                             <div className="card-resume">
                                 <div className="icon-card"> <img src="/education.png" alt="education" /></div>
                                 <div className="card-content">
-                                    <h5>Technology Multimedia and Animation  <br />
+                                    <h5 className="font-bold text-sm leading-tight">Technology Multimedia and Animation  <br />
                                         <small>RMU : Mahasarakham</small>  <br />
                                         <small>Oct. 2013 - Nov. 2017 </small>  <br />
                                     </h5>
@@ -284,15 +287,14 @@ export default function ResumeDialog() {
                             </div>
                         </div>
                         <div className="resume-box">
-                            <h4>Projects</h4>
+                            <h4 className="font-bold text-md">Projects</h4>
                             <Link href="#">
                                 <div className="card-resume" onClick={() => {
                                     setOpen(true);
                                 }}>
                                     <div className="icon-card"> <img src="/project.png" alt="project" /></div>
                                     <div className="card-content">
-                                        <h5>See all
-                                        </h5>
+                                        <h5 className='font-bold text-sm'>See all </h5>
                                     </div>
                                 </div>
                             </Link >
@@ -300,19 +302,12 @@ export default function ResumeDialog() {
                     </div >
                 </div>
             </Dialog.Content>
-
-            <Toast.Provider swipeDirection="right" >
-                <Toast.Root className="toast-root" open={open} onOpenChange={setOpen}>
-                    <Toast.Title className="toast-title">🔔 Portfolio Currently <br /> Being Updated.</Toast.Title>
-                    <Toast.Description asChild>
-
-                    </Toast.Description>
-                    <Toast.Action className="toast-action" asChild altText="Goto schedule to undo">
-                        <button className="toast-button">close</button>
-                    </Toast.Action>
-                </Toast.Root>
-                <Toast.Viewport className="toast-viewport" />
-            </Toast.Provider>
-        </>
+            <ToastMain
+                title='🔔 Portfolio Currently Being Updated.'
+                description=''
+                open={open}
+                setOpen={setOpen}
+            />
+        </React.Fragment>
     );
 }
