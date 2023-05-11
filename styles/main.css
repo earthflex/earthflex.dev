@@ -902,6 +902,7 @@ i.location {
   display: inline-block;
   color: #A9C0EC;
   font-weight: 500;
+  font-size: 12px;
 }
 
 .steps-exps-2 small:before {
@@ -1281,7 +1282,6 @@ a .card-resume:hover:after {
   position: relative;
   z-index: 0;
   margin: 14rem 0 0;
-  overflow: hidden;
   max-width: 100%;
 }
 
@@ -1303,6 +1303,13 @@ a .card-resume:hover:after {
   gap: 1rem;
 }
 
+.grid-about {
+  display: grid;
+  grid-template-columns: 35% auto;
+  column-gap: .8rem;
+  row-gap: .8rem;
+}
+
 .wrap-about {
   position: relative;
   overflow: hidden;
@@ -1320,39 +1327,46 @@ a .card-resume:hover:after {
   z-index: 1;
 }
 
-.about-content h3 {
+.about-content h3.hi {
   font-weight: 300;
-  font-size: 22px;
-  /* padding: .6rem 1rem; */
+  font-size: 24px;
   margin-bottom: 1rem;
-}
-
-.about-content h3::after {
-  content: '';
-  background-image: url(/hi.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  z-index: 11;
-  transform: translate(10px, -14px);
+  font-weight: 400;
 }
 
 .about-content h2 {
   font-weight: 400;
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 200px;
 }
 
-.about-me {
-  padding: 1.6rem;
+.card-me {
+  padding: 1rem 1.2rem;
   height: min-content;
   border-radius: 20px;
-  background: linear-gradient(268.11deg, rgba(255, 255, 255, 0) 1.46%, rgba(255, 255, 255, 0.16) 49.45%, rgba(255, 255, 255, 0) 95.03%);
-  /* background-color: rgb(32, 32, 32);
-  background-image: linear-gradient(135deg, rgb(37 33 32 / 80%), rgb(37 33 32 / 80%));
-  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 5%), 0 10px 16px -3px rgb(0 0 0 / 10%); */
+  background: linear-gradient(136deg, rgb(51, 51, 51) 0%, rgb(34, 34, 34) 100%);
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 5%), 0 10px 16px -3px rgb(0 0 0 / 10%);
+  border: 1px solid #404043;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.card-me:hover .arrow-card {
+  transform: rotate(45deg);
+  transition: all .2s ease;
+  background: rgb(255 255 255 / 70%);
+}
+
+.card-me:hover .arrow-card svg path {
+  stroke: #333;
 }
 
 .project-content {
@@ -1830,7 +1844,7 @@ a .card-resume:hover:after {
 
 .old-main {
   right: 0;
-  bottom: calc(36% / 1.4);
+  bottom: calc(36% / (1.4) - 1rem);
   transform-origin: bottom right;
   z-index: 1;
 }
@@ -1850,7 +1864,7 @@ a .card-resume:hover:after {
 
 .speech-text {
   position: relative;
-  top: 50px;
+  top: 40px;
   left: 0;
   color: #333;
   font-size: 20px;
