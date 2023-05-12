@@ -28,7 +28,7 @@ export const headerHover: Variants = {
 };
 export const cardTap: Variants = {
   initial: {
-   background:'linear-gradient(136deg, rgb(51, 51, 51) 0%, rgb(34, 34, 34) 100%)',
+    background: 'linear-gradient(136deg, rgb(51, 51, 51) 0%, rgb(34, 34, 34) 100%)',
     transition: {
       duration: 0.5
     }
@@ -52,7 +52,7 @@ export const cardTap: Variants = {
     }
   },
   whileTap: {
-    scale: 1.01,
+    scale: 1.03,
     transition: {
       duration: 0.5
     }

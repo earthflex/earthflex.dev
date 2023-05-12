@@ -1306,7 +1306,7 @@ a .card-resume:hover:after {
 
 .grid-about {
   display: grid;
-  grid-template-columns: 35% auto;
+  grid-template-columns: 33.33% auto;
   column-gap: .8rem;
   row-gap: .8rem;
 }
