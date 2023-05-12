@@ -22,9 +22,8 @@ export default function Home({
   };
 }) {
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const [openAbout, setOpenAbout] = React.useState(false);
   const [openPortfolio, setOpenPortfolio] = React.useState(false);
 
   useEffect(() => {

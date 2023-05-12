@@ -52,7 +52,7 @@ export default function Loading() {
                     <source src="/memoji.webm" type="video/webm" />
                 </video>
             </div>
-            <div className="d-flex loader-text">
+            <div className="flex loader-text">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ y: -10, opacity: 1 }}
