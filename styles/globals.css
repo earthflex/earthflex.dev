@@ -287,11 +287,10 @@ img {
 .loader-page .ef-memoji video,
 .error-page .ef-memoji video {
   width: 280px;
-  transform: translateX(-80px);
 }
 
 .loader-text {
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .loader-page h1 {

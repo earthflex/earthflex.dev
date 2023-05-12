@@ -76,7 +76,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: translateX(-50px);
+  transform: translateX(-80px);
+  max-width: inherit;
 }
 
 /* .ef-memoji:after {
