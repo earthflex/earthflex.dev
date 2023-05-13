@@ -27,7 +27,6 @@ export default function Dock({
                     <Link href="/project">
                         <Dockitem title="Project" classicon="bg-project" icon="/project.svg" />
                     </Link>
-
                     <Link href="https://github.com/earthflex/" target="_blank">
                         <Dockitem title="Github" classicon="bg-github" icon="/github.svg" />
                     </Link>
