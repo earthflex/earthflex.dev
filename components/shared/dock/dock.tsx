@@ -1,11 +1,13 @@
 import React from 'react';
 import Link from "next/link";
 import { motion } from "framer-motion";
-import * as Dialog from '@radix-ui/react-dialog';
 import Dockitem from "./dock-item";
-import ResumeDialog from '@/components/resume';
 
-export default function Dock() {
+export default function Dock({
+    onClick,
+}: {
+    onClick: () => void;
+}) {
 
     return (
         <motion.div className="dock-fixed"
@@ -19,16 +21,9 @@ export default function Dock() {
             <div className="dock">
                 <div className="app-icons"
                 >
-                    <Dialog.Root>
-                        <Dialog.Trigger>
-                            <Dockitem title="Resume" classicon="bg-resume" icon="/resume.svg" />
-                        </Dialog.Trigger>
-                        <Dialog.Portal>
-                            <Dialog.Overlay className="dialog-overlay" />
-                            <ResumeDialog />
-                        </Dialog.Portal>
-                    </Dialog.Root>
-
+                    <div onClick={onClick}>
+                        <Dockitem title="Resume" classicon="bg-resume" icon="/resume.svg" />
+                    </div>
                     <Link href="/project">
                         <Dockitem title="Project" classicon="bg-project" icon="/project.svg" />
                     </Link>

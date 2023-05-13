@@ -1,14 +1,17 @@
 import React from "react";
 import * as Toast from '@radix-ui/react-toast';
 
-interface ToastProps {
+export default function ToastMain({
+    title,
+    description,
+    open,
+    setOpen
+}: {
     title: string;
     description: string;
     open: boolean;
     setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const ToastMain: React.FC<ToastProps> = ({ title, description, open, setOpen }) => {
+}) {
     return (
         <React.Fragment>
             <Toast.Provider swipeDirection='right' >
@@ -26,5 +29,3 @@ const ToastMain: React.FC<ToastProps> = ({ title, description, open, setOpen }) 
         </React.Fragment>
     );
 };
-
-export default ToastMain;

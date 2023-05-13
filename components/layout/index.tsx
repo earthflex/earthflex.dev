@@ -3,11 +3,12 @@ import Dock from "../shared/dock/dock";
 import Header from "../shared/header";
 import Meta from "./meta";
 import React from "react";
-import type { Container, Engine } from "tsparticles-engine";
-import Particles from "react-particles";
-import { loadFull } from "tsparticles";
 import Topbar from "../shared/top-bar";
 import Cookies from "../shared/cookies";
+import { motion } from "framer-motion";
+import useModal from "../hook/use-modal";
+import ResumeDetail from "../resume";
+import Modal from "../shared/modal/modal";
 
 export default function Layout({
     meta,
@@ -23,86 +24,24 @@ export default function Layout({
     children: ReactNode;
 }) {
 
-    const particlesInit = React.useCallback(async (engine: Engine) => {
-        console.log(engine);
-        // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        await loadFull(engine);
-    }, []);
+    const { modalOpen, close, open } = useModal();
 
-    const particlesLoaded = React.useCallback(async (container: Container | undefined) => {
-        await console.log(container);
-    }, []);
     return (
-        <>
+        <React.Fragment>
             <Meta {...meta} />
-            <Topbar />
+            <Topbar onClick={open} />
             <Header />
-            <Dock />
-            <Particles
-                id="tsparticles"
-                init={particlesInit}
-                loaded={particlesLoaded}
-                options={{
-                    fpsLimit: 60,
-                    interactivity: {
-                        events: {
-                            onClick: {
-                                enable: false,
-                            },
-                            onHover: {
-                                enable: false,
-                            },
-                            resize: true,
-                        },
-                    },
-                    particles: {
-                        color: {
-                            value: ["rgb(255, 255, 255)"],
-                        },
-                        links: {
-                            enable: false,
-                        },
-                        collisions: {
-                            enable: false,
-                        },
-                        move: {
-                            direction: "none",
-                            enable: true,
-                            outModes: {
-                                default: "out",
-                            },
-                            random: true,
-                            speed: 0.5,
-                            straight: false,
-                        },
-                        number: {
-                            density: {
-                                enable: true,
-                                area: 800,
-                            },
-                            value: 50,
-                        },
-                        opacity: {
-                            value: 0.7,
-                            random: true,
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        size: {
-                            value: { min: 1, max: 3 },
-                            random: true,
-                        },
-                    },
-                    detectRetina: true,
-                }}
-            />
+            <Dock onClick={open} />
+
+            {modalOpen && (
+                <Modal modalOpen={modalOpen} handleClose={close} >
+                    <ResumeDetail handleClose={close} />
+                </Modal>
+            )}
             <Cookies />
             <main>
                 {children}
             </main>
-        </>
+        </React.Fragment>
     );
 }

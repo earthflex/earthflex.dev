@@ -6,7 +6,6 @@ import { ButtonScale } from "@/lib/constants";
 import Link from "next/link";
 
 export default function TallkMenu() {
-
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>

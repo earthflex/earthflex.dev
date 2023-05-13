@@ -3,13 +3,17 @@ import * as Menubar from '@radix-ui/react-menubar';
 import * as Dialog from '@radix-ui/react-dialog';
 import React from "react";
 import Image from "next/image";
-import { SpotifyEmbed } from "./spotify-embed";
+import SpotifyEmbed from "./spotify-embed";
 import ResumeDialog from "../resume";
 import RunCat from "./runcat";
 import RecentItems from "./recent-items";
 
 
-export default function Topbar() {
+export default function Topbar({
+    onClick,
+}: {
+    onClick: () => void;
+}) {
 
     const [isVisible, setIsVisible] = React.useState(false);
 
@@ -57,29 +61,46 @@ export default function Topbar() {
                             <Menubar.Trigger className="MenubarTrigger"><strong>Earthflex</strong></Menubar.Trigger>
                             <Menubar.Portal>
                                 <Menubar.Content className="MenubarContent" align="start" sideOffset={5} alignOffset={-3}>
-                                    <Menubar.Item className="MenubarItem" >
-                                        New Tab <div className="RightSlot">⌘ T</div>
-                                    </Menubar.Item>
-                                    <Menubar.Item className="MenubarItem">
-                                        New Window <div className="RightSlot">⌘ N</div>
-                                    </Menubar.Item>
+                                    <Link href="/">
+                                        <Menubar.Item className="MenubarItem" >
+                                            New Tab (Home) <div className="RightSlot">⌘ T</div>
+                                        </Menubar.Item>
+                                    </Link>
+                                    <Link href="/" target="_blank">
+                                        <Menubar.Item className="MenubarItem">
+                                            New Window <div className="RightSlot">⌘ N</div>
+                                        </Menubar.Item>
+                                    </Link>
                                     <Menubar.Item className="MenubarItem" disabled>
                                         New Incognito Window
                                     </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        Resume
-                                    </Menubar.Item>
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        Project
-                                    </Menubar.Item>
+                                    <div onClick={onClick}>
+                                        <Menubar.Item className="MenubarItem" onClick={onClick}>
+                                            Resume
+                                        </Menubar.Item>
+                                    </div>
+                                    <Link href="/project">
+                                        <Menubar.Item className="MenubarItem">
+                                            Project
+                                        </Menubar.Item>
+                                    </Link>
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        Github
-                                    </Menubar.Item>
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        Linkedin
-                                    </Menubar.Item>
+                                    <Link href="https://github.com/earthflex/" target="_blank">
+                                        <Menubar.Item className="MenubarItem" >
+                                            Github
+                                        </Menubar.Item>
+                                    </Link>
+                                    <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
+                                        <Menubar.Item className="MenubarItem" >
+                                            Linkedin
+                                        </Menubar.Item>
+                                    </Link>
+                                    <Link href="https://twitter.com/earthflexible" target="_blank">
+                                        <Menubar.Item className="MenubarItem" >
+                                            Twitter
+                                        </Menubar.Item>
+                                    </Link>
                                 </Menubar.Content>
                             </Menubar.Portal>
                         </Menubar.Menu>

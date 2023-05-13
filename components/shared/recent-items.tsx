@@ -11,48 +11,49 @@ interface AppItems {
 
 const APP_ITEMS: AppItems[] = [
     {
-        id: '',
+        id: 'notion',
         name: 'Notion',
         img: '/application/notion.png',
     },
     {
-        id: '',
+        id: 'notes',
         name: 'Notes',
         img: '/application/notes.png',
     },
     {
-        id: '',
+        id: 'chatgpt',
         name: 'Bing ChatGPT',
         img: '/application/chatgpt.png',
     },
     {
-        id: '',
+        id: 'chrome',
         name: 'Chrome',
         img: '/application/chrome.png',
     },
     {
-        id: '',
+        id: 'gmail',
         name: 'Gmail',
         img: '/application/gmail.png',
     },
     {
-        id: '',
+        id: 'figma',
         name: 'Figma',
         img: '/application/figma.png',
     },
     {
-        id: '',
+        id: 'vscode',
         name: 'Visual Studio Code',
         img: '/application/vscode.png',
     },
     {
-        id: '',
+        id: 'iterm',
         name: 'Iterm',
         img: '/application/iterm.png',
     },
 ];
 
-const RecentItems: React.FC = () => {
+
+export default function RecentItems() {
     return (
         <React.Fragment>
             <Menubar.Sub>
@@ -75,5 +76,3 @@ const RecentItems: React.FC = () => {
         </React.Fragment>
     );
 };
-
-export default RecentItems;

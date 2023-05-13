@@ -1,6 +1,6 @@
 @media (min-width:1600px) {
     .scroll-r {
-        max-height: calc(56vh - 14px);
+        max-height: calc(55vh - 16px);
     }
 }
 
@@ -13,7 +13,9 @@
 }
 
 @media (max-width:1023.98px) {
-
+    .modal {
+        max-width: 760px;
+    }
     .p-top,
     .project-content {
         height: 60vh;
@@ -34,13 +36,13 @@
 }
 
 @media (max-width:991.98px) {
-    /* .about-content h3 {
-        font-size: 18;
-    }
+ 
+}
 
-    .about-content h2 {
-        font-size: 28px;
-    } */
+@media (min-width:768px) {
+    .resume-right{
+        max-height: calc(70vh);
+    }
 }
 
 @media (max-width:767.98px) {
@@ -48,15 +50,7 @@
         padding-right: calc(1rem * .5);
         padding-left: calc(1rem * .5);
     }
-
-    .resume-content {
-        flex-direction: column;
-    }
-
-    .resume-left {
-        flex-basis: 100%
-    }
-
+    
     .scroll-l,
     .scroll-r {
         max-height: 75% !important;
@@ -66,8 +60,7 @@
     }
 
     .resume-content {
-        max-height: 75% !important;
-        min-height: 75% !important;
+        max-height: 100% !important;
         overflow-y: scroll;
     }
 

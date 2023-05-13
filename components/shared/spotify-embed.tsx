@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react';
-interface SpotifyEmbedProps {
-    type: 'track' | 'album' | 'playlist';
-    id: string;
-    width?: string;
-    height?: string;
-}
+import React from 'react';
 
-export const SpotifyEmbed: React.FC<SpotifyEmbedProps> = ({
+export default function SpotifyEmbed({
     type,
     id,
     width = '100%',
     height = '152',
-}) => {
-
+}: {
+    type: 'track' | 'album' | 'playlist';
+    id: string;
+    width?: string;
+    height?: string;
+}) {
+    
     const embedUrl = `https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
 
     return (
