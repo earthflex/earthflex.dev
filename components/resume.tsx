@@ -1,10 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import * as Dialog from '@radix-ui/react-dialog';
-import * as Toast from '@radix-ui/react-toast';
 import ToastMain from './shared/toast';
+import useModal from '@/components/hook/use-modal';
 
-export default function ResumeDialog() {
+export default function ResumeDetail({
+    handleClose
+}: {
+    handleClose: () => void;
+}) {
+
+    const { modalOpen, close, open } = useModal();
 
     const skills = [
         'UX&UI Designing',
@@ -110,7 +116,7 @@ export default function ResumeDialog() {
                 {
                     position: 'Front-end Developer, Leader UX&UI Designer',
                     detail: [
-                        'Develop Website using HTML, CSS,Javascript, React, Vue, Responsive',
+                        'Develop Website using HTML, CSS,Javascript , React, Vue, Responsive',
                         'Be in charge of all projects in part of UX/UI consultant'
                     ],
                     date: 'Jun. 2022 - Present',
@@ -212,16 +218,12 @@ export default function ResumeDialog() {
         )
     }
 
-    const [open, setOpen] = React.useState(false);
-
     return (
         <React.Fragment>
-            <Dialog.Content className="resume-content">
+            <div className="resume-content md:flex">
                 <div className="resume-left">
-                    <div className="window-control">
-                        <Dialog.Close asChild>
-                            <button className="control-r" aria-label="Close"></button>
-                        </Dialog.Close>
+                    <div className="window-control hidden md:flex">
+                        <button onClick={handleClose} className="control-r" aria-label="Close"></button>
                         <button className="control-y"></button>
                         <button className="control-g"></button>
                     </div>
@@ -262,7 +264,7 @@ export default function ResumeDialog() {
                             </ul>
                         </div>
                     </div>
-                </div >
+                </div>
                 <div className="resume-right">
                     <div className="head-resume d-none">
                         <HeadResume />
@@ -288,10 +290,8 @@ export default function ResumeDialog() {
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-md">Projects</h4>
-                            <Link href="#">
-                                <div className="card-resume" onClick={() => {
-                                    setOpen(true);
-                                }}>
+                            <Link href="/project" onClick={handleClose}>
+                                <div className="card-resume" >
                                     <div className="icon-card"> <img src="/project.png" alt="project" /></div>
                                     <div className="card-content">
                                         <h5 className='font-bold text-sm'>See all </h5>
@@ -301,13 +301,7 @@ export default function ResumeDialog() {
                         </div>
                     </div >
                 </div>
-            </Dialog.Content>
-            <ToastMain
-                title='🔔 Portfolio Currently Being Updated.'
-                description=''
-                open={open}
-                setOpen={setOpen}
-            />
+            </div>
         </React.Fragment>
     );
 }

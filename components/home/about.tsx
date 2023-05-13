@@ -4,10 +4,9 @@ import { motion } from "framer-motion";
 import React from "react";
 import { DialogCardArrowIcon } from "../shared/Icons";
 import ToastMain from "../shared/toast";
+import Link from "next/link";
 
 const About: React.FC = () => {
-    
-    const [openPortfolio, setOpenPortfolio] = React.useState(false);
 
     return (
         <React.Fragment>
@@ -17,7 +16,7 @@ const About: React.FC = () => {
                         <motion.div className="about-detail"
                             initial={"offscreen"}
                             whileInView={"onscreen"}
-                            viewport={{ once: false, amount: .5 }}
+                            viewport={{ once: false, amount: .3 }}
                             transition={{ staggerChildren: 0.1 }}
                         >
                             <motion.div
@@ -72,18 +71,6 @@ const About: React.FC = () => {
                                                 >
                                                     <img src="/hi.png" className="user-none pe-none" width={50} height={50} alt="Hi !" />
                                                     <motion.span
-                                                        initial={{
-                                                            x: -50,
-                                                            opacity: 0,
-                                                        }}
-                                                        animate={{
-                                                            x: 0,
-                                                            opacity: 1,
-                                                        }}
-                                                        transition={{
-                                                            ease: "easeIn",
-                                                            duration: .5,
-                                                        }}
                                                     >Hi there !
                                                     </motion.span>
                                                 </div>
@@ -106,61 +93,54 @@ const About: React.FC = () => {
                                         </motion.div>
                                     </div>
                                 </motion.div>
-                                <motion.div
-                                    variants={scaleCard}>
+                                <Link href="/project">
                                     <motion.div
-                                        initial="initial"
-                                        whileHover="whileHover"
-                                        whileTap="whileTap"
-                                        variants={cardTap}
-                                        onClick={() => {
-                                            setOpenPortfolio(true);
-                                        }}
-                                        className="card-me">
+                                        variants={scaleCard}>
                                         <motion.div
-                                            className='flex items-center justify-between'
-                                        >
-                                            <div
-                                                className="flex items-center gap-2"
+                                            initial="initial"
+                                            whileHover="whileHover"
+                                            whileTap="whileTap"
+                                            variants={cardTap}
+                                            className="card-me">
+                                            <motion.div
+                                                className='flex items-center justify-between'
                                             >
-                                                <span className="text-xl">💼</span>
-                                                <motion.span
-                                                    initial={{
-                                                        x: -50, opacity: 0,
-                                                    }}
-                                                    animate={{
-                                                        x: 0, opacity: 1,
-                                                    }}
-                                                    transition={{
-                                                        ease: "easeIn", duration: .5,
-                                                    }}
-                                                    className="font-medium text-lg "
-                                                >Project
-                                                </motion.span>
-                                            </div>
-                                            <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
-                                                <DialogCardArrowIcon />
-                                            </div>
-                                        </motion.div>
-                                        <motion.div
-                                            initial={{ y: 50, opacity: 0, transformOrigin: 'bottom' }}
-                                            whileInView={{
-                                                y: 0,
-                                                opacity: 1,
-                                            }}
-                                            whileHover={{ scale: .95, transition: { duration: 0.2, type: "ease", } }}
-                                            transition={{
-                                                duration: .4,
-                                                delay: .3,
-                                                type: "easeIn",
-                                                when: "beforeChildren",
-                                                staggerChildren: 0,
-                                            }}
-                                            className="relative h-[120px] md:h-[215px]">
-                                            <img className="absolute bottom-[-18px] right-[-20px] scale-[1.2]" src="cover-project-min.png" alt="cover-project" />
+                                                <div
+                                                    className="flex items-center gap-2"
+                                                >
+                                                    <span className="text-xl">💼</span>
+                                                    <motion.span
+                                                        className="font-medium text-lg "
+                                                    >Project
+                                                    </motion.span>
+                                                </div>
+                                                <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
+                                                    <DialogCardArrowIcon />
+                                                </div>
+                                            </motion.div>
+                                            <motion.div
+                                                initial={{
+                                                    y: 50,
+                                                    scale: 1,
+                                                    opacity: 0,
+                                                    transformOrigin: 'bottom',
+                                                }}
+                                                whileInView={{
+                                                    y: 0,
+                                                    opacity: 1,
+                                                }}
+                                                whileHover={{ scale: .95, transition: { duration: .4, type: "ease", } }}
+                                                transition={{
+                                                    duration: .4,
+                                                    delay: .3,
+                                                    type: "easeIn",
+                                                }}
+                                                className="relative h-[120px] md:h-[215px]">
+                                                <img className="absolute bottom-[-18px] right-[-20px] scale-[1.2] drop-shadow-[2px_20px_5px_rgba(0,0,0,0.50)]" src="cover-project-min.png" alt="cover-project" />
+                                            </motion.div>
                                         </motion.div>
                                     </motion.div>
-                                </motion.div>
+                                </Link>
                             </div>
                         </motion.div>
                     </div>
@@ -262,12 +242,6 @@ const About: React.FC = () => {
                     </motion.div>
                 </div>
             </motion.div>
-            <ToastMain
-                title='🔔 Portfolio Currently Being Updated'
-                description=''
-                open={openPortfolio}
-                setOpen={setOpenPortfolio}
-            />
         </React.Fragment>
     );
 };

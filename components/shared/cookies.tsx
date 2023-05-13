@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from 'framer-motion'
 import { ButtonScale } from "@/lib/constants";
 
-const Cookies: React.FC = () => {
+export default function Cookies() {
 
     const [cookiesAccepted, setCookiesAccepted] = React.useState(false);
     // React.useEffect(() => {
@@ -89,5 +89,3 @@ const Cookies: React.FC = () => {
         </React.Fragment>
     );
 };
-
-export default Cookies;

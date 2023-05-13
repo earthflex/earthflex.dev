@@ -35,10 +35,7 @@ export default function Home({
               <About />
             </Suspense>
           </Layout>
-
         </React.Fragment>
-
-
       ) : (
         <React.Fragment>
           <Meta />

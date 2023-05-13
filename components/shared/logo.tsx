@@ -2,8 +2,6 @@ import React from "react";
 import { motion, AnimationControls } from "framer-motion";
 import { ButtonScale } from "@/lib/constants";
 
-
-
 export default function Logo() {
     return (
         <motion.div

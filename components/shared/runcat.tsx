@@ -81,7 +81,8 @@ const RADIO_CAT: RadioCatItem[] = [
     },
 ];
 
-const RunCat: React.FC = () => {
+export default function RunCat() {
+
     const [runCatSelection, setrunCatSelection] = React.useState<string | null>(null);
     const selectedItem = RADIO_CAT.find((item) => item.id === runCatSelection);
     const loadingImage = '/runcat/dots.png';
@@ -130,5 +131,3 @@ const RunCat: React.FC = () => {
         </>
     );
 };
-
-export default RunCat;
