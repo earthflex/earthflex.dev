@@ -5,6 +5,7 @@ import Meta from '@/components/layout/meta';
 import Loading from './loading';
 import Intro from '@/components/home/intro';
 import About from '@/components/home/about';
+import Cookies from '@/components/shared/cookies';
 
 export default function Home({
   meta,
@@ -35,6 +36,7 @@ export default function Home({
               <About />
             </Suspense>
           </Layout>
+          <Cookies />
         </React.Fragment>
       ) : (
         <React.Fragment>

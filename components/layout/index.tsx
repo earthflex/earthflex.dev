@@ -4,7 +4,6 @@ import Header from "../shared/header";
 import Meta from "./meta";
 import React from "react";
 import Topbar from "../shared/top-bar";
-import Cookies from "../shared/cookies";
 import { motion } from "framer-motion";
 import useModal from "../hook/use-modal";
 import ResumeDetail from "../resume";
@@ -38,7 +37,6 @@ export default function Layout({
                     <ResumeDetail handleClose={close} />
                 </Modal>
             )}
-            <Cookies />
             <main>
                 {children}
             </main>
