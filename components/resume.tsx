@@ -231,7 +231,7 @@ export default function ResumeDetail({
                         <div className="avatar-profile">
                             <img src="/img-profile.png" alt="" />
                         </div>
-                        <div className="head-resume block md:hidden">
+                        <div className="head-resume d-sm-none">
                             <HeadResume />
                         </div>
                         <div className="resume-box">
@@ -266,7 +266,7 @@ export default function ResumeDetail({
                     </div>
                 </div>
                 <div className="resume-right">
-                    <div className="head-resume hidden md:block">
+                    <div className="head-resume d-none">
                         <HeadResume />
                     </div>
                     <div className="scroll-r">
