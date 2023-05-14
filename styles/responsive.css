@@ -4,14 +4,6 @@
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .header--fixed {
-        width: 36%;
-        left: 50%;
-        transform: translateX(-50%) !important;
-    }
-}
-
 @media (max-width:1023.98px) {
     .modal {
         max-width: 760px;
@@ -23,10 +15,6 @@
 }
 
 @media (min-width:768px) {
-    .d-sm-none {
-        display: none;
-    }
-
     .MenubarItem,
     .MenubarSubTrigger,
     .MenubarCheckboxItem,
@@ -62,10 +50,6 @@
     .resume-content {
         max-height: 100% !important;
         overflow-y: scroll;
-    }
-
-    .d-none {
-        display: none;
     }
 
     .title-exp {

@@ -10,8 +10,6 @@ export default function Header() {
     const [isScrolled, setIsScrolled] = React.useState(false);
     const controls = useAnimation();
     const headerBgControls = useAnimation();
-    const textlogoControls = useAnimation();
-    const emojiControls = useAnimation();
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +19,14 @@ export default function Header() {
                 controls.start({ y: '16%' });
                 headerBgControls.start({
                     scale: 0.96,
+                    borderRadius: "50px 50px",
+                    backgroundColor: "#040404",
+                    border: "1px solid #404043",
+                    boxShadow: "0 4px 6px 0 rgba(0, 0, 0, 0.05), 0 10px 16px -3px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(11px)",
+                    padding: "0 0.6rem",
+                    width: 'min(500px, 100%)',
+                    height: "80px",
                     transition: {
                         duration: 1,
                         ease: [0, 0.71, 0.2, 1.01],
@@ -32,12 +38,19 @@ export default function Header() {
                         }
                     }
                 });
-                emojiControls.start({});
             } else {
                 setIsScrolled(false);
                 controls.start({ y: '4%' });
                 headerBgControls.start({
                     scale: 1,
+                    borderRadius: "50px 50px",
+                    backgroundColor: "initial",
+                    border: "initial",
+                    boxShadow: "initial",
+                    backdropFilter: "initial",
+                    padding: "0 1rem 0 .8rem",
+                    width: 'initial',
+                    height: "100px",
                     transition: {
                         duration: 1,
                         ease: [0, 0.71, 0.2, 1.01],
@@ -48,8 +61,8 @@ export default function Header() {
                             restDelta: 0.001,
                         }
                     }
+
                 });
-                emojiControls.start({});
             }
         };
 
