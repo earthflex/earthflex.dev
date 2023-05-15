@@ -22,7 +22,7 @@ const APP_ITEMS: AppItems[] = [
     },
     {
         id: 'chatgpt',
-        name: 'Bing ChatGPT',
+        name: 'ChatGPT',
         img: '/application/chatgpt.png',
     },
     {
