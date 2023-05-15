@@ -1,16 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import * as Dialog from '@radix-ui/react-dialog';
-import ToastMain from './shared/toast';
-import useModal from '@/components/hook/use-modal';
 
 export default function ResumeDetail({
     handleClose
 }: {
     handleClose: () => void;
 }) {
-
-    const { modalOpen, close, open } = useModal();
 
     const skills = [
         'UX&UI Designing',
@@ -40,7 +35,7 @@ export default function ResumeDetail({
         'Bootstrap',
         'Radix-ui',
         'Chakra-ui',
-        'GSAP',
+        // 'GSAP',
         'Framer-Motion'
     ];
 
@@ -289,8 +284,8 @@ export default function ResumeDetail({
                             </div>
                         </div>
                         <div className="resume-box">
-                            <h4 className="font-bold text-md">Projects</h4>
-                            <Link href="/project" onClick={handleClose}>
+                            <h4 className="font-bold text-md">Works</h4>
+                            <Link href="/works" onClick={handleClose}>
                                 <div className="card-resume" >
                                     <div className="icon-card"> <img src="/project.png" alt="project" /></div>
                                     <div className="card-content">

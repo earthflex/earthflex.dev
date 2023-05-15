@@ -2,7 +2,7 @@ import { staggerContainer, earthflexText, earthWrapper, earth, artcraft, earthTv
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import React from "react";
 
-const Intro: React.FC = () => {
+export default function Intro() {
 
     const { scrollYProgress } = useScroll();
     const ref = React.useRef<MotionValue<number> | null>(null);
@@ -115,5 +115,3 @@ const Intro: React.FC = () => {
         </React.Fragment>
     );
 };
-
-export default Intro;
