@@ -80,9 +80,9 @@ export default function Topbar({
                                             Resume
                                         </Menubar.Item>
                                     </div>
-                                    <Link href="/project">
+                                    <Link href="/works">
                                         <Menubar.Item className="MenubarItem">
-                                            Project
+                                            Works
                                         </Menubar.Item>
                                     </Link>
                                     <Menubar.Separator className="MenubarSeparator" />

@@ -1333,27 +1333,10 @@ a .card-resume:hover:after {
   stroke: #333;
 }
 
-.project-content {
-  position: relative;
-  height: 100vh;
-  z-index: 0;
-}
-
-.p-top {
-  position: relative;
-  height: 100vh;
-  z-index: 0;
-}
-
 .p-center {
   position: relative;
   top: 20%;
   height: 50vh;
-}
-
-.project-bg {
-  top: 0;
-  left: 0;
 }
 
 .fuji {
@@ -1807,8 +1790,8 @@ a .card-resume:hover:after {
 }
 
 .old-main {
-  right: 0;
-  bottom: calc(36% / (1.4) - 1rem);
+  /* right: 0;
+  bottom: calc(36% / (1.4) - 1rem); */
   transform-origin: bottom right;
   z-index: 1;
 }
@@ -1818,23 +1801,22 @@ a .card-resume:hover:after {
 }
 
 .speech-bubble {
-  right: 9%;
-  bottom: 50%;
   transform-origin: bottom;
   z-index: 0;
   width: calc(240px / 1.4);
-  height: calc(280px / 1.4);
+  height: calc(260px / 1.4);
 }
 
 .speech-text {
   position: relative;
-  top: 40px;
-  left: 0;
+  top: 35px;
+  left: -6px;
   color: #333;
   font-size: 20px;
   margin: 0 auto;
   text-align: center;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .speech-bubble:before {
@@ -1846,6 +1828,7 @@ a .card-resume:hover:after {
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;
+  opacity: .8;
 }
 
 .app-item {

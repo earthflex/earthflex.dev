@@ -16,13 +16,10 @@
     .modal {
         max-width: 760px;
     }
-    .p-top,
-    .project-content {
-        height: 60vh;
-    }
 }
 
 @media (min-width:768px) {
+
     .MenubarItem,
     .MenubarSubTrigger,
     .MenubarCheckboxItem,
@@ -31,12 +28,10 @@
     }
 }
 
-@media (max-width:991.98px) {
- 
-}
+@media (max-width:991.98px) {}
 
 @media (min-width:768px) {
-    .resume-right{
+    .resume-right {
         max-height: calc(70vh);
     }
 }
@@ -46,7 +41,7 @@
         padding-right: calc(1rem * .5);
         padding-left: calc(1rem * .5);
     }
-    
+
     .scroll-l,
     .scroll-r {
         max-height: 75% !important;
@@ -77,16 +72,6 @@
         padding: 8px 4px;
         margin-bottom: .5rem;
         text-align: center;
-    }
-
-    .p-top,
-    .project-content {
-        height: 35vh;
-    }
-
-    .old-main {
-        transform: scale(.5);
-        bottom: calc(30% / 1.4);
     }
 }
 
@@ -159,8 +144,8 @@
     .header-flex {
         padding: 0 .7rem 0 0.5rem;
     }
-    
-    .grid-about{
+
+    .grid-about {
         grid-template-columns: auto;
     }
 }
