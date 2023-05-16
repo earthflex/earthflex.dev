@@ -15,7 +15,7 @@ export default function Header() {
 
     React.useEffect(() => {
         const handleScroll = () => {
-            console.log(window.scrollY)
+            // console.log(window.scrollY)
             if (window.scrollY > 60) {
                 setIsScrolled(true);
                 controls.start({ y: '16%' });

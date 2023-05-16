@@ -3,21 +3,21 @@ import { scaleCard } from "@/lib/motions";
 import { motion, useAnimation } from "framer-motion";
 import React, { ReactNode } from "react";
 import { CardArrowIcon } from "./Icons";
-import Lottie from "lottie-react";
-
-import doa from "../../public/works/doa.json";
+import Image from "next/image";
 
 export default function CardItem({
     col,
     type,
     theme,
+    color,
     src,
     alt,
-    chip
+    chip,
 }: {
     col: any;
     type: string;
     theme: string;
+    color: string;
     src: string;
     alt: any;
     chip: string[] | string;
@@ -54,14 +54,7 @@ export default function CardItem({
                         animate={controls}
                         className="card-me !border-none !p-0 relative group">
                         {type === 'img' && (
-                            <img src={src} alt={alt} className="w-full h-full object-cover" />
-                        )}
-                        {type === 'lottie' && (
-                            <React.Fragment>
-                                <div className="">
-                                    <Lottie width="100%" className="lottie-file w-full h-full rounded-[20px] overflow-hidden" animationData={doa} />
-                                </div>
-                            </React.Fragment>
+                            <Image src={src} alt={alt} width={376} height={424} className="w-full h-full object-cover" />
                         )}
                         <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                         <motion.div
@@ -82,7 +75,7 @@ export default function CardItem({
                                             duration: .6,
                                         }}
                                         className="p-1 px-3 rounded-full ease-out duration-300">
-                                        <small >{item}</small>
+                                        <small style={{ color: color, }}>{item}</small>
                                     </motion.div>
                                 ))}
                             </div>

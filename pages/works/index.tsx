@@ -8,12 +8,13 @@ const WOKR_ITEM = [
         year: '2020',
         work: [
             {
-                col: '',
-                type: 'lottie',
-                theme: '#333',
+                col: 'col-span-1',
+                type: 'img',
+                theme: '#FECD22',
+                color: 'black',
                 name: 'DOA',
-                chip: ['Web'],
-                src: '/works/doa.json',
+                chip: ['Website'],
+                src: '/works/doa-min.gif',
             },
         ]
     },
@@ -21,28 +22,31 @@ const WOKR_ITEM = [
         year: '2019',
         work: [
             {
-                col: '',
+                col: 'col-span-1',
                 type: 'img',
                 theme: '#F37A21',
+                color: 'white',
                 name: 'Partnership',
                 chip: ['Graphic'],
-                src: '/works/partnership.png',
+                src: '/works/partnership-min.png',
             },
             {
-                col: '',
+                col: 'col-span-1',
                 type: 'img',
                 theme: '#333',
+                color: 'white',
                 name: 'ZMyHome',
                 chip: ['Graphic'],
-                src: '/works/zmyhome.png',
+                src: '/works/zmyhome-min.png',
             },
             {
-                col: '',
+                col: 'col-span-1',
                 type: 'img',
                 theme: '#334358',
+                color: 'white',
                 chip: ['Motion'],
                 name: 'KPI Courseware',
-                src: '/works/kpi-cover.png',
+                src: '/works/kpi-cover-min.png',
             }
         ]
     }
@@ -57,8 +61,8 @@ export default function Works() {
                         <div className="relative z-[15] flex flex-col gap-4">
                             {WOKR_ITEM.map((item, index) => (
                                 <div className="flex gap-3" key={index}>
-                                    <div className="flex flex-col align-middle justify-center gap-4 mt-3">
-                                        <div className="bg-white shadow-custom rounded-full w-3 h-3" />
+                                    <div className="flex flex-col flex-[60px] align-middle justify-center gap-4 mt-3">
+                                        <div className="bg-white shadow-custom rounded-full w-3 h-3 mx-auto" />
                                         <motion.div className="bg-timeline filter-shadow" />
                                     </div>
                                     <div>
@@ -72,6 +76,7 @@ export default function Works() {
                                                         col={work.col}  /* default = col-span-1 */
                                                         type={work.type}
                                                         theme={work.theme}
+                                                        color={work.color}
                                                         alt={work.name}
                                                         chip={work.chip}
                                                         src={work.src} /* default = col-1 752x848 col-2 1552×849 col-3 2352×849 */
