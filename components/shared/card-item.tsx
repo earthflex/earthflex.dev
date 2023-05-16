@@ -1,6 +1,6 @@
 import { cardTapProfilio } from "@/lib/constants";
 import { scaleCard } from "@/lib/motions";
-import { motion, useAnimation } from "framer-motion";
+import { motion} from "framer-motion";
 import React, { ReactNode } from "react";
 import { CardArrowIcon } from "./Icons";
 import Image from "next/image";
@@ -23,20 +23,12 @@ export default function CardItem({
     chip: string[] | string;
 }) {
     const [isHovered, setHovered] = React.useState(false);
-    const controls = useAnimation();
 
     const handleHoverStart = () => {
         setHovered(true);
-        controls.start({
-            transition: { duration: 0.3 }
-        });
     };
     const handleHoverEnd = () => {
         setHovered(false);
-        controls.start({
-            boxShadow: "",
-            transition: { duration: 0.3 }
-        });
     };
     return (
         <React.Fragment>
@@ -51,10 +43,15 @@ export default function CardItem({
                         onHoverStart={handleHoverStart}
                         onHoverEnd={handleHoverEnd}
                         variants={cardTapProfilio}
-                        animate={controls}
                         className="card-me !border-none !p-0 relative group">
                         {type === 'img' && (
-                            <Image src={src} alt={alt} width={376} height={424} className="w-full h-full object-cover" />
+                            <Image
+                                onLoadingComplete={(img) => console.log(img.naturalWidth)}
+                                src={src}
+                                alt={alt}
+                                width={376}
+                                height={424}
+                                className="w-full h-full object-cover" />
                         )}
                         <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                         <motion.div
@@ -67,12 +64,12 @@ export default function CardItem({
                                         style={{ backgroundColor: theme, }}
                                         animate={{
                                             boxShadow: isHovered
-                                                ? ["0px 0px 0px 0px rgba(0,0,0,0)", `-5px 0px 20px 5px ${theme}`, `-20px 0 60px 15px ${theme}`]
+                                                ? ["0px 0px 0px 0px rgba(0,0,0,0)", `-5px 0px 20px 5px ${theme}`, `-20px 0 100px 16px ${theme}`]
                                                 : "0px 0px 0px rgba(0,0,0,0)",
 
                                         }}
                                         transition={{
-                                            duration: .6,
+                                            duration: .3,
                                         }}
                                         className="p-1 px-3 rounded-full ease-out duration-300">
                                         <small style={{ color: color, }}>{item}</small>
