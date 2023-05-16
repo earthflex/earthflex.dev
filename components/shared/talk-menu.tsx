@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { DialogCardArrowIcon, FacebookIcon, GhostIcon, InstargramIcon, LineIcon } from "./Icons";
+import { CardArrowIcon, FacebookIcon, GhostIcon, InstargramIcon, LineIcon } from "./Icons";
 import { ButtonScale } from "@/lib/constants";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ export default function TallkMenu() {
                             <span>
                                 Let`s talk
                             </span>
-                            <DialogCardArrowIcon />
+                            <CardArrowIcon />
                         </button>
                         <motion.div
                             className="bg-talk"

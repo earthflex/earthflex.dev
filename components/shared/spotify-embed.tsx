@@ -21,7 +21,6 @@ export default function SpotifyEmbed({
             width={width}
             height={height}
             frameBorder="0"
-            allowFullScreen
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy" />
     );

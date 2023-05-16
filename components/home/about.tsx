@@ -2,13 +2,17 @@ import { cardTap } from "@/lib/constants";
 import { statusAnimate, scaleCard, oldMan, speechText } from "@/lib/motions";
 import { motion } from "framer-motion";
 import React from "react";
-import { DialogCardArrowIcon } from "../shared/Icons";
+import { CardArrowIcon } from "../shared/Icons";
 import Link from "next/link";
+import CursorFollower from "../shared/cursor";
 
 export default function About() {
 
+    const [showCursor, setShowCursor] = React.useState(false);
+
     return (
         <React.Fragment>
+            <CursorFollower imgSrc="/about-hand.png" show={showCursor} />
             <motion.div>
                 <div className="about-content">
                     <div className="container">
@@ -41,7 +45,9 @@ export default function About() {
                             <div className="grid-about">
                                 <motion.div
                                     variants={scaleCard}>
-                                    <div className="wrap-about">
+                                    <div className="wrap-about"
+                                        onMouseEnter={() => setShowCursor(true)}
+                                        onMouseLeave={() => setShowCursor(false)}>
                                         <motion.div animate={{
                                             boxShadow: [
                                                 '0px 10px 20px 0px #2F65FF, 4px 3px 24px 6px #A56CFF, -11px 8px 20px 0px #213C85',
@@ -74,7 +80,7 @@ export default function About() {
                                                     </motion.span>
                                                 </div>
                                                 <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
-                                                    <DialogCardArrowIcon />
+                                                    <CardArrowIcon />
                                                 </div>
                                             </motion.div>
                                             <div className='pt-3 pb-1'>
@@ -114,7 +120,7 @@ export default function About() {
                                                     </motion.span>
                                                 </div>
                                                 <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
-                                                    <DialogCardArrowIcon />
+                                                    <CardArrowIcon />
                                                 </div>
                                             </motion.div>
                                             <motion.div
@@ -131,7 +137,6 @@ export default function About() {
                                                 whileHover={{ scale: .95, transition: { duration: .4, type: "ease", } }}
                                                 transition={{
                                                     duration: .4,
-                                                    delay: .3,
                                                     type: "easeIn",
                                                 }}
                                                 className="relative h-[120px] md:h-[215px]">

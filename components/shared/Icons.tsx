@@ -1,6 +1,6 @@
 import { IconProps } from '@/types'
 
-export const DialogCardArrowIcon = ({ height = 24, width = 24, ...props }: IconProps) => {
+export const CardArrowIcon = ({ height = 24, width = 24, ...props }: IconProps) => {
   return (
     <svg width={width} height={height} viewBox="0 0 24 24" fill="none" {...props}>
       <path d="M7 17L17 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

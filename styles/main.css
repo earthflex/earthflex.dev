@@ -1322,10 +1322,18 @@ a .card-resume:hover:after {
   cursor: pointer;
 }
 
+.bg-card {
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 10%), linear-gradient(00deg, #000000 0%, rgba(0, 0, 0, 0) 10%);
+}
+
+.card-me .arrow-card {
+  transition: transform .25s;
+}
+
 
 .card-me:hover .arrow-card {
   transform: rotate(45deg);
-  transition: all .2s ease;
+  transition: transform .25s;
   background: rgb(255 255 255 / 70%);
 }
 
@@ -1915,10 +1923,28 @@ a .card-resume:hover:after {
   align-items: center;
 }
 
-.save-button{
-  position: fixed;  
-  left: 50%;
-  top:50%;
-  background: #333;
+.bg-timeline {
+  height: 100%;
+  width: 3px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background: linear-gradient(#fff, rgb(255 255 255 / 27%), rgb(121 126 249 / 0%));
+  /* background: linear-gradient(#fff, #abb4ff, rgb(121 126 249 / 0%)); */
+}
 
+.shadow-custom {
+  box-shadow: 0 4px 20px 3px #FFF;
+  /* filter: drop-shadow(2px 4px 6px #6A4E9D); */
+}
+
+.filter-shadow {
+  filter: drop-shadow(2px 4px 6px #FFF);
+}
+
+.text-shadow {
+  text-shadow: 0px 1px 6px #fff;
+}
+
+.lottie-file svg{
+  border-radius: 20px;
 }

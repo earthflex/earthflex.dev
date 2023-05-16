@@ -1,41 +1,98 @@
-import { cardTap, cardTapProfilio } from "@/lib/constants";
+import { cardTapProfilio } from "@/lib/constants";
 import { scaleCard } from "@/lib/motions";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import React from "react";
-import { DialogCardArrowIcon } from "./Icons";
+import { motion, useAnimation } from "framer-motion";
+import React, { ReactNode } from "react";
+import { CardArrowIcon } from "./Icons";
+import Lottie from "lottie-react";
 
-export default function CardItem() {
+import doa from "../../public/works/doa.json";
+
+export default function CardItem({
+    col,
+    type,
+    theme,
+    src,
+    alt,
+    chip
+}: {
+    col: any;
+    type: string;
+    theme: string;
+    src: string;
+    alt: any;
+    chip: string[] | string;
+}) {
+    const [isHovered, setHovered] = React.useState(false);
+    const controls = useAnimation();
+
+    const handleHoverStart = () => {
+        setHovered(true);
+        controls.start({
+            transition: { duration: 0.3 }
+        });
+    };
+    const handleHoverEnd = () => {
+        setHovered(false);
+        controls.start({
+            boxShadow: "",
+            transition: { duration: 0.3 }
+        });
+    };
     return (
         <React.Fragment>
-            <Link href="#">
+            <div className={col}>
                 <motion.div
-                    variants={scaleCard}>
+                    variants={scaleCard}
+                >
                     <motion.div
                         initial="initial"
                         whileHover="whileHover"
                         whileTap="whileTap"
+                        onHoverStart={handleHoverStart}
+                        onHoverEnd={handleHoverEnd}
                         variants={cardTapProfilio}
-                        className="card-me">
+                        animate={controls}
+                        className="card-me !border-none !p-0 relative group">
+                        {type === 'img' && (
+                            <img src={src} alt={alt} className="w-full h-full object-cover" />
+                        )}
+                        {type === 'lottie' && (
+                            <React.Fragment>
+                                <div className="">
+                                    <Lottie width="100%" className="lottie-file w-full h-full rounded-[20px] overflow-hidden" animationData={doa} />
+                                </div>
+                            </React.Fragment>
+                        )}
+                        <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                         <motion.div
-                            className='flex items-center justify-between'
+                            className="absolute bottom-3 w-full flex items-center justify-between px-4"
                         >
-                            <div
-                                className="flex items-center gap-2"
-                            >
-                                <span className="text-xl">💼</span>
-                                <motion.span
-                                    className="font-medium text-lg "
-                                >Project
-                                </motion.span>
+                            <div className="flex gap-1">
+                                {Array.isArray(chip) && chip.map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        style={{ backgroundColor: theme, }}
+                                        animate={{
+                                            boxShadow: isHovered
+                                                ? ["0px 0px 0px 0px rgba(0,0,0,0)", `-5px 0px 20px 5px ${theme}`, `-20px 0 60px 15px ${theme}`]
+                                                : "0px 0px 0px rgba(0,0,0,0)",
+
+                                        }}
+                                        transition={{
+                                            duration: .6,
+                                        }}
+                                        className="p-1 px-3 rounded-full ease-out duration-300">
+                                        <small >{item}</small>
+                                    </motion.div>
+                                ))}
                             </div>
-                            <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
-                                <DialogCardArrowIcon />
+                            <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card ">
+                                <CardArrowIcon />
                             </div>
                         </motion.div>
                     </motion.div>
                 </motion.div>
-            </Link>
-        </React.Fragment>
+            </div>
+        </React.Fragment >
     );
 };
