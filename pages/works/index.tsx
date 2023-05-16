@@ -32,7 +32,7 @@ const WOKR_ITEM = [
                 color: 'white',
                 name: 'OR',
                 chip: ['Web App'],
-                src: '/works/or.gif',
+                src: '/works/or-min.gif',
             },
             {
                 col: 'col-span-1',
