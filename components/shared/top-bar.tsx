@@ -24,7 +24,7 @@ export default function Topbar({
                     <Menubar.Root className="MenubarRoot">
                         <Menubar.Menu>
                             <Menubar.Trigger className="MenubarTrigger">
-                                <Image src="/banana.png" width={20} height={20} alt="banana" />
+                                <Image src="/banana.png" width={20} height={20} alt="banana" className="w-auto h-auto" />
                             </Menubar.Trigger>
                             <Menubar.Portal>
                                 <Menubar.Content className="MenubarContent" align="start" sideOffset={5} alignOffset={-3}>

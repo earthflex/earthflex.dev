@@ -69,10 +69,6 @@ export const cardTapProfilio: Variants = {
   },
   whileHover: {
     scale: .99,
-    // background: [
-    //   "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #60CAFC 100%, #213C85 189%)",
-    //   "linear-gradient(135deg, #60CAFC, #2F65FF, #A56CFF, #5D2EFF)",
-    // ],
     transition: {
       duration: 1.2,
       ease: [0, 0.71, 0.2, 1.01],
