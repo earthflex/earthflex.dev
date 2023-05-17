@@ -141,7 +141,7 @@ export default function Works() {
                                         <div className="bg-white shadow-custom rounded-full w-3 h-3 mx-auto" />
                                         <motion.div className="bg-timeline filter-shadow" />
                                     </div> */}
-                                    <div>
+                                    <div className="w-full">
                                         {/* <div className="mb-1">
                                             <span className="font-medium text-2xl px-2 py-1 text-shadow ">{item.year}</span>
                                         </div> */}
@@ -150,7 +150,7 @@ export default function Works() {
                                             whileInView={"onscreen"}
                                             viewport={{ once: false }}
                                             transition={{ duration: 0.3, type: 'spring' }}
-                                            className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                                            className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-3">
                                             {item.work.map((work, workIndex) => (
                                                 <React.Fragment key={workIndex}>
                                                     <motion.div
