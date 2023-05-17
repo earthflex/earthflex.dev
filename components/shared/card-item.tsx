@@ -1,6 +1,6 @@
 import { cardTapProfilio } from "@/lib/constants";
 import { scaleCard } from "@/lib/motions";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 import { CardArrowIcon } from "./Icons";
 import Image from "next/image";
@@ -51,7 +51,7 @@ export default function CardItem({
                                 alt={alt}
                                 width={376}
                                 height={424}
-                                className="w-full h-full object-cover" />
+                                className="w-full h-full object-cover group-hover:scale-105 ease-out duration-300" />
                         )}
                         <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                         <motion.div
