@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const WOKR_ITEM = [
     {
-        year: '2020',
+        year: '2019 - 2022',
         work: [
             {
                 col: 'col-span-1',
@@ -117,12 +117,6 @@ const WOKR_ITEM = [
             }
         ]
     },
-    {
-        year: '2019',
-        work: [
-
-        ]
-    }
 ]
 
 export default function Works() {

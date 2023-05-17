@@ -130,7 +130,7 @@ export default function ResumeDetail({
                         'Create UI mockups and prototypes that can be used for consideration to develop good experiences for users',
                         'Develop CMS website by Wordpress Elementor website builder'
                     ],
-                    date: 'Jan 2021 - May 2022',
+                    date: 'Jan 2020 - May 2022',
                 },
                 {
                     position: 'Graphic & Motion Designer',

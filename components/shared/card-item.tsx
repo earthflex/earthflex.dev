@@ -51,7 +51,7 @@ export default function CardItem({
                                 alt={alt}
                                 width={376}
                                 height={424}
-                                className="w-full h-full object-cover group-hover:scale-105 ease-out duration-300" />
+                                className="w-full h-full object-cover" />
                         )}
                         <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                         <motion.div
