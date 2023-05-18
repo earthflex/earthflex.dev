@@ -147,7 +147,7 @@ export default function Works() {
                                             className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-3">
                                             {item.work.map((work, workIndex) => (
                                                 <React.Fragment key={workIndex}>
-                                                    <motion.div
+                                                    <motion.div className="work-grid"
 
                                                     >
                                                         <CardItem
