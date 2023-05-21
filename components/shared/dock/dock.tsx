@@ -33,9 +33,9 @@ export default function Dock({
                     <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
                         <Dockitem title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" />
                     </Link>
-                    <Link href="https://twitter.com/earthflexible" target="_blank">
+                    {/* <Link href="https://twitter.com/earthflexible" target="_blank">
                         <Dockitem title="Twitter" classicon="bg-twitter" icon="/twitter.svg" />
-                    </Link>
+                    </Link> */}
                     <Link href="/" className="trash-app">
                         <Dockitem title="Trash" classicon="bg-trash" icon="/trashfull.png" />
                     </Link>
