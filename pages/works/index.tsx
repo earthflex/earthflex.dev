@@ -10,6 +10,15 @@ const WOKR_ITEM = [
             {
                 col: 'col-span-1',
                 type: 'img',
+                theme: '#352F26',
+                color: 'white',
+                name: 'Mahaporn Transport',
+                chip: ['Web App'],
+                src: '/works/mhp-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
                 theme: '#FF4D00',
                 color: 'white',
                 name: 'Mobilyst Tech',
@@ -25,6 +34,7 @@ const WOKR_ITEM = [
                 chip: ['Web App'],
                 src: '/works/uav-min.gif',
             },
+
             {
                 col: 'col-span-1',
                 type: 'img',
@@ -60,6 +70,15 @@ const WOKR_ITEM = [
                 name: 'FAA',
                 chip: ['Website'],
                 src: '/works/faa-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
+                theme: '#273C83',
+                color: 'white',
+                name: 'Deves',
+                chip: ['Mobile Application'],
+                src: '/works/deves-min.png',
             },
             {
                 col: 'col-span-1',
@@ -100,6 +119,24 @@ const WOKR_ITEM = [
             {
                 col: 'col-span-1',
                 type: 'img',
+                theme: 'white',
+                color: '#DF2360',
+                name: 'Safe Save Thai',
+                chip: ['Website'],
+                src: '/works/save-thai-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
+                theme: '#FFC12C',
+                color: 'black',
+                name: 'Dsdw',
+                chip: ['Website'],
+                src: '/works/dsdw-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
                 theme: '#009E54',
                 color: 'white',
                 name: 'รพ.ลาดพร้าว',
@@ -123,6 +160,15 @@ const WOKR_ITEM = [
                 name: 'ELC Auto cash',
                 chip: ['Mobile Application'],
                 src: '/works/ecl-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
+                theme: '#5D99C3',
+                color: 'white',
+                name: `CLMVT Banker's`,
+                chip: ['Website'],
+                src: '/works/clmvt-banker-min.png',
             },
             {
                 col: 'col-span-1',
