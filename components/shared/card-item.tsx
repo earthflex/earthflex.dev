@@ -14,12 +14,12 @@ export default function CardItem({
     alt,
     chip,
 }: {
-    col: any;
+    col: string;
     type: string;
     theme: string;
     color: string;
     src: string;
-    alt: any;
+    alt: string;
     chip: string[] | string;
 }) {
     const [isHovered, setHovered] = React.useState(false);

@@ -136,6 +136,7 @@ export default function About() {
                                                 }}
                                                 whileHover={{ scale: .95, transition: { duration: .4, type: "ease", } }}
                                                 transition={{
+                                                    delay:.4,
                                                     duration: .4,
                                                     type: "easeIn",
                                                 }}

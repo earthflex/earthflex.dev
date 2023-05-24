@@ -41,8 +41,17 @@ const WOKR_ITEM = [
                 theme: '#FECD22',
                 color: 'black',
                 name: 'Banana',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/banana-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
+                theme: '#005087',
+                color: 'white',
+                name: 'UTSC',
+                chip: ['Web App'],
+                src: '/works/utsc-min.png',
             },
             {
                 col: 'col-span-1',
@@ -71,6 +80,7 @@ const WOKR_ITEM = [
                 chip: ['Website'],
                 src: '/works/faa-min.png',
             },
+
             {
                 col: 'col-span-1',
                 type: 'img',
@@ -110,10 +120,19 @@ const WOKR_ITEM = [
             {
                 col: 'col-span-1',
                 type: 'img',
+                theme: '#6E0904',
+                color: 'white',
+                name: 'NDMI',
+                chip: ['Web App'],
+                src: '/works/ndmi-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
                 theme: '#0096A9',
                 color: 'white',
                 name: 'Tokio Marine',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/kyc-min.png',
             },
             {
@@ -131,7 +150,7 @@ const WOKR_ITEM = [
                 theme: '#FFC12C',
                 color: 'black',
                 name: 'Dsdw',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/dsdw-min.png',
             },
             {
@@ -173,10 +192,19 @@ const WOKR_ITEM = [
             {
                 col: 'col-span-1',
                 type: 'img',
+                theme: '#F3E307',
+                color: '#012756',
+                name: 'Depa',
+                chip: ['Mobile Application'],
+                src: '/works/depa-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
                 theme: '#F54609',
                 color: 'white',
                 name: 'Game Learn',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/gamelearn-min.gif',
             },
             {
@@ -185,7 +213,7 @@ const WOKR_ITEM = [
                 theme: '#f4bd3e',
                 color: 'black',
                 name: 'KPI',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/kpi-min.png',
             },
             {
@@ -197,15 +225,6 @@ const WOKR_ITEM = [
                 chip: ['Website'],
                 src: '/works/bsa-min.png',
             },
-            {
-                col: 'col-span-1',
-                type: 'img',
-                theme: '#F3E307',
-                color: '#012756',
-                name: 'Depa',
-                chip: ['Mobile Application'],
-                src: '/works/depa-min.png',
-            },
 
             {
                 col: 'col-span-1',
@@ -213,7 +232,7 @@ const WOKR_ITEM = [
                 theme: '#175590',
                 color: 'white',
                 name: 'e-CPP',
-                chip: ['Website'],
+                chip: ['Web App'],
                 src: '/works/ecpp-min.png',
             },
             {
