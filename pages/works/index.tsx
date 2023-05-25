@@ -174,6 +174,15 @@ const WOKR_ITEM = [
             {
                 col: 'col-span-1',
                 type: 'img',
+                theme: '#176BB6',
+                color: 'white',
+                name: 'BWS',
+                chip: ['Website'],
+                src: '/works/bws-min.png',
+            },
+            {
+                col: 'col-span-1',
+                type: 'img',
                 theme: '#041B5F',
                 color: 'white',
                 name: 'ELC Auto cash',
