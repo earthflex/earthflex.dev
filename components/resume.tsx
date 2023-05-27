@@ -1,106 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
+import { DataContext } from '@/context';
+import { motion } from 'framer-motion';
+import imageUrlBuilder from '@sanity/image-url'
+import client from "@/client";
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source: any) {
+    return builder.image(source)
+}
 
 export default function ResumeDetail({
-    handleClose
+    handleClose,
 }: {
     handleClose: () => void;
 }) {
 
-    const skills = [
-        'UX&UI Designing',
-        'Web Development',
-        'Motion Design '
-    ];
-
-    const listSkills = skills.map((skill, index) =>
-        <span className="chip-d" key={index}>
-            {skill}
-        </span>
-    );
-
-    const codes = [
-        'HTML',
-        'CSS',
-        'Javascript',
-        'Typescript',
-        'React.js',
-        'Next.js',
-        'Vue.js',
-        'Nuxt.js',
-        // 'Sanity',
-        'MUI',
-        'Vuetify',
-        'TailwindCSS',
-        'Bootstrap',
-        'Radix-ui',
-        'Chakra-ui',
-        // 'GSAP',
-        'Framer-Motion'
-    ];
-
-    const listCodes = codes.map((code, index) =>
-        <span className="chip-d" key={index}>
-            {code}
-        </span>
-    );
-
-    const tools = [
-        'Git',
-        'Figma',
-        'Notion',
-        'Jira',
-        'ChatGPT',
-        'Wordpress Elementor',
-        'Adobe PS,AI,AE,PR',
-        'Affinity Photo,Design',
-    ];
-
-    const listTools = tools.map((tool, index) =>
-        <span className="chip-d" key={index}>
-            {tool}
-        </span>
-    );
-
-    const contacts = [
-        {
-            icon: '/re-email.png',
-            title: 'email',
-            detail: "apiwat.anekboon@gmail.com",
-            link: 'mailto:apiwat.anekboon@gmail.com',
-            traget: '_blank',
-        },
-        {
-            icon: '/re-phone-call.png',
-            title: 'phone',
-            detail: "+66(0)621292875",
-            link: 'tel:+66621292875',
-            traget: '_blank',
-        },
-        {
-            icon: '/re-line.png',
-            title: 'line',
-            detail: "earthz1355",
-            link: 'https://line.me/ti/p/ge0-5qPNP4',
-            traget: '_blank',
-        },
-        {
-            icon: '/re-location.png',
-            title: 'location',
-            detail: "Ladprao, Bangkok, Thailand ",
-            link: '#',
-            traget: '',
-        },
-    ];
-
-    const listContacts = contacts.map((contact, index) =>
-        <li key={index}>
-            <Link href={contact.link} target={contact.traget}>
-                <i className={contact.title}><img src={contact.icon} /></i>
-                {contact.detail}
-            </Link>
-        </li>
-    );
+    const { experience, profile } = React.useContext(DataContext);
+    // console.log(experience)
+    console.log(profile)
 
     const exps = [
         {
@@ -204,11 +123,18 @@ export default function ResumeDetail({
         return (
             <React.Fragment>
                 <div className="resume-download">
-                    <Link className="btn-download" href="resume-apiwat_anekboon.pdf" target="_blank">Download Resume</Link>
+                    <Link
+                        className="btn-download"
+                        href="resume-apiwat_anekboon.pdf"
+                        target="_blank">
+                        Download Resume
+                    </Link>
                 </div>
-                <h2 className="font-bold text-2xl">Apiwat Anekboon</h2>
-                <span>Front-end Developer</span>
-                <span>City, Bangkok</span>
+                <h2 className="font-bold text-2xl">
+                    {profile[0].fullname}
+                </h2>
+                <span>{profile[0].position}</span>
+                <span>{profile[0].location}</span>
             </React.Fragment>
         )
     }
@@ -224,38 +150,94 @@ export default function ResumeDetail({
                     </div>
                     <div className="scroll-l">
                         <div className="avatar-profile">
-                            <img src="/img-profile.png" alt="" />
+                            {profile[0].profileImg && (
+                                <img src={urlFor(profile[0].profileImg.asset._ref).url()} alt="" />
+                            )}
                         </div>
                         <div className="head-resume block md:hidden">
                             <HeadResume />
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-sm">Apply for</h4>
-                            <p>Status : <span className="chip-active">Finding a new job</span></p>
+                            <p>Status :
+                                <span className="chip-active">
+                                    {profile[0].status}
+                                </span>
+                            </p>
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-sm">Skills</h4>
-                            <p>
-                                {listSkills}
-                            </p>
+                            {profile.length > 0 && profile[0].skills && (
+                                <motion.div
+                                    initial={"offscreen"}
+                                    whileInView={"onscreen"}
+                                    viewport={{ once: false }}
+                                    transition={{ duration: 0.3, type: 'spring' }}
+                                >
+                                    {profile[0].skills.map((skill, index) => (
+                                        <span className="chip-d" key={index}>
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </motion.div>
+                            )}
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-sm">Code</h4>
-                            <p>
-                                {listCodes}
-                            </p>
+                            {profile.length > 0 && profile[0].code && (
+                                <motion.div
+                                    initial={"offscreen"}
+                                    whileInView={"onscreen"}
+                                    viewport={{ once: false }}
+                                    transition={{ duration: 0.3, type: 'spring' }}
+                                >
+                                    {profile[0].code.map((skill, index) => (
+                                        <span className="chip-d" key={index}>
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </motion.div>
+                            )}
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-sm">Tools</h4>
-                            <p>
-                                {listTools}
-                            </p>
+                            {profile.length > 0 && profile[0].tools && (
+                                <motion.div
+                                    initial={"offscreen"}
+                                    whileInView={"onscreen"}
+                                    viewport={{ once: false }}
+                                    transition={{ duration: 0.3, type: 'spring' }}
+                                >
+                                    {profile[0].tools.map((skill, index) => (
+                                        <span className="chip-d" key={index}>
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </motion.div>
+                            )}
                         </div>
 
                         <div className="resume-box">
                             <h4 className="font-bold text-sm">Contact</h4>
                             <ul className="list-contact">
-                                {listContacts}
+                                {profile.length > 0 && profile[0].contact && (
+                                    <motion.div
+                                        initial={"offscreen"}
+                                        whileInView={"onscreen"}
+                                        viewport={{ once: false }}
+                                        transition={{ duration: 0.3, type: 'spring' }}
+                                    >
+                                        {profile[0].contact.map((contact, index) => (
+                                            <li key={index}>
+                                                <Link href={contact.href} target={contact.newtab ? "_blank" : "_self"} rel={contact.newtab ? "noopener noreferrer" : ""}>
+                                                    <i style={{ backgroundColor: contact.color.hex }}><img src={urlFor(contact.icon.asset._ref).url()} /></i>
+                                                    {contact.detail}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </motion.div>
+                                )}
+
                             </ul>
                         </div>
                     </div>
@@ -273,15 +255,18 @@ export default function ResumeDetail({
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-md">Educations</h4>
-                            <div className="card-resume">
-                                <div className="icon-card"> <img src="/education.png" alt="education" /></div>
-                                <div className="card-content">
-                                    <h5 className="font-bold text-sm leading-tight">Technology Multimedia and Animation  <br />
-                                        <small>RMU : Mahasarakham</small>  <br />
-                                        <small>Oct. 2013 - Nov. 2017 </small>  <br />
-                                    </h5>
+                            {profile[0].educations.map((learn, index) => (
+                                <div className="card-resume" key={index}>
+                                    <div className="icon-card"> <img src="/education.png" alt="education" /></div>
+                                    <div className="card-content">
+                                        <h5 className="font-bold text-sm leading-tight">
+                                            {learn.fieldofStudy}<br />
+                                            <small>{learn.school}</small>  <br />
+                                            <small>{learn.startMonth}. {learn.startYear} - {learn.endMonth}. {learn.endYear} </small>  <br />
+                                        </h5>
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                         <div className="resume-box">
                             <h4 className="font-bold text-md">Works</h4>
