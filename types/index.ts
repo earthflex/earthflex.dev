@@ -104,6 +104,7 @@ export type EXPERIENCE_TYPE = {
   };
   roles: {
     _key: string;
+    present?: boolean;
     position: string;
     detailRole?: string[];
     startDate?: string;
