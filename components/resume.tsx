@@ -4,6 +4,7 @@ import { DataContext } from '@/context';
 import { motion } from 'framer-motion';
 import imageUrlBuilder from '@sanity/image-url'
 import client from "@/client";
+import { formatDate } from '@/lib/format';
 
 const builder = imageUrlBuilder(client)
 
@@ -175,7 +176,12 @@ export default function ResumeDetail({
                                                                             {role.position}
                                                                         </h5>
                                                                         <div>
-                                                                            <h5><small>{exp.company}</small><small> {role.startDate} - {role.endDate}</small></h5>
+                                                                            <h5>
+                                                                                <small>{exp.company}</small>
+                                                                                <small>
+                                                                                    {role.startDate && formatDate(role.startDate)} -  {role.present ? 'Present' : role.endDate && formatDate(role.endDate)}
+                                                                                </small>
+                                                                            </h5>
                                                                             <div className="steps-item-description">
                                                                                 <ul className="list-disc">
                                                                                     {role.detailRole ? role.detailRole.map((item, index) => (
@@ -195,7 +201,9 @@ export default function ResumeDetail({
                                                                 <div className='steps-exps-2' key={index}>
                                                                     <div className="steps-item-icon"></div>
                                                                     <h5 className='font-bold text-sm'>{role.position}
-                                                                        <small> {role.startDate} - {role.endDate}</small>
+                                                                        <small>
+                                                                            {role.startDate && formatDate(role.startDate)} -  {role.present ? 'Present' : role.endDate && formatDate(role.endDate)}
+                                                                        </small>
                                                                     </h5>
                                                                     <div className="steps-item-description">
                                                                         <ul className="list-disc">
