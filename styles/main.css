@@ -1320,11 +1320,14 @@ a .card-resume:hover:after {
   width: 100%;
   overflow: hidden;
   cursor: pointer;
+}
+
+.guest{
   cursor: url(/c-guest.svg), auto;
 }
 
-.work-grid .card-me {
-  cursor: url(/c-soon.svg), auto;
+.soon {
+  cursor: url(/c-soon.svg), auto !important; 
 
 }
 

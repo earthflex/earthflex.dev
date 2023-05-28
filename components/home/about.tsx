@@ -5,9 +5,10 @@ import React from "react";
 import { CardArrowIcon } from "../shared/Icons";
 import Link from "next/link";
 import CursorFollower from "../shared/cursor";
+import { DataContext } from '@/context';
 
 export default function About() {
-
+    const { profile } = React.useContext(DataContext);
     const [showCursor, setShowCursor] = React.useState(false);
 
     return (
@@ -39,7 +40,7 @@ export default function About() {
                                         repeat: Infinity,
                                     }}
                                 >
-                                    <span className="chip-status">Finding a new job</span>
+                                    <span className="chip-status">{profile[0].status}</span>
                                 </motion.div>
                             </motion.div>
                             <div className="grid-about">
@@ -67,7 +68,7 @@ export default function About() {
                                             whileHover="whileHover"
                                             whileTap="whileTap"
                                             variants={cardTap}
-                                            className="card-me">
+                                            className="card-me guest">
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >
@@ -106,7 +107,7 @@ export default function About() {
                                             whileHover="whileHover"
                                             whileTap="whileTap"
                                             variants={cardTap}
-                                            className="card-me">
+                                            className="card-me guest">
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >
