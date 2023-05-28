@@ -39,7 +39,7 @@ export default function Home({
               <Footer />
             </Suspense>
           </Layout>
-          <Cookies />
+          {/* <Cookies /> */}
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -53,8 +53,11 @@ export default function Home({
 
 export async function getStaticProps() {
   try {
-    const experience = await client.fetch(groq`*[_type == "experience"]`);
-    const profile = await client.fetch(groq`*[_type == "profile"]`);
+    const experience = await client.fetch(groq`*[_type == "experience"] | order(_createdAt desc)`);
+    const profile = await client.fetch(groq`*[_type == "profile"]{
+      ..., 
+      "pdf": pdf.asset->{url, originalFilename, _id}
+  }`);
     return {
       props: {
         profile,

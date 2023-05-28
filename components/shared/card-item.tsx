@@ -50,7 +50,7 @@ export default function CardItem({
                         onHoverStart={handleHoverStart}
                         onHoverEnd={handleHoverEnd}
                         variants={cardTapProfilio}
-                        className="card-me !border-none !p-0 relative group">
+                        className="card-me soon !border-none !p-0 relative group">
                         {type === 'img' && (
                             <img
                                 src={urlFor(src).url()}

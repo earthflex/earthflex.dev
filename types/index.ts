@@ -68,17 +68,18 @@ type Education = {
 
 export type PROFILE_TYPE = {
   contact: Contact[];
-  _rev: string;
-  _type: string;
   _id: string;
-  _updatedAt: string;
   tools: string[];
   skills: string[];
   code: string[];
   status: string;
-  fullname:string;
-  position:string;
-  location:string;
+  fullname: string;
+  position: string;
+  location: string;
+  pdf: {
+    originalFilename: string,
+    url: string,
+  }
   profileImg: {
     _type: string;
     asset: {
@@ -91,4 +92,21 @@ export type PROFILE_TYPE = {
 }[];
 
 export type EXPERIENCE_TYPE = {
+  _id: string;
+  current?: boolean;
+  company?: string;
+  logocompany: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+    _type: string;
+  };
+  roles: {
+    _key: string;
+    position: string;
+    detailRole?: string[];
+    startDate?: string;
+    endDate?: string;
+  }[];
 }[];

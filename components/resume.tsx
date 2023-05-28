@@ -18,117 +18,22 @@ export default function ResumeDetail({
 }) {
 
     const { experience, profile } = React.useContext(DataContext);
-    // console.log(experience)
-    console.log(profile)
-
-    const exps = [
-        {
-            current: true,
-            company: 'NPB Digital Co., Ltd.',
-            city: 'Bangkok',
-            role: [
-                {
-                    position: 'Front-end Developer, Leader UX&UI Designer',
-                    detail: [
-                        'Develop Website using HTML, CSS,Javascript , React, Vue, Responsive',
-                        'Be in charge of all projects in part of UX/UI consultant'
-                    ],
-                    date: 'Jun. 2022 - Present',
-                }
-            ],
-        },
-        {
-            current: false,
-            company: 'Bangkok Web Solution Co., Ltd.',
-            city: 'Bangkok',
-            role: [
-                {
-                    position: 'Web Designer',
-                    detail: [
-                        'Design UX/UI for overall the E-Learning products  and web application',
-                        'Create UI mockups and prototypes that can be used for consideration to develop good experiences for users',
-                        'Develop CMS website by Wordpress Elementor website builder'
-                    ],
-                    date: 'Jan 2020 - May 2022',
-                },
-                {
-                    position: 'Graphic & Motion Designer',
-                    detail: [
-                        'Design banner and illustration logo for PR Marketing',
-                        'Create storyboard & motion graphic of courseware E-Learning'
-                    ],
-                    date: 'Jan 2019 - Dec 2019',
-                }
-            ],
-        },
-    ];
-
-    const listExps = exps.map((exp, index) =>
-        <div className={`steps-item ${exp.current ? "steps_current" : ""}`} key={index}>
-            <div className="steps-item-container">
-                {exp.role.length <= 1 &&
-                    <>
-                        <div className="steps-tail"></div>
-                        <div className="steps-item-icon"></div>
-                    </>
-                }
-                <div className="steps-content">
-                    <div className="steps-item-title">
-                        {exp.role.length <= 1 &&
-                            exp.role.map((role, index) => (
-                                <div key={index}>
-                                    <h5 className='font-bold text-md'>
-                                        {role.position}
-                                    </h5>
-                                    <div>
-                                        <h5><small>{exp.company}</small><small> {role.date}</small></h5>
-                                        <div className="steps-item-description">
-                                            <ul className="list-disc">
-                                                {role.detail.map(detail => (
-                                                    <li key={detail}>{detail}</li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                        {exp.role.length > 1 &&
-                            <>
-                                <h4 className='font-bold text-md'> {exp.company}</h4>
-                                {
-                                    exp.role.map((role, index) => (
-                                        <div className="steps-exps-2" key={index}>
-                                            <div className="steps-item-icon"></div>
-                                            <h5 className='font-bold text-sm'>{role.position}<small>{role.date}</small></h5>
-                                            <div className="steps-item-description">
-                                                <ul className="list-disc">
-                                                    {role.detail.map(detail => (
-                                                        <li key={detail}>{detail}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-                            </>
-                        }
-                    </div>
-                </div>
-            </div>
-        </div >
-    );
+    console.log(experience)
+    // console.log(profile)
 
     const HeadResume = () => {
         return (
             <React.Fragment>
                 <div className="resume-download">
-                    <Link
-                        className="btn-download"
-                        href="resume-apiwat_anekboon.pdf"
-                        target="_blank">
-                        Download Resume
-                    </Link>
+                    {profile.length > 0 && profile[0].pdf && (
+                        <Link
+                            className="btn-download"
+                            rel="noopener noreferrer"
+                            href={profile[0].pdf.url}
+                            target="_blank">
+                            Download Resume
+                        </Link>
+                    )}
                 </div>
                 <h2 className="font-bold text-2xl">
                     {profile[0].fullname}
@@ -250,7 +155,65 @@ export default function ResumeDetail({
                         <div className="resume-box">
                             <div className="box-exp">
                                 <h2 className="title-exp font-bold text-xl">Work Experience</h2>
-                                {listExps}
+                                {experience.map((exp) => (
+                                    <div className={`steps-item ${exp.current ? "steps_current" : ""}`} key={exp._id}>
+                                        <div className="steps-item-container">
+                                            {exp.roles.length <= 1 && (
+                                                <div>
+                                                    <div className="steps-tail"></div>
+                                                    <div className="steps-item-icon"></div>
+                                                </div>
+                                            )}
+                                            <div className="steps-content">
+                                                <div className="steps-item-title">
+                                                    {exp.roles.length === 1 ? (
+                                                        <div>
+                                                            {exp.roles.map((role, index) => (
+                                                                <div key={index}>
+                                                                    <div key={index}>
+                                                                        <h5 className='font-bold text-md'>
+                                                                            {role.position}
+                                                                        </h5>
+                                                                        <div>
+                                                                            <h5><small>{exp.company}</small><small> {role.startDate} - {role.endDate}</small></h5>
+                                                                            <div className="steps-item-description">
+                                                                                <ul className="list-disc">
+                                                                                    {role.detailRole ? role.detailRole.map((item, index) => (
+                                                                                        <li key={index}>{item}</li>
+                                                                                    )) : null}
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    ) : (
+                                                        <div className="">
+                                                            <h4 className='font-bold text-md'> {exp.company}</h4>
+                                                            {exp.roles.map((role, index) => (
+                                                                <div className='steps-exps-2' key={index}>
+                                                                    <div className="steps-item-icon"></div>
+                                                                    <h5 className='font-bold text-sm'>{role.position}
+                                                                        <small> {role.startDate} - {role.endDate}</small>
+                                                                    </h5>
+                                                                    <div className="steps-item-description">
+                                                                        <ul className="list-disc">
+                                                                            {role.detailRole ? role.detailRole.map((item, index) => (
+                                                                                <li key={index}>{item}</li>
+                                                                            )) : null}
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                         <div className="resume-box">
