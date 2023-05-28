@@ -36,7 +36,7 @@ export default function ResumeDetail({
                         </Link>
                     )}
                 </div>
-                <h2 className="font-bold text-2xl">
+                <h2 className="font-bold text-2xl"> 
                     {profile[0].fullname}
                 </h2>
                 <span>{profile[0].position}</span>
