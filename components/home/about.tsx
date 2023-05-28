@@ -86,12 +86,12 @@ export default function About() {
                                             </motion.div>
                                             <div className='pt-3 pb-1'>
                                                 <motion.h2
-                                                >My name is Apiwat Anekboon.
+                                                >Call me Apiwat Anekboon, Earth
                                                     <br />
-                                                    I am a front-end developer from Thailand, with 4 years of experience in web development.
+                                                    I'm front-end developer from Thailand, with 4 years of experience in web development.
                                                     <br />Over the past few years,
                                                     <br /> I have focused on front-end development using HTML, CSS, and JavaScript.
-                                                    <br /> I am passionate about creating beautiful micro-interactions and minor details in interface design.
+                                                    <br /> I'm passionate about doing creative micro-interactions and minor details in interface design.
                                                     <br />
                                                     In my leisure time, I like to explore art, music, tattoos, and vintage shopping.
                                                 </motion.h2>

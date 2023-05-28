@@ -700,22 +700,6 @@
   object-fit: contain;
 }
 
-i.email {
-  background: #ECD1A9;
-}
-
-i.phone {
-  background: #F7F7BC;
-}
-
-i.line {
-  background: #C7F3CF;
-}
-
-i.location {
-  background: #C7E9FF;
-}
-
 .scroll-l {
   max-height: calc(65vh - -2px);
   overflow-y: scroll;
