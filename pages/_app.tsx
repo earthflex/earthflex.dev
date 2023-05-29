@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import type { AppProps } from 'next/app'
 import { Provider as RWBProvider } from "react-wrap-balancer";
 import { Analytics } from "@vercel/analytics/react";
@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
-import { DataContext } from '@/context';
 
 const clashdisplay = localFont({
   src: [
