@@ -7,21 +7,22 @@ import Intro from '@/components/home/intro';
 import About from '@/components/home/about';
 import Cookies from '@/components/shared/cookies';
 import Footer from '@/components/home/footer';
+import { WORKS_ITEMS_TYPE, PROFILE_TYPE, EXPERIENCE_TYPE } from '@/types';
+
+import client from "@/client";
+import { groq } from "next-sanity";
 
 export default function Home({
-  meta,
+  works,
+  profile,
+  experience,
 }: {
-  meta?: {
-    title?: string;
-    description?: string;
-    author?: string;
-    keyword?: string;
-    image?: string;
-  };
+  works: WORKS_ITEMS_TYPE;
+  profile: PROFILE_TYPE;
+  experience: EXPERIENCE_TYPE;
 }) {
 
   const [loading, setLoading] = useState(false);
-
 
   useEffect(() => {
     setTimeout(() => setLoading(true), 2300);
@@ -31,7 +32,7 @@ export default function Home({
     <>
       {loading ? (
         <React.Fragment>
-          <Layout>
+          <Layout works={works} profile={profile} experience={experience}>
             <Suspense fallback={<Loading />}>
               <Intro />
               <About />
@@ -48,4 +49,29 @@ export default function Home({
       )}
     </>
   )
+}
+
+export async function getStaticProps() {
+  try {
+    const experience = await client.fetch(groq`*[_type == "experience"] | order(_createdAt desc)`);
+    const profile = await client.fetch(groq`*[_type == "profile"]{
+      ..., 
+      "pdf": pdf.asset->{url, originalFilename, _id}
+  }`);
+    return {
+      props: {
+        profile,
+        experience,
+      },
+      revalidate: 10,
+    };
+  } catch (error) {
+    console.error('Failed to fetch data from Sanity:', error);
+    return {
+      props: {
+        profile: {},
+        experience: []
+      }
+    };
+  }
 }

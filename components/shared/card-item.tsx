@@ -3,7 +3,14 @@ import { scaleCard } from "@/lib/motions";
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 import { CardArrowIcon } from "./Icons";
-import Image from "next/image";
+import imageUrlBuilder from '@sanity/image-url'
+import client from "@/client";
+
+const builder = imageUrlBuilder(client)
+
+function urlFor(source: any) {
+    return builder.image(source)
+}
 
 export default function CardItem({
     col,
@@ -18,9 +25,9 @@ export default function CardItem({
     type: string;
     theme: string;
     color: string;
-    src: string;
+    src?: string;
     alt: string;
-    chip: string[] | string;
+    chip: string;
 }) {
     const [isHovered, setHovered] = React.useState(false);
 
@@ -30,6 +37,11 @@ export default function CardItem({
     const handleHoverEnd = () => {
         setHovered(false);
     };
+
+    if (!src) {
+        return null; 
+    }
+
     return (
         <React.Fragment>
             <div className={col}>
@@ -43,11 +55,10 @@ export default function CardItem({
                         onHoverStart={handleHoverStart}
                         onHoverEnd={handleHoverEnd}
                         variants={cardTapProfilio}
-                        className="card-me !border-none !p-0 relative group">
+                        className="card-me soon !border-none !p-0 relative group">
                         {type === 'img' && (
-                            <Image
-                                onLoadingComplete={(img) => console.log(img.naturalWidth)}
-                                src={src}
+                            <img
+                                src={urlFor(src).url()}
                                 alt={alt}
                                 width={376}
                                 height={424}
@@ -58,23 +69,19 @@ export default function CardItem({
                             className="absolute bottom-3 w-full flex items-center justify-between px-4"
                         >
                             <div className="flex gap-1">
-                                {Array.isArray(chip) && chip.map((item, index) => (
-                                    <motion.div
-                                        key={index}
-                                        style={{ backgroundColor: theme, }}
-                                        animate={{
-                                            boxShadow: isHovered
-                                                ? ["0px 0px 0px 0px rgba(0,0,0,0)", `-5px 0px 20px 5px ${theme}`, `-20px 0 100px 16px ${theme}`]
-                                                : "0px 0px 0px rgba(0,0,0,0)",
-
-                                        }}
-                                        transition={{
-                                            duration: .3,
-                                        }}
-                                        className="p-1 px-3 rounded-full ease-out duration-300">
-                                        <small style={{ color: color, }}>{item}</small>
-                                    </motion.div>
-                                ))}
+                                <motion.div
+                                    style={{ backgroundColor: theme, }}
+                                    animate={{
+                                        boxShadow: isHovered
+                                            ? ["0px 0px 0px 0px rgba(0,0,0,0)", `-5px 0px 20px 5px ${theme}`, `-20px 0 100px 16px ${theme}`]
+                                            : "0px 0px 0px rgba(0,0,0,0)",
+                                    }}
+                                    transition={{
+                                        duration: .3,
+                                    }}
+                                    className="p-1 px-3 rounded-full ease-out duration-300">
+                                    <small style={{ color: color }}>{chip}</small>
+                                </motion.div>
                             </div>
                             <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card ">
                                 <CardArrowIcon />

@@ -700,22 +700,6 @@
   object-fit: contain;
 }
 
-i.email {
-  background: #ECD1A9;
-}
-
-i.phone {
-  background: #F7F7BC;
-}
-
-i.line {
-  background: #C7F3CF;
-}
-
-i.location {
-  background: #C7E9FF;
-}
-
 .scroll-l {
   max-height: calc(65vh - -2px);
   overflow-y: scroll;
@@ -1320,11 +1304,14 @@ a .card-resume:hover:after {
   width: 100%;
   overflow: hidden;
   cursor: pointer;
+}
+
+.guest{
   cursor: url(/c-guest.svg), auto;
 }
 
-.work-grid .card-me {
-  cursor: url(/c-soon.svg), auto;
+.soon {
+  cursor: url(/c-soon.svg), auto !important; 
 
 }
 

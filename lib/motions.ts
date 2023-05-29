@@ -210,7 +210,6 @@ export const scaleCard: Variants = {
         y: 0,
         scale: 1,
         opacity: 1,
-        transformOrigin: 'top',
         transition: {
             type: "spring",
             bounce: 0.4,

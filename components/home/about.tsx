@@ -5,9 +5,10 @@ import React from "react";
 import { CardArrowIcon } from "../shared/Icons";
 import Link from "next/link";
 import CursorFollower from "../shared/cursor";
+import { DataContext } from '@/context';
 
 export default function About() {
-
+    const { profile } = React.useContext(DataContext);
     const [showCursor, setShowCursor] = React.useState(false);
 
     return (
@@ -39,7 +40,7 @@ export default function About() {
                                         repeat: Infinity,
                                     }}
                                 >
-                                    <span className="chip-status">Finding a new job</span>
+                                    <span className="chip-status">{profile[0].status}</span>
                                 </motion.div>
                             </motion.div>
                             <div className="grid-about">
@@ -67,7 +68,7 @@ export default function About() {
                                             whileHover="whileHover"
                                             whileTap="whileTap"
                                             variants={cardTap}
-                                            className="card-me">
+                                            className="card-me guest">
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >
@@ -85,12 +86,12 @@ export default function About() {
                                             </motion.div>
                                             <div className='pt-3 pb-1'>
                                                 <motion.h2
-                                                >My name is Apiwat Anekboon.
+                                                >Call me Apiwat Anekboon, Earth
                                                     <br />
-                                                    I am a front-end developer from Thailand, with 4 years of experience in web development.
+                                                    I'm front-end developer from Thailand, with 4 years of experience in web development.
                                                     <br />Over the past few years,
                                                     <br /> I have focused on front-end development using HTML, CSS, and JavaScript.
-                                                    <br /> I am passionate about creating beautiful micro-interactions and minor details in interface design.
+                                                    <br /> I'm passionate about doing creative micro-interactions and minor details in interface design.
                                                     <br />
                                                     In my leisure time, I like to explore art, music, tattoos, and vintage shopping.
                                                 </motion.h2>
@@ -106,7 +107,7 @@ export default function About() {
                                             whileHover="whileHover"
                                             whileTap="whileTap"
                                             variants={cardTap}
-                                            className="card-me">
+                                            className="card-me guest">
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >
