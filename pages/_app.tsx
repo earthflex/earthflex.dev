@@ -43,15 +43,37 @@ export default function App({ Component, pageProps }: AppProps) {
           options={{
             fpsLimit: 60,
             interactivity: {
+              detect_on: "canvas",
               events: {
                 onClick: {
-                  enable: false,
+                  enable: true,
+                  mode: "repulse"
                 },
                 onHover: {
-                  enable: false,
+                  enable: true,
+                  mode: "bubble"
                 },
                 resize: true,
               },
+              modes: {
+                bubble: {
+                  distance: 250,
+                  size: 0,
+                  duration: 2,
+                  opacity: 0,
+                  speed: 3,
+                },
+                repulse: {
+                  distance: 400,
+                  duration: 0.4,
+                },
+                push: {
+                  particles_nb : 4
+                },
+                remove: {
+                  particles_nb : 4
+                }
+              }
             },
             particles: {
               color: {
@@ -78,14 +100,27 @@ export default function App({ Component, pageProps }: AppProps) {
                   enable: true,
                   area: 800,
                 },
-                value: 50,
+                value: 80,
               },
               opacity: {
                 value: 0.7,
                 random: true,
+                anim: {
+                  enable: true,
+                  speed: 1,
+                  opacity_min: 0,
+                  sync: false
+                }
               },
               shape: {
                 type: "circle",
+                stroke: {
+                  width: 0,
+                  color: "#000000"
+                },
+                polygon: {
+                  nb_sides: 5
+                },
               },
               size: {
                 value: { min: 1, max: 3 },
