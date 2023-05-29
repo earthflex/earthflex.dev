@@ -17,6 +17,7 @@ export default function Works({
         profile: PROFILE_TYPE;
         experience: EXPERIENCE_TYPE;
     }) {
+
     return (
         <React.Fragment>
             <Layout works={works} profile={profile} experience={experience}>
@@ -35,11 +36,11 @@ export default function Works({
                                             key={work._id}
                                             col='col-span-1'
                                             type={work.mediaType}
-                                            theme={work.themeColor.hex}
-                                            color={work.textColor.hex}
+                                            theme={work.themeColor ? work.themeColor.hex : '#000'}
+                                            color={work.textColor ? work.textColor.hex : '#fff'}
                                             chip={work.workType}
-                                            alt={work.coverimage.attribution}
-                                            src={work.coverimage.asset._ref}
+                                            alt={work.name ? work.name : ''}
+                                            src={work.coverimage && work.coverimage.asset ? work.coverimage.asset._ref : undefined}
                                         />
                                     ))}
                                 </motion.div>
@@ -55,7 +56,7 @@ export default function Works({
 
 export async function getStaticProps() {
     try {
-        const works = await client.fetch(groq`*[_type == "works"]`);
+        const works = await client.fetch(groq`*[_type == "works"] | order(_createdAt desc)`);
         const experience = await client.fetch(groq`*[_type == "experience"] | order(_createdAt desc)`);
         const profile = await client.fetch(groq`*[_type == "profile"]{
             ..., 

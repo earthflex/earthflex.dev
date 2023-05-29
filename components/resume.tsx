@@ -19,8 +19,6 @@ export default function ResumeDetail({
 }) {
 
     const { experience, profile } = React.useContext(DataContext);
-    console.log(experience)
-    // console.log(profile)
 
     const HeadResume = () => {
         return (

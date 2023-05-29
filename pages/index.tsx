@@ -39,7 +39,7 @@ export default function Home({
               <Footer />
             </Suspense>
           </Layout>
-          {/* <Cookies /> */}
+          <Cookies />
         </React.Fragment>
       ) : (
         <React.Fragment>
@@ -61,7 +61,7 @@ export async function getStaticProps() {
     return {
       props: {
         profile,
-        experience
+        experience,
       },
       revalidate: 10,
     };
