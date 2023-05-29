@@ -25,7 +25,7 @@ export default function CardItem({
     type: string;
     theme: string;
     color: string;
-    src: string;
+    src?: string;
     alt: string;
     chip: string;
 }) {
@@ -37,6 +37,11 @@ export default function CardItem({
     const handleHoverEnd = () => {
         setHovered(false);
     };
+
+    if (!src) {
+        return null; 
+    }
+
     return (
         <React.Fragment>
             <div className={col}>
@@ -75,7 +80,7 @@ export default function CardItem({
                                         duration: .3,
                                     }}
                                     className="p-1 px-3 rounded-full ease-out duration-300">
-                                    <small style={{ color: color}}>{chip}</small>
+                                    <small style={{ color: color }}>{chip}</small>
                                 </motion.div>
                             </div>
                             <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card ">
