@@ -19,8 +19,6 @@ export default function ResumeDetail({
 }) {
 
     const { experience, profile } = React.useContext(DataContext);
-    console.log(experience)
-    // console.log(profile)
 
     const HeadResume = () => {
         return (
@@ -36,7 +34,7 @@ export default function ResumeDetail({
                         </Link>
                     )}
                 </div>
-                <h2 className="font-bold text-2xl">
+                <h2 className="font-bold text-2xl"> 
                     {profile[0].fullname}
                 </h2>
                 <span>{profile[0].position}</span>
