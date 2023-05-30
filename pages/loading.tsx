@@ -46,30 +46,14 @@ export default function Loading() {
                 <motion.img
                     src="/element/missile-min.png" />
             </motion.div>
-            <div className="ef-memoji">
-                <video autoPlay muted loop playsInline>
-                    <source src="/memoji.mp4" type="video/mp4" />
-                    <source src="/memoji.webm" type="video/webm" />
-                </video>
+            <div className="ef-memoji pe-none">
+                <img src="/memoji.gif" className="gif" alt="memoji" />
             </div>
             <div className="flex loader-text">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ y: -10, opacity: 1 }}
                 >
-                    {/* <motion.h1
-                            variants={sentence}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            {loadingtext.split("").map((char, index) => {
-                                return (
-                                    <motion.span key={char + "-" + index} variants={letter}>
-                                        {char}
-                                    </motion.span>
-                                )
-                            })}
-                        </motion.h1> */}
                     <motion.h1 className="loader-percecnt">{rounded}</motion.h1>
                 </motion.div>
             </div>
