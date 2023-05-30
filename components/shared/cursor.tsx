@@ -1,13 +1,25 @@
+import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { CSSProperties } from 'react';
-
+import localFont from '@next/font/local'
 interface Position {
     x: number;
     y: number;
 }
 
-export default function CursorFollower({ imgSrc, show }: {
+const comicSans = localFont({
+    src: [
+        {
+            path: '../../styles/fonts/comic-sans-ms/ComicSansMS3.ttf',
+            weight: '200 700',
+            style: 'normal',
+        },
+    ],
+})
+
+export default function CursorFollower({ imgSrc, show, detail }: {
     imgSrc: string;
+    detail: string;
     show: boolean;
 }) {
     const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
@@ -56,7 +68,29 @@ export default function CursorFollower({ imgSrc, show }: {
         display: (show && isDesktop) ? 'block' : 'none',
     };
 
+    const textStyles: CSSProperties = {
+        width: '150px',
+        height: '70px',
+        position:'absolute',
+        top: `20px`,
+        left: `5px`,
+        color: '#333',
+        pointerEvents: 'none',
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        fontSize: '16px',
+        textAlign:'center',
+    }
+
     return (
-        <img src={imgSrc} style={cursorStyles} alt="cursor" />
+        <div style={cursorStyles}>
+            <img src={imgSrc} alt="cursor" />
+            <div style={textStyles}>
+                <div className={comicSans.className}>
+                    {detail}
+                </div>
+            </div>
+        </div>
     );
 };

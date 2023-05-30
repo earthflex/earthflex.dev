@@ -35,6 +35,7 @@ export default function Works({
                                         <CardItem
                                             key={work._id}
                                             col='col-span-1'
+                                            name={work.name ? work.name : ''}
                                             type={work.mediaType}
                                             theme={work.themeColor ? work.themeColor.hex : '#000'}
                                             color={work.textColor ? work.textColor.hex : '#fff'}
