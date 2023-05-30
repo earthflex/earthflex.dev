@@ -13,7 +13,7 @@ export default function About() {
 
     return (
         <React.Fragment>
-            <CursorFollower imgSrc="/about-hand.png" show={showCursor} />
+            <CursorFollower detail="" imgSrc="/about-hand.png" show={showCursor} />
             <motion.div>
                 <div className="about-content">
                     <div className="container">
@@ -137,7 +137,7 @@ export default function About() {
                                                 }}
                                                 whileHover={{ scale: .95, transition: { duration: .4, type: "ease", } }}
                                                 transition={{
-                                                    delay:.4,
+                                                    delay: .4,
                                                     duration: .4,
                                                     type: "easeIn",
                                                 }}
