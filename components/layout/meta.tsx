@@ -9,7 +9,6 @@ export default function Meta({
     author = "Apiwat Anekboon",
     keyword = "Earth, Apiwat, Anekboon, earthflex, อภิวัฒน์, เอนกบุญ, เอิร์ธ,front-end, UX, UI, Portfolio, Design",
     image = `${DOMAIN}/api/og`,
-    // image = `${DOMAIN}/og.png`,
 }: {
     title?: string;
     description?: string;
