@@ -70,11 +70,11 @@ export default function CursorFollower({ imgSrc, show, detail }: {
     };
 
     const textStyles: CSSProperties = {
-        width: '150px',
+        width: '140px',
         height: '70px',
         position:'absolute',
         top: `18px`,
-        left: `8px`,
+        left: `12px`,
         color: '#333',
         pointerEvents: 'none',
         display:'flex',
