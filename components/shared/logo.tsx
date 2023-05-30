@@ -20,7 +20,7 @@ export default function Logo() {
                     transition={{
                         delay: 0.1,
                     }}
-                    className="ef-memoji">
+                    className="ef-memoji pe-none">
                     <img src="/memoji.gif" className="gif" alt="memoji" />
                     {/* <video autoPlay muted loop playsInline>
                             <source src="/memoji.mp4" type="video/mp4" />

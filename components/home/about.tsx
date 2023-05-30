@@ -142,7 +142,7 @@ export default function About() {
                                                     type: "easeIn",
                                                 }}
                                                 className="relative h-[120px] md:h-[215px]">
-                                                <img className="absolute bottom-[-18px] right-[-20px] scale-[1.2] drop-shadow-[2px_20px_5px_rgba(0,0,0,0.50)]" src="cover-project-min.png" alt="cover-project" />
+                                                <img className="pe-none absolute bottom-[-18px] right-[-20px] scale-[1.2] drop-shadow-[2px_20px_5px_rgba(0,0,0,0.50)]" src="cover-project-min.png" alt="cover-project" />
                                             </motion.div>
                                         </motion.div>
                                     </motion.div>
