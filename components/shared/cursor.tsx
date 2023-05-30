@@ -66,14 +66,15 @@ export default function CursorFollower({ imgSrc, show, detail }: {
         top: `${position.y}px`,
         left: `${position.x}px`,
         display: (show && isDesktop) ? 'block' : 'none',
+        filter:'drop-shadow(0 0 0.75rem #333)'
     };
 
     const textStyles: CSSProperties = {
         width: '150px',
         height: '70px',
         position:'absolute',
-        top: `20px`,
-        left: `5px`,
+        top: `18px`,
+        left: `8px`,
         color: '#333',
         pointerEvents: 'none',
         display:'flex',
