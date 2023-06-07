@@ -5,16 +5,16 @@ import { ButtonScale } from "@/lib/constants";
 export default function Cookies() {
 
     const [cookiesAccepted, setCookiesAccepted] = React.useState(false);
-    // React.useEffect(() => {
-    //     const storedAcceptance = localStorage.getItem("cookiesAccepted");
-    //     if (storedAcceptance === "true") {
-    //         setCookiesAccepted(true);
-    //     }
-    // }, []);
+    React.useEffect(() => {
+        const storedAcceptance = localStorage.getItem("cookiesAccepted");
+        if (storedAcceptance === "true") {
+            setCookiesAccepted(true);
+        }
+    }, []);
 
     const handleAcceptCookies = () => {
         setCookiesAccepted(true);
-        // localStorage.setItem("cookiesAccepted", "true");
+        localStorage.setItem("cookiesAccepted", "true");
     };
 
     return (
