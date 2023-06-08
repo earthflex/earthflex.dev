@@ -73,7 +73,7 @@ export default function Footer() {
                             src="/element/river-valley-min.png"
                         />
                     </motion.div>
-                    <motion.div className="p-element old-main right-0 bottom-[20%] sm:bottom-[18%] md:bottom-[20%] lg:bottom-[22%] xl:bottom-[28%] min-[1800px]:bottom-[33%]  scale-[.5] md:scale-100">
+                    <motion.div className="p-element old-main right-0 bottom-[20%] sm:bottom-[18%] md:bottom-[20%] lg:bottom-[22%] xl:bottom-[36%] min-[1800px]:bottom-[33%]  scale-[.5] md:scale-100">
                         <motion.img
                             variants={oldMan}
                             src="/element/old-man.png"
@@ -81,7 +81,7 @@ export default function Footer() {
                     </motion.div>
                     <motion.div
                         variants={speechText}
-                        className="p-element speech-bubble right-[9%] min-[1800px]:right-[6%] bottom-[50%] sm:bottom-[46%] lg:bottom-[46%] xl:bottom-[52%]"
+                        className="p-element speech-bubble right-[9%] min-[1800px]:right-[6%] bottom-[50%] sm:bottom-[46%] lg:bottom-[46%] xl:bottom-[65%] min-[1800px]:bottom-[55%]"
                     >
                         <div className="speech-text">let’s make something special</div>
                     </motion.div>
