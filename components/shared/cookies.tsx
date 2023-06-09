@@ -5,16 +5,45 @@ import { ButtonScale } from "@/lib/constants";
 export default function Cookies() {
 
     const [cookiesAccepted, setCookiesAccepted] = React.useState(false);
+
     React.useEffect(() => {
-        const storedAcceptance = localStorage.getItem("cookiesAccepted");
-        if (storedAcceptance === "true") {
-            setCookiesAccepted(true);
+        const storedAcceptance = sessionStorage.getItem("cookiesAccepted");
+        const expirationDate = sessionStorage.getItem("cookiesAcceptedExpiration");
+
+        if (storedAcceptance === "true" && expirationDate) {
+            const expirationTime = new Date(expirationDate);
+
+            if (expirationTime > new Date()) {
+                setCookiesAccepted(true);
+            } else {
+                sessionStorage.removeItem("cookiesAccepted");
+                sessionStorage.removeItem("cookiesAcceptedExpiration");
+            }
         }
     }, []);
 
     const handleAcceptCookies = () => {
         setCookiesAccepted(true);
-        localStorage.setItem("cookiesAccepted", "true");
+
+        const expirationDate = new Date();
+        // expirationDate.setSeconds(expirationDate.getSeconds() + 30); // เพิ่มเวลา 30 วินาทีจากเวลาปัจจุบัน
+        // expirationDate.setHours(expirationDate.getHours() + 1); // เพิ่มเวลา 1 ชั่วโมงจากเวลาปัจจุบัน
+        expirationDate.setDate(expirationDate.getDate() + 7); // เพิ่มเวลา 7 วันจากเวลาปัจจุบัน
+
+
+        sessionStorage.setItem("cookiesAccepted", "true");
+        sessionStorage.setItem("cookiesAcceptedExpiration", expirationDate.toString());
+
+        setTimeout(() => {
+            sessionStorage.removeItem("cookiesAccepted");
+            sessionStorage.removeItem("cookiesAcceptedExpiration");
+        }, 7 * 24 * 60 * 60 * 1000); 
+        // หลังจาก 30 วินาที จะลบข้อมูลออกจาก sessionStorage
+        // 7: แทนจำนวนวันที่ต้องการ
+        // 24: แทนจำนวนชั่วโมงในหนึ่งวัน
+        // 60: แทนจำนวนนาทีในหนึ่งชั่วโมง
+        // 60: แทนจำนวนวินาทีในหนึ่งนาที
+        // 1000: แทนจำนวนมิลลิวินาทีในหนึ่งวินาที
     };
 
     return (
