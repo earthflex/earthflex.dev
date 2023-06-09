@@ -74,7 +74,7 @@ export const missileWrapper: Variants = {
         scale: .8,
     },
     animate: {
-        y: 100,
+        y: 0,
         scale: .5,
         transition: {
             duration: 0.8,
@@ -158,7 +158,7 @@ export const earthTv: Variants = {
 }
 
 
-export const artcraft: Variants = {
+export const aircraft: Variants = {
     initial: {
         y: 100,
         x: -800,

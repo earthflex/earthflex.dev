@@ -1,4 +1,4 @@
-import { staggerContainer, earthflexText, earthWrapper, earth, artcraft, earthTv, missile, missileWrapper, saturn, saturnWrapper, swimming } from "@/lib/motions";
+import { staggerContainer, earthflexText, earthWrapper, earth, aircraft, earthTv, missile, missileWrapper, saturn, saturnWrapper, swimming } from "@/lib/motions";
 import { motion, useScroll, useTransform, useSpring, MotionValue } from "framer-motion";
 import React from "react";
 
@@ -10,9 +10,12 @@ export default function Intro() {
     const spring = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
     ref.current = spring;
 
-    // const earthY = useTransform(spring, [0, 1], [0, -200]);
+    // const earthY = useTransform(spring, [0, 1], [0, -100]);
     // const scaleEarth = useTransform(spring, [0, 1], [1.8, 0]);
 
+    const missilePosition = useTransform(spring, [0, 1], [0, 1000]);
+    const aircraftPosition = useTransform(spring, [0, 1], [0, 600]);
+    
     return (
         <React.Fragment>
             <motion.div className="intro"
@@ -25,6 +28,9 @@ export default function Intro() {
                     initial="initial"
                     animate="animate"
                     className="p-element missile aura"
+                    style={{
+                        y: missilePosition,
+                    }}
                 >
                     <motion.img
                         variants={missile}
@@ -59,18 +65,18 @@ export default function Intro() {
                     variants={earthWrapper}
                     initial="initial"
                     animate="animate"
-                    // style={{
-                    //     top: '10%',
-                    //     position: 'fixed',
-                    //     transformOrigin: 'top',
-                    //     y: earthY,
-                    //     scale: scaleEarth,
-                    // }}
+                    style={{
+                        top: '10%',
+                        // position: 'fixed',
+                        transformOrigin: 'top',
+                        // y: earthY,
+                        // scale: scaleEarth,
+                    }}
                     className="p-element earth-wrapper"
                 >
                     <motion.img
-                        variants={earth}
                         className="earth"
+                        variants={earth}
                         initial="initial"
                         animate="animate"
                         src="/element/earth-desktop-min.png"
@@ -90,10 +96,13 @@ export default function Intro() {
                 </motion.div>
 
                 <motion.div
-                    variants={artcraft}
+                    variants={aircraft}
                     initial="initial"
                     animate="animate"
                     className="p-element aura"
+                    style={{
+                        x: missilePosition,
+                    }}
                 >
                     <motion.img
                         className="pe-none aircraft"
