@@ -51,6 +51,10 @@
   margin: 0;
 }
 
+main{
+  overflow: hidden;
+}
+
 html,
 body {
   color-scheme: dark;
