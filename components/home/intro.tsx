@@ -66,9 +66,9 @@ export default function Intro() {
                     initial="initial"
                     animate="animate"
                     style={{
-                        top: '10%',
+                        // top: '10%',
                         // position: 'fixed',
-                        transformOrigin: 'top',
+                        // transformOrigin: 'top',
                         // y: earthY,
                         // scale: scaleEarth,
                     }}
