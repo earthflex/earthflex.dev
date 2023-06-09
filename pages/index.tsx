@@ -25,7 +25,31 @@ export default function Home({
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setLoading(true), 2300);
+    const storageTime = sessionStorage.getItem('loadingStartTime');
+    const currentTime = new Date().getTime();
+    
+    // เช็คว่ามีข้อมูลใน sessionStorage หรือไม่
+    if (!storageTime) {
+      // ถ้าไม่มี ให้ตั้งเวลาโหลด
+      setTimeout(() => {
+        setLoading(true);
+        // เก็บเวลาที่เริ่มต้นลงใน sessionStorage
+        sessionStorage.setItem('loadingStartTime', currentTime.toString());
+      }, 2300);
+    } else {
+      // ถ้ามีข้อมูลใน sessionStorage ตรวจสอบว่าผ่านไป 1 ชม. หรือยัง
+      const elapsedTime = currentTime - Number(storageTime);
+      if (elapsedTime < 3600000) { // 1 ชม. เท่ากับ 3600000 มิลลิวินาที
+        // ถ้ายังไม่ถึง 1 ชม. ให้ set loading เป็น true
+        setLoading(true);
+      } else {
+        // ถ้าเกิน 1 ชม. ให้ตั้งเวลาโหลดใหม่
+        setTimeout(() => {
+          setLoading(true);
+          sessionStorage.setItem('loadingStartTime', currentTime.toString());
+        }, 2300);
+      }
+    }
   }, []);
 
   return (
