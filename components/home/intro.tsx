@@ -13,7 +13,7 @@ export default function Intro() {
     // const earthY = useTransform(spring, [0, 1], [0, -100]);
     // const scaleEarth = useTransform(spring, [0, 1], [1.8, 0]);
 
-    const missilePosition = useTransform(spring, [0, 1], [0, 1000]);
+    const missilePosition = useTransform(spring, [0, 1], [0, 900]);
     const aircraftPosition = useTransform(spring, [0, 1], [0, 600]);
     
     return (
@@ -101,7 +101,7 @@ export default function Intro() {
                     animate="animate"
                     className="p-element aura"
                     style={{
-                        x: missilePosition,
+                        x: aircraftPosition,
                     }}
                 >
                     <motion.img
