@@ -27,12 +27,12 @@ export default function CursorFollower({ imgSrc, show, detail }: {
     const [isDesktop, setDesktop] = useState(false);
 
     const updateMedia = () => {
-        setDesktop(window.innerWidth > 1024);
+        setDesktop(window.innerWidth > 1200);
     };
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            setDesktop(window.innerWidth > 1024);
+            setDesktop(window.innerWidth > 1200);
             window.addEventListener("resize", updateMedia);
         }
         return () => {
