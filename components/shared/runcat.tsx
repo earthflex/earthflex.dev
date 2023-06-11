@@ -23,6 +23,12 @@ const RADIO_CAT: RadioCatItem[] = [
         color: 'invert-0',
     },
     {
+        id: 'sushi',
+        name: 'Sushi',
+        img: '/runcat/sushi.png',
+        color: 'invert-0',
+    },
+    {
         id: 'cat',
         name: 'Cat',
         img: '/runcat/cat.png',
