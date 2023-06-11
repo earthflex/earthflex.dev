@@ -811,6 +811,7 @@
 }
 
 .steps_current .steps-tail {
+  width: 2px;
   opacity: .3;
   background-position: 0;
   background-color: transparent;
@@ -819,7 +820,7 @@
 }
 
 .steps-tail:after {
-  width: 2px;
+  /* width: 2px; */
   height: 100%;
   display: inline-block;
   height: 1px;
