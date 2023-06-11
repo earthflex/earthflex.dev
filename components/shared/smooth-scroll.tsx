@@ -39,14 +39,14 @@ export default function SmoothScroll() {
     }, []);
 
     const [maxScrollPosition, setMaxScrollPosition] = React.useState(
-        typeof window !== 'undefined' ? window.innerHeight * 0.86 : 0
+        typeof window !== 'undefined' ? window.innerHeight * 0.84 : 0
     );
 
     const scrollProgress = useTransform(spring, [0, 1], [0, maxScrollPosition]);
 
     React.useEffect(() => {
         const updateMaxScrollPosition = () => {
-            setMaxScrollPosition(window.innerHeight * 0.86);
+            setMaxScrollPosition(window.innerHeight * 0.84);
         };
 
         if (typeof window !== 'undefined') {
