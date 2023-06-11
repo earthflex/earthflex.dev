@@ -14,28 +14,34 @@
 }
 
 ::-webkit-scrollbar {
+  display: none;
+ 
+}
+
+.resume-content ::-webkit-scrollbar {
   width: 7px;
+  display: initial;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+.resume-content ::-webkit-scrollbar-track {
+  background: transparent !important;
 }
 
-::-webkit-scrollbar-thumb {
+.resume-content ::-webkit-scrollbar-thumb {
   background: #787B7C;
   border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.resume-content ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-.resume-content::-webkit-scrollbar-track-piece:end {
+.resume-content ::-webkit-scrollbar-track-piece:end {
   background: transparent;
   margin-top: 8px;
 }
 
-.resume-content::-webkit-scrollbar-track-piece:start {
+.resume-content ::-webkit-scrollbar-track-piece:start {
   background: transparent;
   margin-bottom: 8px;
 }
@@ -58,6 +64,7 @@ main{
 html,
 body {
   color-scheme: dark;
+  
   scroll-behavior: smooth;
   max-width: 100vw;
   min-height: 100%;
