@@ -1734,11 +1734,6 @@ a .card-resume:hover:after {
   color: rgb(200, 199, 203);
 }
 
-.runcat {
-  filter: invert(1);
-  margin: 0 1px;
-}
-
 .MenubarContent--visible {
   display: block !important;
 }

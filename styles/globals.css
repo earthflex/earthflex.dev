@@ -215,6 +215,10 @@ img {
   margin-right: 7px !important;
 }
 
+.modal-open .scroll-main{
+  background: transparent;
+}
+
 .slide-sheet {
   height: 75vh;
   border: 1px solid #404043;

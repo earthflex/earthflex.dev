@@ -12,9 +12,6 @@ export default function SmoothScroll() {
     const spring = useSpring(ref.current || scrollYProgress, { stiffness: 100, damping: 30 });
     ref.current = spring;
 
-    const [maxScrollPosition, setMaxScrollPosition] = React.useState(0);
-    const scrollProgress = useTransform(spring, [0, 1], [0, maxScrollPosition]);
-
     React.useEffect(() => {
         const handleWheel = (event: WheelEvent) => {
             event.preventDefault();
@@ -41,39 +38,35 @@ export default function SmoothScroll() {
         };
     }, []);
 
+    const [maxScrollPosition, setMaxScrollPosition] = React.useState(
+        typeof window !== 'undefined' ? window.innerHeight * 0.86 : 0
+    );
+
+    const scrollProgress = useTransform(spring, [0, 1], [0, maxScrollPosition]);
+
     React.useEffect(() => {
-        const calculateMaxScrollPosition = () => {
-            const contentHeight = document.documentElement.scrollHeight;
-            const viewportHeight = window.innerHeight;
-            const calculatedMaxScroll = contentHeight - viewportHeight;
-            const ninetyPercentOfViewport = viewportHeight * 0.86;
-            return Math.min(calculatedMaxScroll, ninetyPercentOfViewport); // จำกัดค่าที่ไม่เกิน 90vh
+        const updateMaxScrollPosition = () => {
+            setMaxScrollPosition(window.innerHeight * 0.86);
         };
 
-        const maxScroll = calculateMaxScrollPosition();
-        setMaxScrollPosition(maxScroll);
-        // console.log("Maximum Scroll Position:", maxScroll);
-
-        const handleResize = () => {
-            const newMaxScrollPosition = calculateMaxScrollPosition();
-            // console.log("New Maximum Scroll Position:", newMaxScrollPosition);
-            setMaxScrollPosition(newMaxScrollPosition);
-        };
-
-        window.addEventListener('resize', handleResize);
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', updateMaxScrollPosition);
+        }
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            if (typeof window !== 'undefined') {
+                window.removeEventListener('resize', updateMaxScrollPosition);
+            }
         };
     }, []);
 
     return (
         <div
-            className="hidden xl:block fixed w-[8px] top-[48px] right-[6px] z-[100] h-screen overflow-y-scroll"
+            className="hidden xl:block fixed w-[8px] top-[48px] right-[4px] z-[13] h-screen overflow-y-scroll"
             ref={scrollRef}
         >
             <motion.div
-                className="h-[60px] absolute w-[7px] bg-[#787B7C] hover:bg-[#555] rounded-lg"
+                className="scroll-main h-[60px] absolute w-[7px] shadow-inner bg-[#787B7C] hover:bg-[#555] rounded-lg"
                 style={{
                     top: scrollProgress,
                 }}
