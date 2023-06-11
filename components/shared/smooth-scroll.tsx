@@ -47,7 +47,7 @@ export default function SmoothScroll() {
             const viewportHeight = window.innerHeight;
             const calculatedMaxScroll = contentHeight - viewportHeight;
             const ninetyPercentOfViewport = viewportHeight * 0.9;
-            return Math.min(calculatedMaxScroll, ninetyPercentOfViewport);
+            return Math.min(calculatedMaxScroll, ninetyPercentOfViewport); // จำกัดค่าที่ไม่เกิน 90vh
         };
 
         const maxScroll = calculateMaxScrollPosition();
@@ -73,7 +73,7 @@ export default function SmoothScroll() {
             ref={scrollRef}
         >
             <motion.div
-                className="h-[80px] w-[7px] bg-[#787B7C] hover:bg-[#555] rounded-lg"
+                className="h-[60px] w-[7px] bg-[#787B7C] hover:bg-[#555] rounded-lg"
                 style={{
                     y: scrollProgress,
                 }}
