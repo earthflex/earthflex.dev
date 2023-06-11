@@ -46,7 +46,7 @@ export default function SmoothScroll() {
             const contentHeight = document.documentElement.scrollHeight;
             const viewportHeight = window.innerHeight;
             const calculatedMaxScroll = contentHeight - viewportHeight;
-            const ninetyPercentOfViewport = viewportHeight * 0.9;
+            const ninetyPercentOfViewport = viewportHeight * 0.86;
             return Math.min(calculatedMaxScroll, ninetyPercentOfViewport); // จำกัดค่าที่ไม่เกิน 90vh
         };
 
@@ -69,7 +69,7 @@ export default function SmoothScroll() {
 
     return (
         <div
-            className="hidden xl:block fixed w-[8px] top-[6px] right-[6px] z-[100] h-screen overflow-y-scroll"
+            className="hidden xl:block fixed w-[8px] top-[48px] right-[6px] z-[100] h-screen overflow-y-scroll"
             ref={scrollRef}
         >
             <motion.div
