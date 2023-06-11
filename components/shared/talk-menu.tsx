@@ -55,7 +55,7 @@ export default function TallkMenu() {
                         <div style={{ display: 'flex', flexDirection: 'column', gap: 15 }}>
                             <div>
                                 <div className="avatar"><img src="/dogdev.png" className="pe-none" alt="instagram" /></div>
-                                <p className="text-center">👋 Hello !, Sawandee krub 🙏</p>
+                                <p className="text-center">👋 Hello !, Sawasdee krub 🙏</p>
                             </div>
                         </div>
                     </div>
