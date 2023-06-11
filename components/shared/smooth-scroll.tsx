@@ -52,11 +52,11 @@ export default function SmoothScroll() {
 
         const maxScroll = calculateMaxScrollPosition();
         setMaxScrollPosition(maxScroll);
-        console.log("Maximum Scroll Position:", maxScroll);
+        // console.log("Maximum Scroll Position:", maxScroll);
 
         const handleResize = () => {
             const newMaxScrollPosition = calculateMaxScrollPosition();
-            console.log("New Maximum Scroll Position:", newMaxScrollPosition);
+            // console.log("New Maximum Scroll Position:", newMaxScrollPosition);
             setMaxScrollPosition(newMaxScrollPosition);
         };
 
