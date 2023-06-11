@@ -73,9 +73,9 @@ export default function SmoothScroll() {
             ref={scrollRef}
         >
             <motion.div
-                className="h-[60px] w-[7px] bg-[#787B7C] hover:bg-[#555] rounded-lg"
+                className="h-[60px] absolute w-[7px] bg-[#787B7C] hover:bg-[#555] rounded-lg"
                 style={{
-                    y: scrollProgress,
+                    top: scrollProgress,
                 }}
             />
         </div>
