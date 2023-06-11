@@ -69,7 +69,7 @@ export default function SmoothScroll() {
 
     return (
         <div
-            className="hidden xl:block fixed w-[7px] top-0 right-0 z-[100] h-screen overflow-y-scroll"
+            className="hidden xl:block fixed w-[8px] top-[6px] right-[6px] z-[100] h-screen overflow-y-scroll"
             ref={scrollRef}
         >
             <motion.div
