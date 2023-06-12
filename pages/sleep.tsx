@@ -81,7 +81,7 @@ export default function SleepWindow() {
                         ease: [0, 0.71, 0.2, 1.01],
                     }
                 }}
-                className="fixed z-20 flex justify-center items-center rounded-full left-[30px] bottom-[30px] cursor-pointer ring-white ring-2 hover:ring-blue-400 shadow-lg shadow-blue-500/50 w-10 h-10">
+                className="fixed z-30 flex justify-center items-center rounded-full left-[30px] bottom-[30px] cursor-pointer ring-white ring-2 hover:ring-blue-400 shadow-lg shadow-blue-500/50 w-10 h-10">
                 {isPlaying ? <FiVolume2 /> : <FiVolumeX />}
             </motion.div>
             <div className="sleep-window overflow-hidden m-h-screen relative z-10 ">
@@ -105,7 +105,7 @@ export default function SleepWindow() {
             </div>
             <motion.div
                 transition={{ staggerChildren: .5, delayChildren: 0.7, }}
-                className="absolute top-0 left-0 flex flex-col gap-4 items-center justify-center overflow-hidden h-screen w-screen z-10"
+                className="absolute  top-0 left-0 flex flex-col gap-4 items-center justify-center overflow-hidden h-screen w-screen z-20"
             >
                 <motion.div
                     className="w-[120px] h-[120px] rounded-full bg-profile overflow-hidden flex justify-center items-center select-none"

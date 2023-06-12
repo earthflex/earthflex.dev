@@ -37,7 +37,7 @@ export default function Modal({
     }, [onKeyDown]);
 
 
-    const { isMobile, isDesktop } = useWindowSize();
+    const { isMobile, isDesktop, isTablet } = useWindowSize();
 
     return (
         <BackDrop onClick={handleClose}>
@@ -46,7 +46,7 @@ export default function Modal({
                     {children}
                 </SlideSheet>
             )}
-            {isDesktop && (
+            {(isTablet || isDesktop) && (
                 <motion.div
                     ref={desktopModalRef}
                     key="desktop-modal"
