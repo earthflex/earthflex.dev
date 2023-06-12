@@ -91,7 +91,7 @@ export default function SleepWindow() {
                     muted
                     loop
                     playsInline
-                    src="/sleep.mp4"
+                    src={isDesktop ? '/sleep.mp4' : '/sleep-min.mp4'}
                     initial={{ scale: initialScale, transformOrigin: 'center' }}
                     animate={{
                         scale: targetScale,

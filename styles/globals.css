@@ -77,14 +77,6 @@ body {
   position: relative;
   cursor: url(/default.png), auto;
   background-image: url(/bg-min.jpg);
-
-  overflow-x: hidden;
-  /* ปิดใช้งาน scrollbar แนวนอน */
-  overflow-y: scroll;
-  /* อนุญาต scrollbar แนวตั้งเฉพาะเมื่อจำเป็น */
-  -webkit-overflow-scrolling: touch;
-  /* สำหรับ iOS */
-
 }
 
 .wrapper-main {
@@ -222,7 +214,7 @@ img {
 }
 
 .modal-open .scroll-main {
-  background: transparent;
+  display: none;
 }
 
 .slide-sheet {
