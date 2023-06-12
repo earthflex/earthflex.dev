@@ -7,7 +7,6 @@ import SpotifyEmbed from "./spotify-embed";
 import RunCat from "./runcat";
 import RecentItems from "./recent-items";
 
-
 export default function Topbar({
     onClick,
 }: {

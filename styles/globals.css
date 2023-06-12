@@ -410,3 +410,11 @@ img {
 .text-shadow {
   text-shadow: 0px 1px 10px #fff;
 }
+
+.tooltip-c-text {
+  @apply hidden absolute top-full left-1/2 transform -translate-x-1/2 bg-gray-800 text-white mt-2 px-2 py-2 text-xs whitespace-nowrap rounded-md;
+}
+
+.tooltip-custom:hover .tooltip-c-text {
+  @apply hidden xl:block
+}
