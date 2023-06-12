@@ -23,16 +23,13 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <RWBProvider>
       <div className={clashdisplay.className} >
-        <div className="wrapper-main">
-          <div className="grain-animation"></div>
-          <AnimatePresence >
-            <motion.div
-            >
-              <Component {...pageProps} />
-              <SmoothScroll />
-            </motion.div>
-          </AnimatePresence>
-        </div>
+        <div className="grain-animation"></div>
+        <AnimatePresence >
+          <motion.div>
+            <Component {...pageProps} />
+            <SmoothScroll />
+          </motion.div>
+        </AnimatePresence>
       </div>
       <Analytics />
     </RWBProvider>
