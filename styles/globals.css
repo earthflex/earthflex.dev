@@ -15,7 +15,6 @@
 
 ::-webkit-scrollbar {
   display: none;
- 
 }
 
 .resume-content ::-webkit-scrollbar {
@@ -30,10 +29,11 @@
 .resume-content ::-webkit-scrollbar-thumb {
   background: #787B7C;
   border-radius: 8px;
+  cursor: move;
 }
 
 .resume-content ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #ADAFB0;
 }
 
 .resume-content ::-webkit-scrollbar-track-piece:end {
@@ -57,14 +57,14 @@
   margin: 0;
 }
 
-main{
+main {
   overflow: hidden;
 }
 
 html,
 body {
   color-scheme: dark;
-  
+
   scroll-behavior: smooth;
   max-width: 100vw;
   min-height: 100%;
@@ -77,6 +77,13 @@ body {
   position: relative;
   cursor: url(/default.png), auto;
   background-image: url(/bg-min.jpg);
+
+  overflow-x: hidden;
+  /* ปิดใช้งาน scrollbar แนวนอน */
+  overflow-y: scroll;
+  /* อนุญาต scrollbar แนวตั้งเฉพาะเมื่อจำเป็น */
+  -webkit-overflow-scrolling: touch;
+  /* สำหรับ iOS */
 
 }
 
@@ -98,7 +105,6 @@ body {
   opacity: .3;
   mix-blend-mode: overlay;
 }
-
 
 @keyframes grain {
   0% {
@@ -215,7 +221,7 @@ img {
   margin-right: 7px !important;
 }
 
-.modal-open .scroll-main{
+.modal-open .scroll-main {
   background: transparent;
 }
 
@@ -264,7 +270,8 @@ img {
 }
 
 .error-page {
-  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -303,6 +310,16 @@ img {
   padding: 8px 8px;
   border-radius: 8px;
   border: 0.5px solid #787b7c;
+}
+
+.btn-sleep {
+  font-size: 18px;
+  padding: 8px 8px;
+  border-radius: 100px;
+  background-image: linear-gradient(135deg, rgb(185 185 185), rgb(120 120 120));
+  box-shadow: 0 4px 6px 0 rgb(0 0 0 / 5%), 0 10px 16px -3px rgb(0 0 0 / 10%);
+  -webkit-backdrop-filter: blur(11px);
+  backdrop-filter: blur(11px);
 }
 
 @media (max-width:600px) {
@@ -371,4 +388,25 @@ img {
 
 .rotate-landscape img {
   max-width: 80px;
+}
+
+.sleep-window iframe {
+  width: 100vw;
+  height: 100 vh;
+  transform: scale(1.3);
+  transform-origin: 50% 50%;
+}
+
+.sleep-window~.scroll-main,
+.error-page~.scroll-main {
+  display: none;
+}
+
+.bg-profile {
+  background: linear-gradient(360deg, #C16AAF 0%, #6A4E9D 40.89%, #213C85 80.6%, #000000 189%);
+  box-shadow: 0px -4px 10px rgba(255, 255, 255, 0.5), 0px -4px 5px rgb(13, 37, 106);
+}
+
+.text-shadow {
+  text-shadow: 0px 1px 10px #fff;
 }

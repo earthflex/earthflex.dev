@@ -62,11 +62,11 @@ export default function SmoothScroll() {
 
     return (
         <div
-            className="hidden xl:block fixed w-[8px] top-[48px] right-[4px] z-[13] h-screen overflow-y-scroll"
+            className="scroll-main hidden xl:block fixed w-[8px] top-[48px] right-[4px] z-[13] h-screen overflow-y-scroll"
             ref={scrollRef}
         >
             <motion.div
-                className="scroll-main h-[60px] absolute w-[7px] shadow-inner bg-[#787B7C] hover:bg-[#555] rounded-lg"
+                className="h-[60px] absolute w-[7px] shadow-inner bg-[#787B7C] hover:bg-[#ADAFB0] rounded-lg"
                 style={{
                     top: scrollProgress,
                 }}
