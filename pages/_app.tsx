@@ -28,8 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
           <AnimatePresence >
             <motion.div
             >
-              <SmoothScroll />
               <Component {...pageProps} />
+              <SmoothScroll />
             </motion.div>
           </AnimatePresence>
         </div>

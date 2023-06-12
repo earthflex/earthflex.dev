@@ -1,5 +1,5 @@
 import { cardTap } from "@/lib/constants";
-import { statusAnimate, scaleCard, oldMan, speechText } from "@/lib/motions";
+import { statusAnimate, scaleCard } from "@/lib/motions";
 import { motion } from "framer-motion";
 import React from "react";
 import { CardArrowIcon } from "../shared/Icons";

@@ -1,13 +1,11 @@
 import Link from "next/link";
 import * as Menubar from '@radix-ui/react-menubar';
-import * as Dialog from '@radix-ui/react-dialog';
 import React from "react";
+import { useRouter } from 'next/router';
 import Image from "next/image";
 import SpotifyEmbed from "./spotify-embed";
-import ResumeDialog from "../resume";
 import RunCat from "./runcat";
 import RecentItems from "./recent-items";
-
 
 export default function Topbar({
     onClick,
@@ -16,6 +14,30 @@ export default function Topbar({
 }) {
 
     const [isVisible, setIsVisible] = React.useState(false);
+
+    const router = useRouter();
+
+    React.useEffect(() => {
+        const handleKeyDown = (event: { key: string; metaKey: any; }) => {
+            if (event.key === 'Enter' && event.metaKey) {
+                // ปฏิบัติการที่คุณต้องการทำเมื่อกด command + enter
+                handleSleep();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        // ล้าง event listener เมื่อ component ถูก unmount
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+    const handleSleep = () => {
+        // ใส่โค้ดสำหรับฟีเจอร์ Sleep ที่นี่
+        router.push('/sleep');
+        console.log('Sleep feature triggered');
+    };
 
     return (
         <React.Fragment>
@@ -28,19 +50,9 @@ export default function Topbar({
                             </Menubar.Trigger>
                             <Menubar.Portal>
                                 <Menubar.Content className="MenubarContent" align="start" sideOffset={5} alignOffset={-3}>
-                                    <Dialog.Root>
-                                        <Dialog.Trigger>
-                                            <Menubar.Item className="MenubarItem">
-                                                About This Banana Mac
-                                            </Menubar.Item>
-                                        </Dialog.Trigger>
-                                        <Dialog.Portal>
-                                            <Dialog.Overlay className="dialog-overlay" />
-                                            <Dialog.Content className="dialog-content">
-                                                11111
-                                            </Dialog.Content>
-                                        </Dialog.Portal>
-                                    </Dialog.Root>
+                                    <Menubar.Item className="MenubarItem" >
+                                        About This Banana Mac
+                                    </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
                                     <Menubar.Item className="MenubarItem" disabled>
                                         System Settings...
@@ -51,9 +63,11 @@ export default function Topbar({
                                     <Menubar.Separator className="MenubarSeparator" />
                                     <RecentItems />
                                     <Menubar.Separator className="MenubarSeparator" />
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        Sleep <div className="RightSlot">⌘ S</div>
-                                    </Menubar.Item>
+                                    <Link href="/sleep">
+                                        <Menubar.Item className="MenubarItem" >
+                                            Sleep <div className="RightSlot hidden lg:flex">⌘ Enter</div>
+                                        </Menubar.Item>
+                                    </Link>
                                 </Menubar.Content>
                             </Menubar.Portal>
                         </Menubar.Menu>
@@ -63,17 +77,9 @@ export default function Topbar({
                                 <Menubar.Content className="MenubarContent" align="start" sideOffset={5} alignOffset={-3}>
                                     <Link href="/">
                                         <Menubar.Item className="MenubarItem" >
-                                            New Tab (Home) <div className="RightSlot">⌘ T</div>
+                                            Home
                                         </Menubar.Item>
                                     </Link>
-                                    <Link href="/" target="_blank">
-                                        <Menubar.Item className="MenubarItem">
-                                            New Window <div className="RightSlot">⌘ N</div>
-                                        </Menubar.Item>
-                                    </Link>
-                                    <Menubar.Item className="MenubarItem" disabled>
-                                        New Incognito Window
-                                    </Menubar.Item>
                                     <Menubar.Separator className="MenubarSeparator" />
                                     <div onClick={onClick}>
                                         <Menubar.Item className="MenubarItem" onClick={onClick}>
