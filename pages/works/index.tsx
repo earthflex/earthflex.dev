@@ -28,21 +28,21 @@ export default function Works({
                                 <motion.div
                                     initial={"offscreen"}
                                     whileInView={"onscreen"}
-                                    viewport={{ once: false }}
+                                    viewport={{ once: false , amount: .5, }}
                                     transition={{ duration: 0.3, type: 'spring' }}
-                                    className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-3">
+                                    className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-2 2xl:grid-cols-3">
                                     {works.map((work) => (
-                                        <CardItem
-                                            key={work._id}
-                                            col='col-span-1'
-                                            name={work.name ? work.name : ''}
-                                            type={work.mediaType}
-                                            theme={work.themeColor ? work.themeColor.hex : '#000'}
-                                            color={work.textColor ? work.textColor.hex : '#fff'}
-                                            chip={work.workType}
-                                            alt={work.name ? work.name : ''}
-                                            src={work.coverimage && work.coverimage.asset ? work.coverimage.asset._ref : undefined}
-                                        />
+                                            <CardItem
+                                                key={work._id}
+                                                col='col-span-1'
+                                                name={work.name ? work.name : ''}
+                                                type={work.mediaType}
+                                                theme={work.themeColor ? work.themeColor.hex : '#000'}
+                                                color={work.textColor ? work.textColor.hex : '#fff'}
+                                                chip={work.workType}
+                                                alt={work.name ? work.name : ''}
+                                                src={work.coverimage && work.coverimage.asset ? work.coverimage.asset._ref : undefined}
+                                            />
                                     ))}
                                 </motion.div>
                             )}
