@@ -44,8 +44,9 @@ export default function Intro() {
     const SwimX = useTransform(spring, [0, 1], [-100, endSwimX]);
     const SwimY = useTransform(spring, [0, 1], [100, endSwimY]);
 
+    const startAircraft = isMobile ? 75 : isTablet ? 160 : 300;
     const endAircraft = isMobile ? -300 : isTablet ? -300 : -300;
-    const aircraftPosition = useTransform(spring, [0, 1], [300, endAircraft]);
+    const aircraftPosition = useTransform(spring, [0, 1], [startAircraft, endAircraft]);
 
     return (
         <React.Fragment>
