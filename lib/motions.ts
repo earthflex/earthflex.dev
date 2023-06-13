@@ -1,4 +1,4 @@
-
+import { DeviceFlags } from "@/types";
 import { Variants } from "framer-motion";
 
 export const staggerContainer: Variants = {
@@ -11,17 +11,20 @@ export const staggerContainer: Variants = {
     }
 }
 
-export const earthflexText: Variants = {
+export const earthflexText = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
-        y: 80,
-        opacity: 0,
+        y: 120,
+        opacity:0,
+        scale:.98,
+        transformOrigin:'center bottom',
     },
     animate: {
-        y: 60,
-        opacity: 1,
+        y: 0,
+        opacity:1,
+        scale:1,
         transition: {
-            delay: .2,
-            duration: 1.2,
+            delay: .6,
+            duration: .8,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
                 type: "spring",
@@ -31,18 +34,21 @@ export const earthflexText: Variants = {
             }
         }
     }
-}
+});
 
-export const earthWrapper: Variants = {
+export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
-        y: 400,
-        x: 0,
-        scale: 0
+        y: 200,
+        x:0,
+        z:100,
+        opacity:0,
+        scale: 0,
     },
     animate: {
-        y: 100,
-        x: 0,
-        scale: .8,
+        opacity:1,
+        y: isMobile ? 120 : isTablet ? 150 : 125,
+        z:100,
+        scale: isMobile ? 1.4 : isTablet ? 1 : 1,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
@@ -54,7 +60,7 @@ export const earthWrapper: Variants = {
             }
         }
     }
-}
+});
 
 export const earth: Variants = {
     initial: {},
@@ -75,7 +81,7 @@ export const missileWrapper: Variants = {
     },
     animate: {
         y: 0,
-        scale: .5,
+        scale: .4,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
@@ -103,12 +109,12 @@ export const missile: Variants = {
 
 export const saturnWrapper: Variants = {
     initial: {
-        y: -300,
+        y: -100,
         scale: .8,
     },
     animate: {
-        y: 0,
-        scale: .6,
+        y: -40,
+        scale: .5,
         transition: {
             duration: 0.8,
             ease: [0, 0.71, 0.2, 1.01],
@@ -157,17 +163,17 @@ export const earthTv: Variants = {
     }
 }
 
-
-export const aircraft: Variants = {
+export const aircraft = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
-        y: 100,
-        x: -800,
+        y: 140,
+        x: isMobile ? 400 : isTablet ? 800 : 800,
         scale: .7,
     },
     animate: {
-        x: 0,
+        x: isMobile ? 60 : isTablet ? 300 : 300,
         transition: {
-            duration: 0.8,
+            delay:1,
+            duration: 2,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
                 type: "spring",
@@ -177,7 +183,7 @@ export const aircraft: Variants = {
             }
         }
     }
-}
+});
 
 
 export const swimming: Variants = {
@@ -263,6 +269,17 @@ export const textAnimate: Variants = {
             type: "spring",
             bounce: 0.4,
             duration: .5
+        }
+    }
+}
+
+export const flamingo: Variants = {
+    offscreen: { x: -240,  },
+    onscreen: {
+        x: -50,
+        transition: {
+            type: "spring",
+            duration: 1
         }
     }
 }

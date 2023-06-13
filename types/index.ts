@@ -16,6 +16,11 @@ export type MetaProps = {
   image?: string;
 }
 
+export type DeviceFlags = {
+  isMobile: boolean,
+  isTablet: boolean
+};
+
 export type WORKS_ITEMS_TYPE = {
   _id: string;
   name: string;
