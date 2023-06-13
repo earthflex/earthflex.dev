@@ -58,7 +58,7 @@
 }
 
 main {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 html,
@@ -81,6 +81,7 @@ body {
   transform-origin: top;
   overflow-x: hidden;
 }
+
 
 .grain-animation {
   transform: translateZ(0);

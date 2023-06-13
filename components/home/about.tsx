@@ -32,12 +32,11 @@ export default function About() {
                                             "linear-gradient(0deg, #C16AAF 0%, #6A4E9D 40.89%, #60CAFC 100%, #213C85 189%)",
                                             "linear-gradient(135deg, #60CAFC, #2F65FF, #A56CFF, #5D2EFF)",
                                         ],
-                                    }
-                                    }
+                                    }}
                                     transition={{
-                                        ease: "easeInOut",
                                         duration: 2,
                                         repeat: Infinity,
+                                        repeatType: "reverse",
                                     }}
                                 >
                                     <span className="chip-status">{profile[0].status}</span>
@@ -61,6 +60,7 @@ export default function About() {
                                                 ease: "linear",
                                                 duration: 2,
                                                 repeat: Infinity,
+                                                repeatType: "reverse",
                                             }}
                                             className="about-shadow" />
                                         <motion.div
