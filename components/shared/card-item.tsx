@@ -6,6 +6,7 @@ import { CardArrowIcon } from "./Icons";
 import CursorFollower from "@/components/shared/cursor";
 import imageUrlBuilder from '@sanity/image-url'
 import client from "@/client";
+import useWindowSize from "../hook/use-window-size";
 
 const builder = imageUrlBuilder(client)
 
@@ -32,6 +33,9 @@ export default function CardItem({
     alt: string;
     chip: string;
 }) {
+
+    const { isMobile, isTablet, isDesktop } = useWindowSize();
+
     const [isHovered, setHovered] = React.useState(false);
 
     const handleHoverStart = () => {
@@ -87,7 +91,7 @@ export default function CardItem({
                                             width={376}
                                             height={424}
                                             className="w-full h-full object-cover"
-                                            variants={imgCardItem}
+                                            variants={isDesktop ? imgCardItem : undefined}
                                         />
                                     </motion.div>
                                 )}
