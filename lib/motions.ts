@@ -14,14 +14,14 @@ export const staggerContainer: Variants = {
 export const earthflexText = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
         y: 120,
-        opacity:0,
-        scale:.98,
-        transformOrigin:'center bottom',
+        opacity: 0,
+        scale: .98,
+        transformOrigin: 'center bottom',
     },
     animate: {
         y: 0,
-        opacity:1,
-        scale:1,
+        opacity: 1,
+        scale: 1,
         transition: {
             delay: .6,
             duration: .8,
@@ -39,15 +39,15 @@ export const earthflexText = ({ isMobile, isTablet }: DeviceFlags): Variants => 
 export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
         y: 200,
-        x:0,
-        z:100,
-        opacity:0,
+        x: 0,
+        z: 100,
+        opacity: 0,
         scale: 0,
     },
     animate: {
-        opacity:1,
+        opacity: 1,
         y: isMobile ? 120 : isTablet ? 150 : 125,
-        z:100,
+        z: 100,
         scale: isMobile ? 1.4 : isTablet ? 1 : 1,
         transition: {
             duration: 0.8,
@@ -172,7 +172,7 @@ export const aircraft = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     animate: {
         x: isMobile ? 60 : isTablet ? 300 : 300,
         transition: {
-            delay:1,
+            delay: 1,
             duration: 2,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
@@ -220,6 +220,65 @@ export const scaleCard: Variants = {
             type: "spring",
             bounce: 0.4,
             duration: 1,
+        }
+    }
+}
+
+export const scaleCardItem: Variants = {
+    offscreen: {
+        y: -120,
+        scale: 0.9,
+        z: -1,
+        x: 0,
+        opacity: 1,
+        position: "relative",
+        zIndex: -1,
+        filter: "contrast(60%) brightness(30%) ",
+        transformOrigin: 'center 0%',
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1,
+        }
+    },
+    onscreen: {
+        y: 0,
+        z: 0,
+        scale: 1,
+        opacity: 1,
+        zIndex: 20,
+        filter: "none",
+        transformOrigin: 'top top',
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 1.6,
+        }
+    }
+}
+
+export const arrowCardItem: Variants = {
+    offscreen: {
+        x: 140,
+    },
+    onscreen: {
+        x: 0,
+        transition: {
+            duration:.4,
+        }
+    }
+}
+
+export const imgCardItem: Variants = {
+    offscreen: {
+        scale: 1,
+    },
+    onscreen: {
+        scale: 1,
+        y: 0,
+        transformOrigin:'left center',
+        transition: {
+            duration:1,
         }
     }
 }
@@ -274,7 +333,7 @@ export const textAnimate: Variants = {
 }
 
 export const flamingo: Variants = {
-    offscreen: { x: -240,  },
+    offscreen: { x: -240, },
     onscreen: {
         x: -50,
         transition: {
