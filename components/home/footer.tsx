@@ -78,7 +78,7 @@ export default function Footer() {
                         className="p-element flamingo bottom-[45%] xl:bottom-[60%] 2xl:bottom-[66%] left-0 w-[35%] lg:w-[25%] 2xl:w-[22%]"
                     >
                         <motion.img
-                            variants={flamingo}
+                            variants={flamingo({ isMobile, isTablet })}
                             src="/element/flamingo-min.png"
                         />
                     </motion.div>
