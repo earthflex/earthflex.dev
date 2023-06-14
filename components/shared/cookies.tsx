@@ -124,9 +124,9 @@ export default function Cookies() {
                                 style={{
                                     transformOrigin: isMobile ? "center bottom" : "left bottom"
                                 }}
-                                className="card-cookies w-full flex items-center justify-start gap-4 sm:gap-1 pt-8 pb-4 sm:py-3 px-8 sm:px-4 flex-col sm:flex-row rounded-t-3xl sm:rounded-b-3xl"
+                                className="card-cookies w-full flex items-center justify-start gap-2 sm:gap-1 pt-8 pb-4 sm:py-3 px-8 sm:px-4 flex-col sm:flex-row rounded-t-3xl sm:rounded-b-3xl"
                             >
-                                <div className="w-full">
+                                <div className="w-full mb-3">
                                     <div className="text-xl font-bold sm:font-normal sm:mr-4">
                                         The sloth would like cookies.
                                     </div>
@@ -160,9 +160,21 @@ export default function Cookies() {
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            exit={{
+                                opacity: 0,
+                                transition: {
+                                    delay: .3,
+                                    duration: .3,
+                                    scale: {
+                                        type: "scale",
+                                        damping: 12,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    }
+                                }
+                            }}
                             transition={{
-                                delay: 1.2,
+                                delay: 1,
                                 duration: 1,
                                 ease: [0, 0.71, 0.2, 1.01],
                                 scale: {

@@ -333,16 +333,19 @@ export const textAnimate: Variants = {
     }
 }
 
-export const flamingo: Variants = {
-    offscreen: { x: -240, },
+export const flamingo = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
+    offscreen: {
+        x: isMobile ? -160 : isTablet ? -240 : -400,
+    },
     onscreen: {
-        x: -50,
+        x: isMobile ? -50 : isTablet ? -50 : -50,
         transition: {
             type: "spring",
             duration: 1
         }
     }
-}
+});
+
 
 export const oldMan: Variants = {
     offscreen: { y: 200, scale: 0 },
