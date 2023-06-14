@@ -10,7 +10,7 @@ import Modal from "../shared/modal/modal";
 
 import { MetaProps, EXPERIENCE_TYPE, PROFILE_TYPE, WORKS_ITEMS_TYPE } from "@/types";
 import { DataContext } from "@/context";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "../hook/use-window-size";
 
 export default function Layout({
@@ -37,7 +37,7 @@ export default function Layout({
             y: 60,
             scale: scaleValue,
             borderRadius: "30px",
-            border:"2px solid rgba(221, 221, 221, 0.2)",
+            border: "2px solid rgba(221, 221, 221, 0.2)",
             transition: { duration: 0.3, ease: [0.43, 0.13, 0.23, 0.96] }
         },
         closed: {
@@ -65,11 +65,13 @@ export default function Layout({
                     </main>
                 </motion.div>
                 <Dock onClick={open} />
-                {modalOpen && (
-                    <Modal modalOpen={modalOpen} handleClose={close} >
-                        <ResumeDetail handleClose={close} />
-                    </Modal>
-                )}
+                <AnimatePresence>
+                    {modalOpen && (
+                        <Modal modalOpen={modalOpen} handleClose={close} >
+                            <ResumeDetail handleClose={close} />
+                        </Modal>
+                    )}
+                </AnimatePresence>
             </DataContext.Provider>
         </React.Fragment>
     );

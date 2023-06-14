@@ -335,7 +335,7 @@ export const textAnimate: Variants = {
 
 export const flamingo = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     offscreen: {
-        x: isMobile ? -160 : isTablet ? -240 : -240,
+        x: isMobile ? -160 : isTablet ? -240 : -400,
     },
     onscreen: {
         x: isMobile ? -50 : isTablet ? -50 : -50,

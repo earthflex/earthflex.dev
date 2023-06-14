@@ -135,7 +135,9 @@ export const letter: Variants = {
 export const contentShow = {
   hidden: {
     opacity: 0,
-    scale: 0.96,
+    scale: 0,
+    y: 100,
+    transformOrigin: '35% bottom',
     transition: {
       duration: 0.4,
       ease: [0.16, 1, 0.3, 1],
@@ -144,6 +146,7 @@ export const contentShow = {
   visible: {
     opacity: 1,
     scale: 1,
+    y: 0,
     transition: {
       duration: 0.4,
       ease: [0.16, 1, 0.3, 1],
@@ -151,17 +154,15 @@ export const contentShow = {
   },
   exit: {
     opacity: 0,
-    scale: 0.96,
-    transition: {
-      duration: 0.4,
-      ease: [0.16, 1, 0.3, 1],
-    },
+    scale: 0,
+    y: 100,
+    transformOrigin: '35% bottom',
   },
 };
 
 // const FadeIn = {
 //     hidden: {
-//          y: "100vh",
+//         y: "100vh",
 //         opacity: 0,
 //         scale: .96,
 //     },

@@ -31,30 +31,32 @@ export default function SlideSheet({
         }
     }
     return (
-        <AnimatePresence>
-            <motion.div
-                ref={slidesheetRef}
-                key="leaflet"
-                onClick={(e) => e.stopPropagation()}
-                className="slide-sheet group fixed inset-x-0 bottom-0 z-[40] w-screen cursor-grab  pb-5 active:cursor-grabbing sm:hidden"
-                initial={{ y: "100%" }}
-                animate={controls}
-                exit={{ y: "100%" }}
-                transition={transitionProps}
-                drag="y"
-                dragDirectionLock
-                onDragEnd={handleDragEnd}
-                dragElastic={{ top: 0, bottom: 1 }}
-                dragConstraints={{ top: 0, bottom: 0 }}
+        <motion.div
+            ref={slidesheetRef}
+            key="slidesheet"
+            onClick={(e) => e.stopPropagation()}
+            className="slide-sheet group fixed inset-x-0 bottom-0 z-[40] w-screen cursor-grab  pb-5 active:cursor-grabbing sm:hidden"
+            initial={{
+                y: "100%",
+            }}
+            animate={controls}
+            exit={{
+                y: "100%",
+            }}
+            transition={transitionProps}
+            drag="y"
+            dragDirectionLock
+            onDragEnd={handleDragEnd}
+            dragElastic={{ top: 0, bottom: 1 }}
+            dragConstraints={{ top: 0, bottom: 0 }}
+        >
+            <div
+                className={`rounded-t-4xl -mb-1 flex h-7 w-full items-center justify-center border-gray-200`}
             >
-                <div
-                    className={`rounded-t-4xl -mb-1 flex h-7 w-full items-center justify-center border-gray-200`}
-                >
-                    <div className="-mr-1 h-1 w-6 rounded-full bg-gray-300 transition-all group-active:rotate-12" />
-                    <div className="h-1 w-6 rounded-full bg-gray-300 transition-all group-active:-rotate-12" />
-                </div>
-                {children}
-            </motion.div>
-        </AnimatePresence>
+                <div className="-mr-1 h-1 w-6 rounded-full bg-gray-300 transition-all group-active:rotate-12" />
+                <div className="h-1 w-6 rounded-full bg-gray-300 transition-all group-active:-rotate-12" />
+            </div>
+            {children}
+        </motion.div>
     )
 };
