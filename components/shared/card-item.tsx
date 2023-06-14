@@ -117,7 +117,7 @@ export default function CardItem({
                                     <motion.div
                                         initial={"offscreen"}
                                         whileInView={"onscreen"}
-                                        viewport={{ once: true, amount: 0.5 }}
+                                        viewport={{ once: false, amount: 0.5 }}
                                         transition={{ staggerChildren: 0.5 }}
                                     >
                                         <motion.div

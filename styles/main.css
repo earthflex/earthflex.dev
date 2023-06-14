@@ -1806,13 +1806,6 @@ a .card-resume:hover:after {
   margin-right: 8px;
 }
 
-.wrapper-cookies {
-  position: fixed;
-  bottom: 5%;
-  left: 3%;
-  z-index: 101;
-}
-
 .sloth-cookies {
   position: relative;
   bottom: -8px;
@@ -1820,29 +1813,22 @@ a .card-resume:hover:after {
   pointer-events: none;
 }
 
-.speech-cookies {
+.card-cookies {
   background: #fff;
   color: #333;
-  padding: .4rem .6rem .4rem 1rem;
-  border-radius: 24px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   filter: drop-shadow(rgba(0, 0, 0, 0.27) 1px 5px 12px);
   backface-visibility: visible;
   will-change: filter, scroll-position, contents;
-  transform-origin: left bottom;
   transition: transform;
 }
 
-.speech-cookies button {
+.card-cookies button.accept {
   background-color: #141415;
   color: #fff;
   padding: 1rem;
-  border-radius: 24px;
 }
 
-.speech-cookies button:hover {
+.card-cookies button.accept:hover {
   background-color: #141415;
 }
 
