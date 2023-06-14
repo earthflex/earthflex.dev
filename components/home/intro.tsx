@@ -74,7 +74,7 @@ export default function Intro() {
                 </motion.div>
 
                 <motion.div
-                    className="absolute overflow-hidden h-[80px] top-[90px] xl:top-[100px]"
+                    className="absolute  overflow-hidden h-[60px] sm:h-[75px] xl:h-[80px] top-[90px] xl:top-[100px]"
                     style={{
                         perspective: 800,
                         scale: scaleText,
@@ -90,7 +90,7 @@ export default function Intro() {
                     >
                         <span className="glitch">EARTH</span>
                         <motion.div
-                            className="inline-flex flex-col overflow-hidden h-[50px] sm:h-[60px] xl:h-[70px] relative"
+                            className="inline-flex flex-col relative"
                         >
                             <motion.span className='grain'>FLEX</motion.span>
                         </motion.div>

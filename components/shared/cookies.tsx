@@ -126,7 +126,7 @@ export default function Cookies() {
                                 }}
                                 className="card-cookies w-full flex items-center justify-start gap-2 sm:gap-1 pt-8 pb-4 sm:py-3 px-8 sm:px-4 flex-col sm:flex-row rounded-t-3xl sm:rounded-b-3xl"
                             >
-                                <div className="w-full mb-3">
+                                <div className="w-full mb-3 sm:mb-0">
                                     <div className="text-xl font-bold sm:font-normal sm:mr-4">
                                         The sloth would like cookies.
                                     </div>
