@@ -69,8 +69,12 @@ export default function About() {
                                             whileTap="whileTap"
                                             variants={cardTap}
                                             className="card-me guest">
+
+                                            <div className="card-line w-full absolute top-[-1px] left-0 z-20">
+                                                <div className="w-1/3 h-[2px] bg-line mx-auto" />
+                                            </div>
                                             <div className="card-line w-full absolute bottom-[-1px] left-0 z-20">
-                                                <div className="w-1/3 h-[2px] bg-line-animation mx-auto" />
+                                                <div className="w-1/3 h-[2px] bg-line mx-auto" />
                                             </div>
                                             <motion.div
                                                 className='flex items-center justify-between'
@@ -112,7 +116,10 @@ export default function About() {
                                             variants={cardTap}
                                             className="card-me  guest">
                                             <div className="card-line w-full absolute top-[-1px] left-0 z-20">
-                                                <div className="w-1/3 h-[2px] bg-line-animation mx-auto" />
+                                                <div className="w-1/3 h-[2px] bg-line mx-auto" />
+                                            </div>
+                                            <div className="card-line w-full absolute bottom-[-1px] left-0 z-20">
+                                                <div className="w-1/3 h-[2px] bg-line mx-auto" />
                                             </div>
                                             <motion.div
                                                 className='flex items-center justify-between'
