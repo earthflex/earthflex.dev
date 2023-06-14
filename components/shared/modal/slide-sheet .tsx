@@ -42,6 +42,9 @@ export default function SlideSheet({
             animate={controls}
             exit={{
                 y: "100%",
+                transition: {
+                    duration: .5,
+                }
             }}
             transition={transitionProps}
             drag="y"

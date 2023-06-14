@@ -69,6 +69,9 @@ export default function About() {
                                             whileTap="whileTap"
                                             variants={cardTap}
                                             className="card-me guest">
+                                            <div className="card-line w-full absolute bottom-[-1px] left-0 z-20">
+                                                <div className="w-1/3 h-[2px] bg-line-animation mx-auto" />
+                                            </div>
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >
@@ -107,7 +110,10 @@ export default function About() {
                                             whileHover="whileHover"
                                             whileTap="whileTap"
                                             variants={cardTap}
-                                            className="card-me guest">
+                                            className="card-me  guest">
+                                            <div className="card-line w-full absolute top-[-1px] left-0 z-20">
+                                                <div className="w-1/3 h-[2px] bg-line-animation mx-auto" />
+                                            </div>
                                             <motion.div
                                                 className='flex items-center justify-between'
                                             >

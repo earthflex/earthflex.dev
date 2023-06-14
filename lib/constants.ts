@@ -71,6 +71,7 @@ export const cardTap: Variants = {
         stiffness: 80,
         restDelta: 0.001,
         repeat: Infinity,
+        repeatType: "reverse",
       }
     }
   },
