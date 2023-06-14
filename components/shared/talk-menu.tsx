@@ -21,7 +21,7 @@ export default function TallkMenu() {
                         whileHover="whileHover"
                         whileTap="whileTap"
                         className="relative">
-                        <button className="talk"
+                        <button className="talk overflow-hidden"
                         >
                             <span>
                                 Let`s talk

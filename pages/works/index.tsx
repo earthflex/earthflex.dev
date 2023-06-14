@@ -30,7 +30,7 @@ export default function Works({
                                     whileInView={"onscreen"}
                                     viewport={{ once: false , amount: .5, }}
                                     transition={{ duration: 0.3, type: 'spring' }}
-                                    className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-2 2xl:grid-cols-3">
+                                    className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-2 2xl:grid-cols-2">
                                     {works.map((work) => (
                                             <CardItem
                                                 key={work._id}
