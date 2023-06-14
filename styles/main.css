@@ -232,7 +232,9 @@
 }
 
 @keyframes ping {
-  75%, 100% {
+
+  75%,
+  100% {
     transform: scale(1.2);
     opacity: 0;
   }
@@ -284,7 +286,8 @@
   transition: all .4s ease;
 }
 
-.menu-right button:hover svg,.menu-right button:focus svg  {
+.menu-right button:hover svg,
+.menu-right button:focus svg {
   transform: rotate(45deg);
   transition: all .4s ease;
 }
@@ -1312,6 +1315,31 @@ a .card-resume:hover:after {
   width: 100%;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
+}
+
+.bg-line-animation {
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0), rgba(255, 255, 255, 0.84) 50%, rgba(17, 17, 17, 0));
+  animation: line-gradient 3s infinite;
+}
+
+.bg-line {
+  background-image: linear-gradient(90deg, rgba(17, 17, 17, 0), rgba(255, 255, 255, 0.84) 50%, rgba(17, 17, 17, 0));
+}
+
+@keyframes line-gradient {
+  0% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .guest {
