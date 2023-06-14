@@ -6,16 +6,17 @@ import useWindowSize from "../hook/use-window-size";
 export default function Cookies() {
 
     const { isMobile } = useWindowSize();
+
     const [cookiesAccepted, setCookiesAccepted] = React.useState(
-        localStorage.getItem("cookiesAccepted") === "true" || false
+        sessionStorage.getItem("cookiesAccepted") === "true" || false
     );
     const [notNowAccepted, setNotNowAccepted] = React.useState(
         sessionStorage.getItem("notNowAccepted") === "true" || false
     );
 
     React.useEffect(() => {
-        const storedAcceptance = localStorage.getItem("cookiesAccepted");
-        const expirationDate = localStorage.getItem("cookiesAcceptedExpiration");
+        const storedAcceptance = sessionStorage.getItem("cookiesAccepted");
+        const expirationDate = sessionStorage.getItem("cookiesAcceptedExpiration");
 
         if (storedAcceptance === "true" && expirationDate) {
             const expirationTime = new Date(expirationDate);
@@ -23,8 +24,8 @@ export default function Cookies() {
             if (expirationTime > new Date()) {
                 setCookiesAccepted(true);
             } else {
-                localStorage.removeItem("cookiesAccepted");
-                localStorage.removeItem("cookiesAcceptedExpiration");
+                sessionStorage.removeItem("cookiesAccepted");
+                sessionStorage.removeItem("cookiesAcceptedExpiration");
             }
         }
     }, []);
@@ -34,23 +35,17 @@ export default function Cookies() {
         setCookiesAccepted(true);
 
         const expirationDate = new Date();
-        // expirationDate.setSeconds(expirationDate.getSeconds() + 30); // เพิ่มเวลา 30 วินาทีจากเวลาปัจจุบัน
-        // expirationDate.setHours(expirationDate.getHours() + 1); // เพิ่มเวลา 1 ชั่วโมงจากเวลาปัจจุบัน
-        expirationDate.setDate(expirationDate.getDate() + 7); // เพิ่มเวลา 7 วันจากเวลาปัจจุบัน
+        // expirationDate.setSeconds(expirationDate.getSeconds() + 30); // 30 วินาทีจากเวลาปัจจุบัน
+        // expirationDate.setHours(expirationDate.getHours() + 1); //  1 ชั่วโมงจากเวลาปัจจุบัน
+        expirationDate.setDate(expirationDate.getDate() + 7); // 7 วันจากเวลาปัจจุบัน
 
-        localStorage.setItem("cookiesAccepted", "true");
-        localStorage.setItem("cookiesAcceptedExpiration", expirationDate.toString());
+        sessionStorage.setItem("cookiesAccepted", "true");
+        sessionStorage.setItem("cookiesAcceptedExpiration", expirationDate.toString());
 
         setTimeout(() => {
-            localStorage.removeItem("cookiesAccepted");
-            localStorage.removeItem("cookiesAcceptedExpiration");
+            sessionStorage.removeItem("cookiesAccepted");
+            sessionStorage.removeItem("cookiesAcceptedExpiration");
         }, 7 * 24 * 60 * 60 * 1000);
-        // หลังจาก 30 วินาที จะลบข้อมูลออกจาก sessionStorage
-        // 7: แทนจำนวนวันที่ต้องการ
-        // 24: แทนจำนวนชั่วโมงในหนึ่งวัน
-        // 60: แทนจำนวนนาทีในหนึ่งชั่วโมง
-        // 60: แทนจำนวนวินาทีในหนึ่งนาที
-        // 1000: แทนจำนวนมิลลิวินาทีในหนึ่งวินาที
     };
 
     const handleNotNow = () => {
@@ -58,90 +53,110 @@ export default function Cookies() {
         sessionStorage.setItem("notNowAccepted", "true");
     };
 
+    const [shakeAnimation, setShakeAnimation] = React.useState(false);
+    const handleOverlayClick = () => {
+        setShakeAnimation(true);
+        setTimeout(() => {
+            setShakeAnimation(false);
+        }, 1000);
+    };
+
     return (
         <React.Fragment>
             <AnimatePresence>
                 {!cookiesAccepted && !notNowAccepted && (
                     <div className="fixed w-full sm:w-auto left-0 sm:left-[3%] bottom-0 sm:bottom-[5%] z-[101]">
-                        <motion.img
-                            className="sloth-cookies aura"
-                            initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            exit={{
-                                y: "200%",
-                                opacity: 0,
-                                scale: 0,
-                                transition: {
-                                    delay: 0,
-                                    duration: .6,
-                                }
-                            }}
-                            transition={{
-                                delay: 1.8,
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                                scale: {
-                                    type: "scale",
-                                    damping: 12,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                }
-                            }}
-                            src="/sloth-cookie.png"
-                        />
-                        <motion.div
-                            initial={{
-                                y: 100,
-                                scale: 0
-                            }}
-                            animate={{
-                                y: 0,
-                                scale: 1
-                            }}
-                            exit={{
-                                y: "110%",
-                                scale: 1,
-                                transition: {
-                                    delay: .1,
-                                    duration: .6,
-                                }
-                            }}
-                            transition={{
-                                delay: 1.4,
-                                duration: 1,
-                                ease: [0, 0.71, 0.2, 1.01],
-                                scale: {
-                                    type: "spring",
-                                    damping: 12,
-                                    stiffness: 100,
-                                    restDelta: 0.001,
-                                }
-                            }}
-                            style={{
-                                transformOrigin: isMobile ? "center bottom" : "left bottom"
-                            }}
-                            className="card-cookies gap-4 sm:gap-3 pt-8 pb-8 sm:py-3 px-8 sm:px-6 flex-col sm:flex-row rounded-t-3xl sm:rounded-b-3xl"
-                        >
-                            <div className="text-xl font-bold sm:font-normal">
-                                The sloth would like cookies.
-                            </div>
-                            <motion.button
-                                onClick={handleAcceptCookies}
-                                variants={ButtonScale("down")}
-                                initial="initial"
-                                whileHover="whileHover"
-                                whileTap="whileTap"
-                                className="accept w-full sm:w-auto text-center"
+                        <div className={shakeAnimation ? "shake" : ""} onClick={handleOverlayClick}>
+                            <motion.img
+                                className="sloth-cookies aura"
+                                initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
+                                animate={{ y: 0, opacity: 1, scale: 1 }}
+                                exit={{
+                                    y: "200%",
+                                    opacity: 0,
+                                    scale: 0,
+                                    transition: {
+                                        delay: 0,
+                                        duration: .6,
+                                    }
+                                }}
+                                transition={{
+                                    delay: 1.8,
+                                    duration: 1,
+                                    ease: [0, 0.71, 0.2, 1.01],
+                                    scale: {
+                                        type: "scale",
+                                        damping: 12,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    }
+                                }}
+                                src="/sloth-cookie.png"
+                            />
+                            <motion.div
+                                initial={{
+                                    y: 100,
+                                    scale: 0
+                                }}
+                                animate={{
+                                    y: 0,
+                                    scale: 1
+                                }}
+                                exit={{
+                                    y: "110%",
+                                    scale: 1,
+                                    transition: {
+                                        delay: .1,
+                                        duration: .6,
+                                    }
+                                }}
+                                transition={{
+                                    delay: 1.4,
+                                    duration: 1,
+                                    ease: [0, 0.71, 0.2, 1.01],
+                                    scale: {
+                                        type: "spring",
+                                        damping: 12,
+                                        stiffness: 100,
+                                        restDelta: 0.001,
+                                    }
+                                }}
+                                style={{
+                                    transformOrigin: isMobile ? "center bottom" : "left bottom"
+                                }}
+                                className="card-cookies w-full flex items-center justify-start gap-4 sm:gap-1 pt-8 pb-4 sm:py-3 px-8 sm:px-4 flex-col sm:flex-row rounded-t-3xl sm:rounded-b-3xl"
                             >
-                                Accept
-                            </motion.button>
-                            <button
-                                onClick={handleNotNow}
-                                className="underline w-full sm:w-auto text-center"
-                            >
-                                Not Now
-                            </button>
-                        </motion.div>
+                                <div className="w-full">
+                                    <div className="text-xl font-bold sm:font-normal sm:mr-4">
+                                        The sloth would like cookies.
+                                    </div>
+                                    <div className="text-gray-500 text-sm font-light">
+                                        This is a fake cookie 🍪
+                                    </div>
+                                </div>
+
+                                <motion.button
+                                    onClick={handleAcceptCookies}
+                                    variants={ButtonScale(isMobile ? "up" : "down")}
+                                    initial="initial"
+                                    whileHover="whileHover"
+                                    whileTap="whileTap"
+                                    className="accept whitespace-nowrap rounded-2xl w-full sm:w-auto text-center"
+                                >
+                                    Accept
+                                </motion.button>
+                                <motion.button
+                                    onClick={handleNotNow}
+                                    variants={ButtonScale(isMobile ? "up" : "down")}
+                                    initial="initial"
+                                    whileHover="whileHover"
+                                    whileTap="whileTap"
+                                    className="rounded-2xl whitespace-nowrap hover:bg-slate-200 underline p-4  w-full sm:w-auto text-center"
+                                >
+                                    Not Now
+                                </motion.button>
+                            </motion.div>
+                        </div>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -158,6 +173,7 @@ export default function Cookies() {
                                 }
                             }}
                             className="overlay-cookie"
+                            onClick={handleOverlayClick}
                         />
                     </div>
                 )}

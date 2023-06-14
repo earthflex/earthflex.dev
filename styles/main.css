@@ -1816,8 +1816,6 @@ a .card-resume:hover:after {
 .card-cookies {
   background: #fff;
   color: #333;
-  display: flex;
-  align-items: center;
   filter: drop-shadow(rgba(0, 0, 0, 0.27) 1px 5px 12px);
   backface-visibility: visible;
   will-change: filter, scroll-position, contents;
@@ -1828,7 +1826,6 @@ a .card-resume:hover:after {
   background-color: #141415;
   color: #fff;
   padding: 1rem;
-  border-radius: 24px;
 }
 
 .card-cookies button.accept:hover {

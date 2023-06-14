@@ -13,6 +13,28 @@ export const FadeIn = (direction: "up" | "down" = "up"): Variants => {
   };
 };
 
+// export const aircraft = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
+//   initial: {
+//       y: 140,
+//       x: isMobile ? 400 : isTablet ? 800 : 800,
+//       scale: .7,
+//   },
+//   animate: {
+//       x: isMobile ? 60 : isTablet ? 300 : 300,
+//       transition: {
+//           delay: 1,
+//           duration: 2,
+//           ease: [0, 0.71, 0.2, 1.01],
+//           scale: {
+//               type: "spring",
+//               damping: 12,
+//               stiffness: 100,
+//               restDelta: 0.001
+//           }
+//       }
+//   }
+// });
+
 export const ButtonScale = (direction: "up" | "down" = "up"): Variants => {
   return {
     initial: { scale: direction === "up" ? .95 : 1, },
