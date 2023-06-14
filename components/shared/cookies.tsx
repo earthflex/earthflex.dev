@@ -103,7 +103,7 @@ export default function Cookies() {
                                     scale: 1
                                 }}
                                 exit={{
-                                    y: "110%",
+                                    y: "150%",
                                     scale: 1,
                                     transition: {
                                         delay: .1,
