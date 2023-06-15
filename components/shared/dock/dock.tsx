@@ -22,22 +22,22 @@ export default function Dock({
                 <div className="app-icons"
                 >
                     <div onClick={onClick}>
-                        <Dockitem title="Resume" classicon="bg-resume" icon="/resume.svg" />
+                        <Dockitem title="Resume" classicon="bg-resume" icon="/resume.svg" alt="resume" aria-label="Preview Resume" />
                     </div>
                     <Link href="/works">
-                        <Dockitem title="Works" classicon="bg-project" icon="/project.svg" />
+                        <Dockitem title="Works" classicon="bg-project" icon="/project.svg" alt="works" aria-label="Preview Works" />
                     </Link>
                     <Link href="https://github.com/earthflex/" target="_blank">
-                        <Dockitem title="Github" classicon="bg-github" icon="/github.svg" />
+                        <Dockitem title="Github" classicon="bg-github" icon="/github.svg" alt="github" aria-label="Preview Github"  />
                     </Link>
                     <Link href="https://www.linkedin.com/in/apiwat-anekboon/" target="_blank">
-                        <Dockitem title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" />
+                        <Dockitem title="Linkedin" classicon="bg-linkedin" icon="/linkedin.svg" alt="linkedin" aria-label="Preview Linkedin" />
                     </Link>
                     {/* <Link href="https://twitter.com/earthflexible" target="_blank">
-                        <Dockitem title="Twitter" classicon="bg-twitter" icon="/twitter.svg" />
+                        <Dockitem title="Twitter" classicon="bg-twitter" icon="/twitter.svg" alt="twitter" />
                     </Link> */}
                     <Link href="/" className="trash-app">
-                        <Dockitem title="Trash" classicon="bg-trash" icon="/trashfull.png" />
+                        <Dockitem title="Trash" classicon="bg-trash" icon="/trashfull.png" alt="trash" aria-label="Trash" />
                     </Link>
                 </div>
             </div>

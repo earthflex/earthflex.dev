@@ -70,6 +70,7 @@ export default function Intro() {
                         variants={saturn}
                         initial="initial"
                         animate="animate"
+                        alt="saturn"
                         src="/element/saturn-min.webp" />
                 </motion.div>
 
@@ -86,7 +87,6 @@ export default function Intro() {
                         variants={earthflexText({ isMobile, isTablet })}
                         initial="initial"
                         animate="animate"
-
                     >
                         <span className="glitch">EARTH</span>
                         <motion.div
@@ -115,6 +115,7 @@ export default function Intro() {
                         variants={earth}
                         initial="initial"
                         animate="animate"
+                        alt="earth"
                         src="/element/earth-desktop-min.webp"
                     />
                 </motion.div>
@@ -133,6 +134,7 @@ export default function Intro() {
                         variants={missile}
                         initial="initial"
                         animate="animate"
+                        alt="missile"
                         src="/element/missile-min.webp" />
                 </motion.div>
 
@@ -144,6 +146,7 @@ export default function Intro() {
                     className="p-element group-computer aura">
                     <motion.img
                         className="pe-none computer"
+                        alt="computer"
                         src="/element/computer-earth.gif"
                     />
                 </motion.div>
@@ -160,6 +163,7 @@ export default function Intro() {
                 >
                     <motion.img
                         className="pe-none aircraft"
+                        alt="aircraft"
                         src="/element/aircraft-min.webp"
                     />
                 </motion.div>
@@ -177,6 +181,7 @@ export default function Intro() {
                 >
                     <motion.img
                         className="pe-none swim"
+                        alt="swimming"
                         src="/element/sport-swimming-min.webp"
                     />
                 </motion.div>
