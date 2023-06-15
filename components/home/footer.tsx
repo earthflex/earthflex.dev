@@ -31,6 +31,7 @@ export default function Footer() {
                     >
                         <motion.img
                             alt="mount-fuji"
+                            className="w-full"
                             src="/element/mount-fuji-min.webp"
                         />
                     </motion.div>
@@ -40,6 +41,7 @@ export default function Footer() {
                     >
                         <motion.img
                             alt="cloud"
+                            className="w-full"
                             src="/element/cloud-min.webp"
                         />
                     </motion.div>
@@ -49,6 +51,7 @@ export default function Footer() {
                         >
                             <motion.img
                                 alt="statue-liberty"
+                                className="w-full"
                                 src="/element/statue-liberty-min.webp"
                             />
                         </motion.div>
@@ -57,6 +60,7 @@ export default function Footer() {
                         >
                             <motion.img
                                 alt="building"
+                                className="w-full"
                                 src="/element/building-1-min.webp"
                             />
                         </motion.div>
@@ -65,6 +69,7 @@ export default function Footer() {
                         >
                             <motion.img
                                 alt="building"
+                                className="w-full"
                                 src="/element/building-2-min.webp"
                             />
                         </motion.div>
@@ -75,6 +80,7 @@ export default function Footer() {
                     >
                         <motion.img
                             alt="mount-road"
+                            className="w-full"
                             src="/element/mount-road-min.webp"
                         />
                     </motion.div>
@@ -85,6 +91,7 @@ export default function Footer() {
                         <motion.img
                             variants={flamingo({ isMobile, isTablet })}
                             alt="flamingo"
+                            className="w-full"
                             src="/element/flamingo-min.webp"
                         />
                     </motion.div>
@@ -93,6 +100,7 @@ export default function Footer() {
                     >
                         <motion.img
                             alt="river-valley"
+                            className="w-full"
                             src="/element/river-valley-min.webp"
                         />
                     </motion.div>
@@ -100,6 +108,7 @@ export default function Footer() {
                         <motion.img
                             variants={oldMan}
                             alt="old-man"
+                            className="w-full"
                             src="/element/old-man.webp"
                         />
                     </motion.div>
@@ -114,6 +123,7 @@ export default function Footer() {
                         className="p-element sunflowers-footer"
                     >
                         <motion.img
+                            className="w-full"
                             alt="sunflowers"
                             src="/element/sunflowers-footer-min.webp"
                         />
