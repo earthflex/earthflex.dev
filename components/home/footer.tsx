@@ -31,7 +31,7 @@ export default function Footer() {
                     >
                         <motion.img
                             className=""
-                            src="/element/mount-fuji-min.png"
+                            src="/element/mount-fuji-min.webp"
                         />
                     </motion.div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
                         className="p-element cloud bottom-[55%] md:bottom-[52%] xl:bottom-[65%] 2xl:bottom-[65%] right-[20%] w-[40%] "
                     >
                         <motion.img
-                            src="/element/cloud-min.png"
+                            src="/element/cloud-min.webp"
                         />
                     </motion.div>
                     <div className="p-element group-building bottom-[56%] md:bottom-[50%] lg:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[77%] right-0">
@@ -47,21 +47,21 @@ export default function Footer() {
                             className="building-3 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
-                                src="/element/statue-liberty-min.png"
+                                src="/element/statue-liberty-min.webp"
                             />
                         </motion.div>
                         <motion.div
                             className="building-1 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
-                                src="/element/building-1-min.png"
+                                src="/element/building-1-min.webp"
                             />
                         </motion.div>
                         <motion.div
                             className="building-2 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
-                                src="/element/building-2-min.png"
+                                src="/element/building-2-min.webp"
                             />
                         </motion.div>
                     </div>
@@ -70,7 +70,7 @@ export default function Footer() {
                         className="p-element mount-road w-full bottom-[28%] xl:bottom-[30%] 2xl:bottom-[30%]"
                     >
                         <motion.img
-                            src="/element/mount-road-min.png"
+                            src="/element/mount-road-min.webp"
                         />
                     </motion.div>
 
@@ -79,20 +79,20 @@ export default function Footer() {
                     >
                         <motion.img
                             variants={flamingo({ isMobile, isTablet })}
-                            src="/element/flamingo-min.png"
+                            src="/element/flamingo-min.webp"
                         />
                     </motion.div>
                     <motion.div
                         className="p-element river-valley"
                     >
                         <motion.img
-                            src="/element/river-valley-min.png"
+                            src="/element/river-valley-min.webp"
                         />
                     </motion.div>
                     <motion.div className="p-element old-main right-0 bottom-[16%] sm:bottom-[18%] md:bottom-[20%] lg:bottom-[14%] xl:bottom-[20%] min-[1800px]:bottom-[22%]  scale-[.5] md:scale-100">
                         <motion.img
                             variants={oldMan}
-                            src="/element/old-man.png"
+                            src="/element/old-man.webp"
                         />
                     </motion.div>
                     <motion.div
@@ -106,7 +106,7 @@ export default function Footer() {
                         className="p-element sunflowers-footer"
                     >
                         <motion.img
-                            src="/element/sunflowers-footer-min.png"
+                            src="/element/sunflowers-footer-min.webp"
                         />
                     </motion.div>
                 </motion.div>

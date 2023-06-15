@@ -32,7 +32,7 @@ export default async function handler(req: NextRequest) {
                 }}
             >
                 <img
-                    src={new URL("../../public/logo.png", import.meta.url).toString()}
+                    src={new URL("../../public/logo.webp", import.meta.url).toString()}
                     alt="earthflex"
                 />
                 <div

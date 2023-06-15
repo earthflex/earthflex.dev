@@ -167,7 +167,7 @@ export const aircraft = ({ isMobile, isTablet }: DeviceFlags): Variants => ({
     initial: {
         y: 140,
         x: isMobile ? 400 : isTablet ? 800 : 800,
-        scale: .7,
+        scale: isMobile ? .5 : isTablet ? .7 : .7,
     },
     animate: {
         x: isMobile ? 60 : isTablet ? 300 : 300,

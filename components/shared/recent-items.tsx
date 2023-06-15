@@ -13,42 +13,42 @@ const APP_ITEMS: AppItems[] = [
     {
         id: 'notion',
         name: 'Notion',
-        img: '/application/notion.png',
+        img: '/application/notion',
     },
     {
         id: 'notes',
         name: 'Notes',
-        img: '/application/notes.png',
+        img: '/application/notes',
     },
     {
         id: 'chatgpt',
         name: 'ChatGPT',
-        img: '/application/chatgpt.png',
+        img: '/application/chatgpt',
     },
     {
         id: 'chrome',
         name: 'Chrome',
-        img: '/application/chrome.png',
+        img: '/application/chrome',
     },
     {
         id: 'gmail',
         name: 'Gmail',
-        img: '/application/gmail.png',
+        img: '/application/gmail',
     },
     {
         id: 'figma',
         name: 'Figma',
-        img: '/application/figma.png',
+        img: '/application/figma',
     },
     {
         id: 'vscode',
         name: 'Visual Studio Code',
-        img: '/application/vscode.png',
+        img: '/application/vscode',
     },
     {
         id: 'iterm',
         name: 'Iterm',
-        img: '/application/iterm.png',
+        img: '/application/iterm',
     },
 ];
 
@@ -67,7 +67,7 @@ export default function RecentItems() {
                     <Menubar.SubContent className="MenubarSubContent" alignOffset={-5}>
                         {APP_ITEMS.map((item) => (
                             <Menubar.Item className="MenubarItem" key={item.id}>
-                                <img className="app-item" src={item.img} width={16} height={16} alt={item.name} />{item.name}
+                                <img className="app-item" src={`${item.img}.webp`} width={16} height={16} alt={item.name} />{item.name}
                             </Menubar.Item>
                         ))}
                     </Menubar.SubContent>

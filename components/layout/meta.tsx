@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-// const DOMAIN = "https://d8e3-49-49-233-191.ap.ngrok.io";
 const DOMAIN = "https://earthflex.dev"; /* #production */
 
 export default function Meta({
@@ -32,7 +31,7 @@ export default function Meta({
             <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-precomposed.png" />
 
             <meta itemProp="image" content={image} />
-            <meta property="og:logo" content={`${DOMAIN}/logo.png`}></meta>
+            <meta property="og:logo" content={`${DOMAIN}/logo.webp`}></meta>
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
