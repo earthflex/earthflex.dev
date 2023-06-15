@@ -83,6 +83,7 @@ export default function Cookies() {
                                         restDelta: 0.001,
                                     }
                                 }}
+                                alt="sloth-cookie"
                                 src="/sloth-cookie.webp"
                             />
                             <motion.div

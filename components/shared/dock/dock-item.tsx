@@ -7,10 +7,12 @@ export default function dockItem({
     title,
     classicon,
     icon,
+    alt
 }: {
     title: string;
     classicon: string,
     icon: string;
+    alt: string;
 }) {
     return (
         <Tooltip.Provider delayDuration={0} skipDelayDuration={500} disableHoverableContent={false}
@@ -23,7 +25,7 @@ export default function dockItem({
                         whileTap={{ scale: 1 }}>
                         <motion.div >
                             <div className={`icon-item ${classicon}`}>
-                                <img src={icon} />
+                                <img src={icon} alt={alt} />
                             </div>
                         </motion.div>
                     </motion.div >

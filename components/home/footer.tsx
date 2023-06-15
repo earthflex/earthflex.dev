@@ -30,7 +30,7 @@ export default function Footer() {
                         className="p-element fuji  bottom-[55%] md:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[68%] left-0"
                     >
                         <motion.img
-                            className=""
+                            alt="mount-fuji"
                             src="/element/mount-fuji-min.webp"
                         />
                     </motion.div>
@@ -39,6 +39,7 @@ export default function Footer() {
                         className="p-element cloud bottom-[55%] md:bottom-[52%] xl:bottom-[65%] 2xl:bottom-[65%] right-[20%] w-[40%] "
                     >
                         <motion.img
+                            alt="cloud"
                             src="/element/cloud-min.webp"
                         />
                     </motion.div>
@@ -47,6 +48,7 @@ export default function Footer() {
                             className="building-3 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
+                                alt="statue-liberty"
                                 src="/element/statue-liberty-min.webp"
                             />
                         </motion.div>
@@ -54,6 +56,7 @@ export default function Footer() {
                             className="building-1 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
+                                alt="building"
                                 src="/element/building-1-min.webp"
                             />
                         </motion.div>
@@ -61,6 +64,7 @@ export default function Footer() {
                             className="building-2 w-[60px] lg:w-[auto]"
                         >
                             <motion.img
+                                alt="building"
                                 src="/element/building-2-min.webp"
                             />
                         </motion.div>
@@ -70,6 +74,7 @@ export default function Footer() {
                         className="p-element mount-road w-full bottom-[28%] xl:bottom-[30%] 2xl:bottom-[30%]"
                     >
                         <motion.img
+                            alt="mount-road"
                             src="/element/mount-road-min.webp"
                         />
                     </motion.div>
@@ -79,6 +84,7 @@ export default function Footer() {
                     >
                         <motion.img
                             variants={flamingo({ isMobile, isTablet })}
+                            alt="flamingo"
                             src="/element/flamingo-min.webp"
                         />
                     </motion.div>
@@ -86,12 +92,14 @@ export default function Footer() {
                         className="p-element river-valley"
                     >
                         <motion.img
+                            alt="river-valley"
                             src="/element/river-valley-min.webp"
                         />
                     </motion.div>
                     <motion.div className="p-element old-main right-0 bottom-[16%] sm:bottom-[18%] md:bottom-[20%] lg:bottom-[14%] xl:bottom-[20%] min-[1800px]:bottom-[22%]  scale-[.5] md:scale-100">
                         <motion.img
                             variants={oldMan}
+                            alt="old-man"
                             src="/element/old-man.webp"
                         />
                     </motion.div>
@@ -106,6 +114,7 @@ export default function Footer() {
                         className="p-element sunflowers-footer"
                     >
                         <motion.img
+                            alt="sunflowers"
                             src="/element/sunflowers-footer-min.webp"
                         />
                     </motion.div>
