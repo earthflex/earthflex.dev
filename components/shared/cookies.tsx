@@ -4,7 +4,7 @@ import { ButtonScale } from "@/lib/constants";
 import useWindowSize from "../hook/use-window-size";
 import { useCookiesAccepted } from "../hook/use-cookie";
 
-type Duration = "30seconds" | "30minutes" | "1hour" | "1day" | "30seconds";
+type Duration = "30seconds" | "30minutes" | "1hour" | "1day" | "7days";
 
 export default function Cookies() {
 
@@ -20,7 +20,7 @@ export default function Cookies() {
                 durationInMilliseconds = 30 * 1000; // 30 seconds
                 break;
             case "30minutes":
-                durationInMilliseconds = 30 * 60 * 1000;
+                durationInMilliseconds = 30 * 60 * 1000;  // 30 minutes
                 break;
             case "1hour":
                 durationInMilliseconds = 60 * 60 * 1000; // 1 hour
@@ -28,7 +28,7 @@ export default function Cookies() {
             case "1day":
                 durationInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
                 break;
-            case "30seconds":
+            case "7days":
                 durationInMilliseconds = 7 * 24 * 60 * 60 * 1000; // 7 days
                 break;
         }
@@ -128,7 +128,7 @@ export default function Cookies() {
                                 </div>
 
                                 <motion.button
-                                    onClick={() => handleAcceptCookies("30seconds")}
+                                    onClick={() => handleAcceptCookies("7days")}
                                     variants={ButtonScale(isMobile ? "up" : "down")}
                                     initial="initial"
                                     whileHover="whileHover"

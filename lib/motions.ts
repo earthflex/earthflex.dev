@@ -247,8 +247,8 @@ export const scaleCardItem: Variants = {
         scale: 1,
         opacity: 1,
         zIndex: 20,
-        filter: "none",
-        transformOrigin: 'top top',
+        filter: "contrast(100%) brightness(100%) ",
+        transformOrigin: 'top 0%',
         transition: {
             type: "spring",
             bounce: 0.4,
