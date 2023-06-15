@@ -19,7 +19,6 @@
 }
 
 @media (min-width:768px) {
-
     .MenubarItem,
     .MenubarSubTrigger,
     .MenubarCheckboxItem,
@@ -86,7 +85,7 @@
         letter-spacing: .6vw;
     }
 
-    .menu-right button {
+    .menu-right .talk {
         font-size: 16px;
     }
 
@@ -109,10 +108,6 @@
     .steps-exps-2 small:before,
     .steps-item-title small:after {
         display: none;
-    }
-
-    .earthflex {
-        font-size: 55px;
     }
 
     .about-content {
@@ -150,13 +145,7 @@
     }
 }
 
-@media (max-width:425px) {}
-
 @media (max-width:403px) {
-    .earthflex {
-        font-size: 50px;
-    }
-
     .menu-right .talk {
         font-size: 18px;
     }
@@ -165,11 +154,5 @@
 @media (max-width:378px) {
     .ef-topbar .mobile-location {
         display: none;
-    }
-}
-
-@media (max-width:320px) {
-    .earthflex {
-        font-size: 45px;
     }
 }

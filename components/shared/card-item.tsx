@@ -54,7 +54,7 @@ export default function CardItem({
     return (
         <React.Fragment>
             <div className={col}>
-                <CursorFollower detail={name} imgSrc="/ballon-hand.png" show={showCursor} />
+                <CursorFollower detail={name} imgSrc="/ballon-hand.webp" show={showCursor} />
                 <motion.div
                     initial={"offscreen"}
                     whileInView={"onscreen"}

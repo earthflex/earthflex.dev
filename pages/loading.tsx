@@ -44,7 +44,7 @@ export default function Loading() {
                 className="p-element missile-loader"
             >
                 <motion.img
-                    src="/element/missile-min.png" />
+                    src="/element/missile-min.webp" />
             </motion.div>
             <div className="ef-memoji pe-none">
                 <img src="/memoji.gif" className="gif" alt="memoji" />

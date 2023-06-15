@@ -13,11 +13,11 @@ export default function About() {
 
     return (
         <React.Fragment>
-            <CursorFollower detail="" imgSrc="/about-hand.png" show={showCursor} />
+            <CursorFollower detail="" imgSrc="/about-hand.webp" show={showCursor} />
             <motion.div>
                 <div className="about-content">
                     <div className="container">
-                        <motion.div className="about-detail"
+                        <motion.div className="flex flex-col gap-4 py-4"
                             initial={"offscreen"}
                             whileInView={"onscreen"}
                             viewport={{ once: false, amount: .3 }}
@@ -82,7 +82,7 @@ export default function About() {
                                                 <div
                                                     className="flex items-center gap-2"
                                                 >
-                                                    <img src="/hi.png" className="user-none pe-none" width={50} height={50} alt="Hi !" />
+                                                    <img src="/hi.webp" className="user-none pe-none" width={50} height={50} alt="Hi !" />
                                                     <motion.span
                                                     >Hi there !
                                                     </motion.span>
@@ -155,7 +155,7 @@ export default function About() {
                                                     type: "easeIn",
                                                 }}
                                                 className="relative h-[120px] md:h-[215px]">
-                                                <img className="pe-none absolute bottom-[-18px] right-[-20px] scale-[1.2] drop-shadow-[2px_20px_5px_rgba(0,0,0,0.50)]" src="cover-project-min.png" alt="cover-project" />
+                                                <img className="pe-none absolute bottom-[-18px] right-[-20px] scale-[1.2] drop-shadow-[2px_20px_5px_rgba(0,0,0,0.50)]" src="cover-project-min.webp" alt="cover-project" />
                                             </motion.div>
                                         </motion.div>
                                     </motion.div>

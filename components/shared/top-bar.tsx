@@ -125,7 +125,7 @@ export default function Topbar({
                             <div className={`overlay-spotify  ${isVisible ? 'show' : ''}`} onClick={() => setIsVisible(!isVisible)}></div>
                         </Menubar.Menu>
                         <Menubar.Menu>
-                            <button className="MenubarTrigger btn-topbar mobile-location">
+                            <button className="MenubarTrigger btn-topbar mobile-location ">
                                 <Image src="/navigation.png" width={14} height={14} alt="location" />
                                 &nbsp;&nbsp;Ladprao, BKK
                             </button>

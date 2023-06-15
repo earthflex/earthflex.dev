@@ -145,7 +145,7 @@ export default function SleepWindow() {
                                 }
                             }
                         }}
-                        src="/profile-min.png"
+                        src="/profile-min.webp"
                         className="relative mt-2 "
                         alt="earthflex"
                     />

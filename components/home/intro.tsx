@@ -70,11 +70,11 @@ export default function Intro() {
                         variants={saturn}
                         initial="initial"
                         animate="animate"
-                        src="/element/saturn-min.png" />
+                        src="/element/saturn-min.webp" />
                 </motion.div>
 
                 <motion.div
-                    className="absolute  overflow-hidden h-[60px] sm:h-[75px] xl:h-[80px] top-[90px] xl:top-[100px]"
+                    className="absolute overflow-hidden h-[60px] sm:h-[75px] xl:h-[80px] top-[90px] xl:top-[100px]"
                     style={{
                         perspective: 800,
                         scale: scaleText,
@@ -82,7 +82,7 @@ export default function Intro() {
                     }}
                 >
                     <motion.div
-                        className="earthflex"
+                        className="earthflex text-[40px] min-[281]:text-[45px] min-[321px]:text-[50px] min-[403px]:text-[55px] sm:text-[70px]"
                         variants={earthflexText({ isMobile, isTablet })}
                         initial="initial"
                         animate="animate"
@@ -115,7 +115,7 @@ export default function Intro() {
                         variants={earth}
                         initial="initial"
                         animate="animate"
-                        src="/element/earth-desktop-min.png"
+                        src="/element/earth-desktop-min.webp"
                     />
                 </motion.div>
 
@@ -133,7 +133,7 @@ export default function Intro() {
                         variants={missile}
                         initial="initial"
                         animate="animate"
-                        src="/element/missile-min.png" />
+                        src="/element/missile-min.webp" />
                 </motion.div>
 
                 <motion.div
@@ -160,7 +160,7 @@ export default function Intro() {
                 >
                     <motion.img
                         className="pe-none aircraft"
-                        src="/element/aircraft-min.png"
+                        src="/element/aircraft-min.webp"
                     />
                 </motion.div>
 
@@ -177,7 +177,7 @@ export default function Intro() {
                 >
                     <motion.img
                         className="pe-none swim"
-                        src="/element/sport-swimming-min.png"
+                        src="/element/sport-swimming-min.webp"
                     />
                 </motion.div>
             </motion.div>

@@ -192,7 +192,6 @@
   text-align: center;
   white-space: normal;
   transition: all .25 ease;
-  font-size: 24px;
   display: flex;
   align-items: center;
   touch-action: manipulation;
@@ -419,7 +418,6 @@
 
 .earthflex {
   position: relative;
-  font-size: 70px;
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -1248,13 +1246,6 @@ a .card-resume:hover:after {
   max-width: 100%;
 }
 
-.about-detail {
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .grid-about {
   display: grid;
   grid-template-columns: 33.33% auto;
@@ -1787,8 +1778,6 @@ a .card-resume:hover:after {
 }
 
 .old-main {
-  /* right: 0;
-  bottom: calc(36% / (1.4) - 1rem); */
   transform-origin: bottom right;
   z-index: 1;
 }

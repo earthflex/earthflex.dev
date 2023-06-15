@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Custom404() {
     return (
         <div className="error-page">
-            <img className="mbm-lighten pe-none" src="/error.png" width={200}  alt={"error page"} />
+            <img className="mbm-lighten pe-none" src="/error.webp" width={200}  alt={"error page"} />
             <div className="flex error-text">
                 <motion.h1
                     initial={{ x: 100, opacity: 0 }}

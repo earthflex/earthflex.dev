@@ -22,7 +22,7 @@ export default function Logo() {
                     }}
                     className="ef-memoji pe-none">
                     <img src="/memoji.gif" className="gif" alt="memoji" />
-                    <img className="memoji-hover" src="/memoji-hover.png" />
+                    <img className="memoji-hover" src="/memoji-hover.webp" />
                 </motion.div>
                 <motion.h1
                     data-hover="I'M"
