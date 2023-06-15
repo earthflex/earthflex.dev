@@ -59,33 +59,35 @@ export default function Cookies() {
                 {!cookiesAccepted && !notNowAccepted && (
                     <div className="fixed w-full sm:w-auto left-0 sm:left-[3%] bottom-0 sm:bottom-[5%] z-[101]">
                         <div className={shakeAnimation ? "shake" : ""} onClick={handleOverlayClick}>
-                            <motion.img
-                                className="sloth-cookies aura w-full"
-                                initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
-                                animate={{ y: 0, opacity: 1, scale: 1 }}
-                                exit={{
-                                    y: "200%",
-                                    opacity: 0,
-                                    scale: 0,
-                                    transition: {
-                                        delay: 0,
-                                        duration: .6,
-                                    }
-                                }}
-                                transition={{
-                                    delay: 1.8,
-                                    duration: 1,
-                                    ease: [0, 0.71, 0.2, 1.01],
-                                    scale: {
-                                        type: "scale",
-                                        damping: 12,
-                                        stiffness: 100,
-                                        restDelta: 0.001,
-                                    }
-                                }}
-                                alt="sloth-cookie"
-                                src="/sloth-cookie.webp"
-                            />
+                           <div className="max-w-[160px]">
+                                <motion.img
+                                    className="sloth-cookies aura w-full"
+                                    initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
+                                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                                    exit={{
+                                        y: "200%",
+                                        opacity: 0,
+                                        scale: 0,
+                                        transition: {
+                                            delay: 0,
+                                            duration: .6,
+                                        }
+                                    }}
+                                    transition={{
+                                        delay: 1.8,
+                                        duration: 1,
+                                        ease: [0, 0.71, 0.2, 1.01],
+                                        scale: {
+                                            type: "scale",
+                                            damping: 12,
+                                            stiffness: 100,
+                                            restDelta: 0.001,
+                                        }
+                                    }}
+                                    alt="sloth-cookie"
+                                    src="/sloth-cookie.webp"
+                                />
+                           </div>
                             <motion.div
                                 initial={{
                                     y: 100,
