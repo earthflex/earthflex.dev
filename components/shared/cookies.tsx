@@ -60,7 +60,7 @@ export default function Cookies() {
                     <div className="fixed w-full sm:w-auto left-0 sm:left-[3%] bottom-0 sm:bottom-[5%] z-[101]">
                         <div className={shakeAnimation ? "shake" : ""} onClick={handleOverlayClick}>
                             <motion.img
-                                className="sloth-cookies aura"
+                                className="sloth-cookies aura w-full"
                                 initial={{ y: 30, opacity: 0, scale: 0, transformOrigin: 'bottom' }}
                                 animate={{ y: 0, opacity: 1, scale: 1 }}
                                 exit={{

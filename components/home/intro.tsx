@@ -111,12 +111,12 @@ export default function Intro() {
                     className="p-element earth-wrapper"
                 >
                     <motion.img
-                        className="earth"
+                        className="earth w-full"
                         variants={earth}
                         initial="initial"
                         animate="animate"
                         alt="earth"
-                        src="/element/earth-desktop-min.webp"
+                        src={isMobile ? '/element/earth-mobile-min.webp' : '/element/earth-desktop-min.webp'}
                     />
                 </motion.div>
 
@@ -135,6 +135,7 @@ export default function Intro() {
                         initial="initial"
                         animate="animate"
                         alt="missile"
+                        className="w-full"
                         src="/element/missile-min.webp" />
                 </motion.div>
 
@@ -145,7 +146,7 @@ export default function Intro() {
                     animate="animate"
                     className="p-element group-computer aura">
                     <motion.img
-                        className="pe-none computer"
+                        className="pe-none computer w-full"
                         alt="computer"
                         src="/element/computer-earth.gif"
                     />
@@ -162,7 +163,7 @@ export default function Intro() {
                     }}
                 >
                     <motion.img
-                        className="pe-none aircraft"
+                        className="pe-none aircraft w-full"
                         alt="aircraft"
                         src="/element/aircraft-min.webp"
                     />
@@ -180,7 +181,7 @@ export default function Intro() {
                     }}
                 >
                     <motion.img
-                        className="pe-none swim"
+                        className="pe-none swim w-full"
                         alt="swimming"
                         src="/element/sport-swimming-min.webp"
                     />
