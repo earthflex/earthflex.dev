@@ -45,7 +45,7 @@ export default function Layout({
             y: 0,
             scale: 1,
             borderRadius: "30px 30px 0 0",
-            border: 'none',
+            border: '0 solid rgba(221, 221, 221, 0.2)',
             transition: { duration: 0.3 }
         }
     };
