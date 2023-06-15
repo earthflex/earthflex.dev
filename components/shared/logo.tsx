@@ -22,10 +22,6 @@ export default function Logo() {
                     }}
                     className="ef-memoji pe-none">
                     <img src="/memoji.gif" className="gif" alt="memoji" />
-                    {/* <video autoPlay muted loop playsInline>
-                            <source src="/memoji.mp4" type="video/mp4" />
-                            <source src="/memoji.webm" type="video/webm" />
-                        </video> */}
                     <img className="memoji-hover" src="/memoji-hover.png" />
                 </motion.div>
                 <motion.h1

@@ -2,50 +2,42 @@ import React from "react";
 import { AnimatePresence, motion } from 'framer-motion'
 import { ButtonScale } from "@/lib/constants";
 import useWindowSize from "../hook/use-window-size";
+import { useCookiesAccepted } from "../hook/use-cookie";
+
+type Duration = "30seconds" | "30minutes" | "1hour" | "1day" | "30seconds";
 
 export default function Cookies() {
 
     const { isMobile } = useWindowSize();
 
-    const [cookiesAccepted, setCookiesAccepted] = React.useState(
-        sessionStorage.getItem("cookiesAccepted") === "true" || false
-    );
-    const [notNowAccepted, setNotNowAccepted] = React.useState(
-        sessionStorage.getItem("notNowAccepted") === "true" || false
-    );
+    const { cookiesAccepted, setCookiesAccepted, notNowAccepted, setNotNowAccepted } = useCookiesAccepted();
 
-    React.useEffect(() => {
-        const storedAcceptance = sessionStorage.getItem("cookiesAccepted");
-        const expirationDate = sessionStorage.getItem("cookiesAcceptedExpiration");
+    const handleAcceptCookies = (duration: Duration = "30seconds") => {
+        let durationInMilliseconds: number;
 
-        if (storedAcceptance === "true" && expirationDate) {
-            const expirationTime = new Date(expirationDate);
-
-            if (expirationTime > new Date()) {
-                setCookiesAccepted(true);
-            } else {
-                sessionStorage.removeItem("cookiesAccepted");
-                sessionStorage.removeItem("cookiesAcceptedExpiration");
-            }
+        switch (duration) {
+            case "30seconds":
+                durationInMilliseconds = 30 * 1000; // 30 seconds
+                break;
+            case "30minutes":
+                durationInMilliseconds = 30 * 60 * 1000;
+                break;
+            case "1hour":
+                durationInMilliseconds = 60 * 60 * 1000; // 1 hour
+                break;
+            case "1day":
+                durationInMilliseconds = 24 * 60 * 60 * 1000; // 1 day
+                break;
+            case "30seconds":
+                durationInMilliseconds = 7 * 24 * 60 * 60 * 1000; // 7 days
+                break;
         }
-    }, []);
 
+        const expirationTime = new Date().getTime() + durationInMilliseconds;
 
-    const handleAcceptCookies = () => {
         setCookiesAccepted(true);
-
-        const expirationDate = new Date();
-        // expirationDate.setSeconds(expirationDate.getSeconds() + 30); // 30 วินาทีจากเวลาปัจจุบัน
-        // expirationDate.setHours(expirationDate.getHours() + 1); //  1 ชั่วโมงจากเวลาปัจจุบัน
-        expirationDate.setDate(expirationDate.getDate() + 7); // 7 วันจากเวลาปัจจุบัน
-
-        sessionStorage.setItem("cookiesAccepted", "true");
-        sessionStorage.setItem("cookiesAcceptedExpiration", expirationDate.toString());
-
-        setTimeout(() => {
-            sessionStorage.removeItem("cookiesAccepted");
-            sessionStorage.removeItem("cookiesAcceptedExpiration");
-        }, 7 * 24 * 60 * 60 * 1000);
+        localStorage.setItem("cookiesAccepted", "true");
+        localStorage.setItem("cookiesAcceptedExpiration", expirationTime.toString());
     };
 
     const handleNotNow = () => {
@@ -91,7 +83,7 @@ export default function Cookies() {
                                         restDelta: 0.001,
                                     }
                                 }}
-                                src="/sloth-cookie.png"
+                                src="/sloth-cookie.webp"
                             />
                             <motion.div
                                 initial={{
@@ -136,7 +128,7 @@ export default function Cookies() {
                                 </div>
 
                                 <motion.button
-                                    onClick={handleAcceptCookies}
+                                    onClick={() => handleAcceptCookies("30seconds")}
                                     variants={ButtonScale(isMobile ? "up" : "down")}
                                     initial="initial"
                                     whileHover="whileHover"

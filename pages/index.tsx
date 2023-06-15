@@ -5,7 +5,6 @@ import Meta from '@/components/layout/meta';
 import Loading from './loading';
 import Intro from '@/components/home/intro';
 import About from '@/components/home/about';
-import Cookies from '@/components/shared/cookies';
 import Footer from '@/components/home/footer';
 import { WORKS_ITEMS_TYPE, PROFILE_TYPE, EXPERIENCE_TYPE } from '@/types';
 
@@ -25,30 +24,15 @@ export default function Home({
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const storageTime = sessionStorage.getItem('loadingStartTime');
-    const currentTime = new Date().getTime();
-    
-    // เช็คว่ามีข้อมูลใน sessionStorage หรือไม่
-    if (!storageTime) {
-      // ถ้าไม่มี ให้ตั้งเวลาโหลด
+    const loadingStart = sessionStorage.getItem('loadingStart');
+
+    if (loadingStart === 'Hi') {
+      setLoading(true);
+    } else {
       setTimeout(() => {
         setLoading(true);
-        // เก็บเวลาที่เริ่มต้นลงใน sessionStorage
-        sessionStorage.setItem('loadingStartTime', currentTime.toString());
+        sessionStorage.setItem('loadingStart', 'Hi');
       }, 2300);
-    } else {
-      // ถ้ามีข้อมูลใน sessionStorage ตรวจสอบว่าผ่านไป 1 ชม. หรือยัง
-      const elapsedTime = currentTime - Number(storageTime);
-      if (elapsedTime < 3600000) { // 1 ชม. เท่ากับ 3600000 มิลลิวินาที
-        // ถ้ายังไม่ถึง 1 ชม. ให้ set loading เป็น true
-        setLoading(true);
-      } else {
-        // ถ้าเกิน 1 ชม. ให้ตั้งเวลาโหลดใหม่
-        setTimeout(() => {
-          setLoading(true);
-          sessionStorage.setItem('loadingStartTime', currentTime.toString());
-        }, 2300);
-      }
     }
   }, []);
 
@@ -63,7 +47,6 @@ export default function Home({
               <Footer />
             </Suspense>
           </Layout>
-          <Cookies />
         </React.Fragment>
       ) : (
         <React.Fragment>

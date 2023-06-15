@@ -12,6 +12,7 @@ import { MetaProps, EXPERIENCE_TYPE, PROFILE_TYPE, WORKS_ITEMS_TYPE } from "@/ty
 import { DataContext } from "@/context";
 import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "../hook/use-window-size";
+import Cookies from "../shared/cookies";
 
 export default function Layout({
     meta,
@@ -72,6 +73,7 @@ export default function Layout({
                         </Modal>
                     )}
                 </AnimatePresence>
+                <Cookies />
             </DataContext.Provider>
         </React.Fragment>
     );
