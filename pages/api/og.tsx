@@ -1,5 +1,6 @@
 import { ImageResponse } from '@vercel/og'
 import { NextRequest } from "next/server";
+import { useEffect } from 'react';
 
 export const config = {
     runtime: 'edge',
@@ -15,6 +16,10 @@ export default async function handler(req: NextRequest) {
 
     const { searchParams } = req.nextUrl;
     const title = searchParams.get("title") || "Earthflex";
+
+    // useEffect(() => {
+    //    console.log('test');
+    //   }, []);
 
     return new ImageResponse(
         (
@@ -32,9 +37,9 @@ export default async function handler(req: NextRequest) {
                 }}
             >
                 <img
-                    src={new URL("../../public/logo.webp", import.meta.url).toString()}
+                    src={new URL("../../public/logo-min.png", import.meta.url).toString()}
                     alt="earthflex"
-                />
+                />  
                 <div
                     style={{
                         fontSize: "80px",
