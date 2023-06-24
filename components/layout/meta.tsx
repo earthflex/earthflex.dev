@@ -3,7 +3,7 @@ import Head from "next/head";
 const DOMAIN = "https://earthflex.dev"; /* #production */
 
 export default function Meta({
-    title = "EARTHFLEX.DEV",
+    title = "earthflex.dev",
     description = "Call me Apiwat Anekboon, Earth I'm front-end developer from Thailand, with 4 years of experience in web development.Over the past few years, I have focused on front-end development using HTML, CSS, and JavaScript. I'm passionate about doing creative micro-interactions and minor details in interface design.",
     author = "Apiwat Anekboon",
     keyword = "Earth, Apiwat, Anekboon, earthflex, อภิวัฒน์, เอนกบุญ, เอิร์ธ,front-end, UX, UI, Portfolio, Design",
