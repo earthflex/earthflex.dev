@@ -1,12 +1,12 @@
 export type VideoProps = {
   src: string;
-}
+};
 
 export type IconProps = {
-  className?: string
-  height?: string | number
-  width?: string | number
-}
+  className?: string;
+  height?: string | number;
+  width?: string | number;
+};
 
 export type MetaProps = {
   title?: string;
@@ -14,11 +14,11 @@ export type MetaProps = {
   author?: string;
   keyword?: string;
   image?: string;
-}
+};
 
 export type DeviceFlags = {
-  isMobile: boolean,
-  isTablet: boolean
+  isMobile: boolean;
+  isTablet: boolean;
 };
 
 export type WORKS_ITEMS_TYPE = {
@@ -28,10 +28,10 @@ export type WORKS_ITEMS_TYPE = {
   workType: string;
   themeColor: {
     hex: string;
-  },
+  };
   textColor: {
     hex: string;
-  },
+  };
   coverimage: {
     _type: string;
     attribution: string;
@@ -39,7 +39,7 @@ export type WORKS_ITEMS_TYPE = {
       _ref: string;
       _type: string;
     };
-  },
+  };
 }[];
 
 type Contact = {
@@ -50,7 +50,7 @@ type Contact = {
   type: string;
   color: {
     hex: string;
-  },
+  };
   icon: {
     _type: string;
     attribution: string;
@@ -59,7 +59,7 @@ type Contact = {
       _type: string;
     };
   };
-}
+};
 
 type Education = {
   school: string;
@@ -82,9 +82,9 @@ export type PROFILE_TYPE = {
   position: string;
   location: string;
   pdf: {
-    originalFilename: string,
-    url: string,
-  }
+    originalFilename: string;
+    url: string;
+  };
   profileImg: {
     _type: string;
     asset: {

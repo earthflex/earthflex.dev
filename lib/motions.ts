@@ -41,7 +41,6 @@ export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => (
         y: 200,
         x: 0,
         z: 100,
-        opacity: 0,
         scale: 0,
     },
     animate: {
@@ -50,7 +49,7 @@ export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => (
         z: 100,
         scale: isMobile ? 1.4 : isTablet ? 1 : 1,
         transition: {
-            duration: 0.8,
+            duration: 20,
             ease: [0, 0.71, 0.2, 1.01],
             scale: {
                 type: "spring",
