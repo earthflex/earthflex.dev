@@ -270,13 +270,13 @@ export const arrowCardItem: Variants = {
 
 export const imgCardItem: Variants = {
     offscreen: {
-        scale: 1.4,
-        x: -20,
+        scale: 1.2,
+        x: 20,
     },
     onscreen: {
         scale: 1,
         x: 0,
-        transformOrigin:'left center',
+        transformOrigin:'center center',
         transition: {
             duration:1,
         }
