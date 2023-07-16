@@ -42,6 +42,9 @@ export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => (
         x: 0,
         z: 100,
         scale: 0,
+        transition :{
+            duration: 20,
+        }
     },
     animate: {
         opacity: 1,
@@ -64,11 +67,12 @@ export const earthWrapper = ({ isMobile, isTablet }: DeviceFlags): Variants => (
 export const earth: Variants = {
     initial: {},
     animate: {
-        y: [30, 0, 30],
+        y: [10, 0, 10],
         transition: {
-            duration: 15,
+            duration: 10,
             ease: "linear",
             repeat: Infinity,
+            repeatType: "reverse"
         }
     }
 }
