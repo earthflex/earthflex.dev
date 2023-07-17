@@ -61,7 +61,7 @@ export default function CardItem({
         <motion.div
           initial={"offscreen"}
           whileInView={"onscreen"}
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ staggerChildren: 0.5 }}
         >
           <div
@@ -83,7 +83,7 @@ export default function CardItem({
                     className="overflow-hidden"
                     initial={"offscreen"}
                     whileInView={"onscreen"}
-                    viewport={{ once: false, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.5 }}
                     transition={{
                       staggerChildren: 0.4,
                     }}

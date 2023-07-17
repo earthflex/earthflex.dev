@@ -274,7 +274,7 @@ export const arrowCardItem: Variants = {
 
 export const imgCardItem: Variants = {
     offscreen: {
-        scale: 1.2,
+        scale: 1.1,
         x: 20,
     },
     onscreen: {
