@@ -22,6 +22,20 @@ import React from "react";
 import useWindowSize from "../hook/use-window-size";
 
 export default function Intro() {
+  const [currentImage, setCurrentImage] = React.useState(0);
+  const images = [
+    "/element/computer-earth-frame-1.webp",
+    "/element/computer-earth-frame-2.webp",
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 500); // 500 milliseconds delay for frame swap (0.5 seconds)
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const { isMobile, isTablet } = useWindowSize();
 
   const { scrollYProgress } = useScroll();
@@ -186,11 +200,13 @@ export default function Intro() {
           animate="animate"
           className="p-element group-computer aura"
         >
-          <motion.img
-            className="pe-none computer w-full"
-            alt="computer"
-            src="/element/computer-earth.gif"
-          />
+          <div className="animation-c">
+            <motion.img
+              className="pe-none computer w-full"
+              alt="computer"
+              src={images[currentImage]}
+            />
+          </div>
         </motion.div>
 
         <motion.div
