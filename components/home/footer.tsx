@@ -25,56 +25,14 @@ export default function Footer() {
                     whileInView={"onscreen"}
                     viewport={{ once: false, amount: 0.5 }}
                     transition={{ staggerChildren: 0.5 }}>
-
-                    <motion.div
-                        className="p-element fuji  bottom-[55%] md:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[68%] left-0"
-                    >
-                        <motion.img
-                            alt="mount-fuji"
+                    
+                    <div className="w-full absolute p-element  bottom-[65%] md:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[60%] left-0">
+                    <motion.img
+                            alt=""
                             className="w-full"
-                            src="/element/mount-fuji-min.webp"
+                            src="/element/full-footer.webp"
                         />
-                    </motion.div>
-
-                    <motion.div
-                        className="p-element cloud bottom-[55%] md:bottom-[52%] xl:bottom-[65%] 2xl:bottom-[65%] right-[20%] w-[40%] "
-                    >
-                        <motion.img
-                            alt="cloud"
-                            className="w-full"
-                            src="/element/cloud-min.webp"
-                        />
-                    </motion.div>
-                    <div className="p-element group-building bottom-[56%] md:bottom-[50%] lg:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[77%] right-0">
-                        <motion.div
-                            className="building-3 w-[60px] lg:w-[auto]"
-                        >
-                            <motion.img
-                                alt="statue-liberty"
-                                className="w-full"
-                                src="/element/statue-liberty-min.webp"
-                            />
-                        </motion.div>
-                        <motion.div
-                            className="building-1 w-[60px] lg:w-[auto]"
-                        >
-                            <motion.img
-                                alt="building"
-                                className="w-full"
-                                src="/element/building-1-min.webp"
-                            />
-                        </motion.div>
-                        <motion.div
-                            className="building-2 w-[60px] lg:w-[auto]"
-                        >
-                            <motion.img
-                                alt="building"
-                                className="w-full"
-                                src="/element/building-2-min.webp"
-                            />
-                        </motion.div>
                     </div>
-
                     <motion.div
                         className="p-element mount-road w-full bottom-[28%] xl:bottom-[30%] 2xl:bottom-[30%]"
                     >
