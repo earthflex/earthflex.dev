@@ -26,7 +26,7 @@ export default function Footer() {
                     viewport={{ once: false, amount: 0.5 }}
                     transition={{ staggerChildren: 0.5 }}>
                     
-                    <div className="w-full absolute p-element  bottom-[65%] md:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[60%] left-0">
+                    <div className="w-full absolute p-element  bottom-[52%] md:bottom-[52%] xl:bottom-[60%] 2xl:bottom-[60%] left-0">
                     <motion.img
                             alt=""
                             className="w-full"
