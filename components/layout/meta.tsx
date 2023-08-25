@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import React from "react";
 const DOMAIN = "https://earthflex.dev"; /* #production */
 
 export default function Meta({
@@ -15,6 +15,22 @@ export default function Meta({
   keyword?: string;
   image?: string;
 }) {
+  const [currentFavicon, setCurrentFavicon] = React.useState(0);
+  const favicon = [
+    "/favicon/frame_1.webp",
+    "/favicon/frame_2.webp",
+    "/favicon/frame_3.webp",
+    "/favicon/frame_4.webp",
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFavicon((prevImage) => (prevImage + 1) % favicon.length);
+    }, 500);
+
+    return () => clearInterval(interval);
+  }, [favicon.length]);
+
   return (
     <Head>
       <title>{title}</title>
@@ -25,9 +41,7 @@ export default function Meta({
       <meta name="description" content={description} />
       <meta name="author" content={author} />
       <meta name="keyword" content={keyword} />
-      <link rel="icon" href="favicon.ico" type="image/x-icon" />
-      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-      <link rel="icon" type="image/png" href="favicon.png" />
+      <link rel="icon" type="image/webp" href={favicon[currentFavicon]} />
       <link
         rel="apple-touch-icon-precomposed"
         sizes="180x180"
