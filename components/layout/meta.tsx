@@ -41,6 +41,7 @@ export default function Meta({
       <meta name="description" content={description} />
       <meta name="author" content={author} />
       <meta name="keyword" content={keyword} />
+      {/* <link rel="icon" href="favicon.ico" type="image/x-icon" /> */}
       <link rel="icon" type="image/webp" href={favicon[currentFavicon]} />
       <link
         rel="apple-touch-icon-precomposed"
