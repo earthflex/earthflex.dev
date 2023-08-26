@@ -1015,7 +1015,6 @@
   width: 100%;
   object-fit: cover;
   object-position: top;
-  filter: blur(0.5px);
 }
 
 .card-resume {
