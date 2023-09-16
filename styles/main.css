@@ -1654,7 +1654,7 @@ a .card-resume:hover:after {
 }
 
 .MenubarTrigger {
-  padding: 4px 12px;
+  padding: 4px 8px;
   font-size: 14px;
   outline: none;
   user-select: none;
@@ -1778,11 +1778,15 @@ a .card-resume:hover:after {
 }
 
 .btn-topbar {
-  padding: 6px 12px;
+  padding: 3px 8px;
 }
 
 .MenubarTrigger[data-highlighted].btn-runcat {
   background-color: transparent !important;
+}
+
+.mobile-location {
+  font-size: 12px;
 }
 
 .mobile-location:hover img {

@@ -227,7 +227,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
                   height={14}
                   alt="location"
                 />
-                &nbsp;&nbsp;Ladprao, BKK
+                &nbsp;&nbsp;Localhost, BKK
               </button>
             </Menubar.Menu>
           </Menubar.Root>
