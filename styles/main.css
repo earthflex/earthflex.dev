@@ -620,10 +620,9 @@
 .window-control {
   position: sticky;
   top: 0;
-  width: 80px;
   height: 26px;
-  justify-content: space-between;
-  margin: 14px 14px 0 14px;
+  padding: 14px 14px 0 14px;
+  gap: 10px;
 }
 
 [class*="control-"] {
@@ -1655,7 +1654,7 @@ a .card-resume:hover:after {
 }
 
 .MenubarTrigger {
-  padding: 8px 12px;
+  padding: 4px 8px;
   font-size: 14px;
   outline: none;
   user-select: none;
@@ -1779,11 +1778,15 @@ a .card-resume:hover:after {
 }
 
 .btn-topbar {
-  padding: 6px 12px;
+  padding: 3px 8px;
 }
 
 .MenubarTrigger[data-highlighted].btn-runcat {
   background-color: transparent !important;
+}
+
+.mobile-location {
+  font-size: 12px;
 }
 
 .mobile-location:hover img {
@@ -1978,4 +1981,12 @@ a .card-resume:hover:after {
 
 .lottie-file svg {
   border-radius: 20px;
+}
+
+.btn-more {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: #71716f;
+  border: 0.5px solid #71716f;
 }
