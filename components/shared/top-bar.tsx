@@ -52,7 +52,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
             </div>
             <div className="mt-4 mb-5">
               <img
-                src="/about.webp"
+                src="/about-min.webp"
                 className="w-40 mx-auto pointer-events-none"
                 alt="About This Banana Mac"
               />
@@ -90,7 +90,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
                 <div className="w-[60%] text-[#B0B0AE]">Gold</div>
               </div>
             </div>
-            <div className="text-center md:mb-10">
+            <div className="text-center mb-10">
               <a
                 className="btn-more"
                 href="https://en.wikipedia.org/wiki/Golden_Retriever"
