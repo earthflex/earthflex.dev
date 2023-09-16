@@ -40,7 +40,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
     <React.Fragment>
       {modalOpen && (
         <Modal modalOpen={modalOpen} handleClose={close}>
-          <div className="w-full md:w-[300px] md:bg-[#282b2b] rounded-xl overflow-hidden px-4">
+          <div className="w-full md:w-[300px] md:bg-[#282b2b] rounded-xl overflow-hidden px-4 md:px-0">
             <div className="window-control hidden md:flex bg-[#282b2b]">
               <button
                 onClick={close}
@@ -53,7 +53,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
             <div className="mt-4 mb-5">
               <img
                 src="/about.webp"
-                className="w-40 mx-auto"
+                className="w-40 mx-auto pointer-events-none"
                 alt="About This Banana Mac"
               />
             </div>
