@@ -751,7 +751,7 @@
 }
 
 .scroll-r {
-  max-height: calc(53vh - 20px);
+  max-height: calc(55vh - 20px);
   overflow-y: scroll;
   padding: 1rem;
 }
