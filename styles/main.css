@@ -620,8 +620,7 @@
 .window-control {
   position: sticky;
   top: 0;
-  height: 26px;
-  padding: 14px 14px 0 14px;
+  padding: 14px 14px;
   gap: 10px;
 }
 
