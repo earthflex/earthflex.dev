@@ -120,7 +120,7 @@ export default function RunCat() {
     if (storedRunCatSelection) {
       setrunCatSelection(storedRunCatSelection);
     } else {
-      setrunCatSelection("frog_coffee");
+      setrunCatSelection("dog_dance");
     }
   }, []);
 
