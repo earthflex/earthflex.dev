@@ -112,7 +112,7 @@ export default function Topbar({ onClick }: { onClick: () => void }) {
                   width={20}
                   height={20}
                   alt="banana"
-                  className="w-auto h-auto"
+                  className="w-auto max-w-[48px] h-auto"
                 />
               </Menubar.Trigger>
               <Menubar.Portal>
