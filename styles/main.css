@@ -1989,3 +1989,19 @@ a .card-resume:hover:after {
   background: #71716f;
   border: 0.5px solid #71716f;
 }
+
+@media (min-height: 900px) {
+  .old-main {
+    bottom: 18%;
+  }
+
+  .speech-bubble {
+    right: 7%;
+    bottom: 33%;
+  }
+  .flamingo {
+    bottom: 55%;
+  }
+}
+
+
