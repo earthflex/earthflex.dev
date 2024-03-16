@@ -6,6 +6,7 @@ import { EXPERIENCE_TYPE, PROFILE_TYPE, WORKS_ITEMS_TYPE } from "@/types";
 
 import client from "@/client";
 import { groq } from "next-sanity";
+import Link from "next/link";
 
 export default function Works({
   works,
@@ -32,7 +33,7 @@ export default function Works({
                 >
                   {works.map((work) => (
                     <React.Fragment key={work._id}>
-                      <a target="_blank" href={work.link ? work.link : ""}>
+                      <Link target="_blank" href={work.link ? work.link : ""}>
                         <CardItem
                           col="col-span-1"
                           link={work.link ? work.link : ""}
@@ -48,7 +49,7 @@ export default function Works({
                               : undefined
                           }
                         />
-                      </a>
+                      </Link>
                     </React.Fragment>
                   ))}
                 </motion.div>
