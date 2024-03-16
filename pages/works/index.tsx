@@ -33,7 +33,7 @@ export default function Works({
                 >
                   {works.map((work) => (
                     <React.Fragment key={work._id}>
-                      <Link target="_blank" href={work.link ? work.link : ""}>
+                      <a target="_blank" href={work.link}>
                         <CardItem
                           col="col-span-1"
                           link={work.link ? work.link : ""}
@@ -49,7 +49,7 @@ export default function Works({
                               : undefined
                           }
                         />
-                      </Link>
+                      </a>
                     </React.Fragment>
                   ))}
                 </motion.div>
