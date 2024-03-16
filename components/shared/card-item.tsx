@@ -132,9 +132,18 @@ export default function CardItem({
                     transition={{ staggerChildren: 0.5 }}
                   >
                     <motion.div variants={arrowCardItem}>
-                      <motion.div className="bg-black p-1 rounded-full arrow-card">
-                        <CardArrowIcon />
-                      </motion.div>
+                      {link ? (
+                        <motion.div className="bg-black p-1 rounded-full arrow-card">
+                          <CardArrowIcon />
+                        </motion.div>
+                      ) : (
+                        <motion.div className="relative">
+                          <span className="hover:animate-ping absolute h-full w-full rounded-full bg-white opacity-25"></span>
+                          <span className="text-black text-[10px] bg-[#ddd] px-2 py-1 f rounded-full flex items-center justify-center">
+                            OFFLINE
+                          </span>
+                        </motion.div>
+                      )}
                     </motion.div>
                   </motion.div>
                 </motion.div>
