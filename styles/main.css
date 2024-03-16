@@ -1388,6 +1388,14 @@ a .card-resume:hover:after {
   cursor: url(/c-soon.svg), auto !important;
 }
 
+.online {
+  cursor: url(/c-online.svg), auto !important;
+}
+
+.offline {
+  cursor: url(/c-offline.svg), auto !important;
+}
+
 .bg-card {
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 10%),
     linear-gradient(00deg, #000000 0%, rgba(0, 0, 0, 0) 10%);

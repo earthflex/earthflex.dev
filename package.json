@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hotjar/browser": "^1.0.9",
     "@next/font": "^13.2.4",
     "@radix-ui/react-alert-dialog": "^1.0.2",
     "@radix-ui/react-dialog": "^1.0.2",

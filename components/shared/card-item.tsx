@@ -23,6 +23,7 @@ export default function CardItem({
   src,
   alt,
   chip,
+  link,
 }: {
   col: string;
   name: string;
@@ -32,6 +33,7 @@ export default function CardItem({
   src?: string;
   alt: string;
   chip: string;
+  link: string;
 }) {
   const { isMobile, isTablet, isDesktop } = useWindowSize();
 
@@ -76,7 +78,10 @@ export default function CardItem({
                 onHoverStart={handleHoverStart}
                 onHoverEnd={handleHoverEnd}
                 variants={cardTapProfilio}
-                className="card-me min-h-full soon !border-none !p-0 relative group"
+                className={
+                  "card-me min-h-full !border-none !p-0 relative max-h-[600px] group " +
+                  (link ? "online" : "offline")
+                }
               >
                 {type === "img" && (
                   <motion.div
