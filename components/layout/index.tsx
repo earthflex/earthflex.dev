@@ -19,12 +19,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "../hook/use-window-size";
 import Cookies from "../shared/cookies";
 
-import Hotjar from "@hotjar/browser";
-const siteId = 3882722;
-const hotjarVersion = 6;
-
-Hotjar.init(siteId, hotjarVersion);
-
 export default function Layout({
   meta,
   children,
