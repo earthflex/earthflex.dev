@@ -78,30 +78,31 @@ export default function CardItem({
                 onHoverStart={handleHoverStart}
                 onHoverEnd={handleHoverEnd}
                 variants={cardTapProfilio}
-                className="card-me min-h-full !border-none !p-0 relative max-h-[600px] group soon"
+                className={
+                  "card-me min-h-full !border-none !p-0 relative max-h-[600px] group " +
+                  (link ? "online" : "offline")
+                }
               >
-               <a target="_blank" href={link}>
-                  {type === "img" && (
-                    <motion.div
-                      className="overflow-hidden"
-                      initial={"offscreen"}
-                      whileInView={"onscreen"}
-                      viewport={{ once: true, amount: 0.5 }}
-                      transition={{
-                        staggerChildren: 0.4,
-                      }}
-                    >
-                      <motion.img
-                        src={urlFor(src).url()}
-                        alt={alt}
-                        width={376}
-                        height={424}
-                        className="w-full h-full object-cover"
-                        variants={isDesktop ? imgCardItem : undefined}
-                      />
-                    </motion.div>
-                  )}
-               </a>
+                {type === "img" && (
+                  <motion.div
+                    className="overflow-hidden"
+                    initial={"offscreen"}
+                    whileInView={"onscreen"}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{
+                      staggerChildren: 0.4,
+                    }}
+                  >
+                    <motion.img
+                      src={urlFor(src).url()}
+                      alt={alt}
+                      width={376}
+                      height={424}
+                      className="w-full h-full object-cover"
+                      variants={isDesktop ? imgCardItem : undefined}
+                    />
+                  </motion.div>
+                )}
                 <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
                 <motion.div className="absolute bottom-3 w-full flex items-center justify-between px-4">
                   <div className="flex gap-1">

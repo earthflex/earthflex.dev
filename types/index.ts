@@ -22,6 +22,7 @@ export type DeviceFlags = {
 };
 
 export type WORKS_ITEMS_TYPE = {
+  link: string;
   _id: string;
   name: string;
   mediaType: string;

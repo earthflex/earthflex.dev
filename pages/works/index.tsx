@@ -31,22 +31,25 @@ export default function Works({
                   className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:gird-cols-2 lg:grid-cols-2 2xl:grid-cols-2"
                 >
                   {works.map((work) => (
-                    <CardItem
-                      // link={work.link}
-                      key={work._id}
-                      col="col-span-1"
-                      name={work.name ? work.name : ""}
-                      type={work.mediaType}
-                      theme={work.themeColor ? work.themeColor.hex : "#000"}
-                      color={work.textColor ? work.textColor.hex : "#fff"}
-                      chip={work.workType}
-                      alt={work.name ? work.name : ""}
-                      src={
-                        work.coverimage && work.coverimage.asset
-                          ? work.coverimage.asset._ref
-                          : undefined
-                      }
-                    />
+                    <React.Fragment key={work._id}>
+                      <a target="_blank" href={work.link ? work.link : ""}>
+                        <CardItem
+                          col="col-span-1"
+                          link={work.link ? work.link : ""}
+                          name={work.name ? work.name : ""}
+                          type={work.mediaType}
+                          theme={work.themeColor ? work.themeColor.hex : "#000"}
+                          color={work.textColor ? work.textColor.hex : "#fff"}
+                          chip={work.workType}
+                          alt={work.name ? work.name : ""}
+                          src={
+                            work.coverimage && work.coverimage.asset
+                              ? work.coverimage.asset._ref
+                              : undefined
+                          }
+                        />
+                      </a>
+                    </React.Fragment>
                   ))}
                 </motion.div>
               )}
