@@ -79,7 +79,7 @@ export default function CardItem({
                 onHoverEnd={handleHoverEnd}
                 variants={cardTapProfilio}
                 className={
-                  "card-me min-h-full !border-none !p-0 relative max-h-[400px] xl:max-h-[600px] group " +
+                  "card-me min-h-full !border-none !p-0 relative max-h-[400px] md:max-h-[600px] group " +
                   (link ? "online" : "offline")
                 }
               >
