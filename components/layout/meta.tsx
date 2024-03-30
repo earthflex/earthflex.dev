@@ -49,18 +49,21 @@ export default function Meta({
         href="/apple-touch-icon-precomposed.png"
       />
 
-      <meta itemProp="image" content={image} />
+      <meta itemProp="image" content={`${DOMAIN}/thumbnail-gif.gif`} />
+      {/* <meta itemProp="image" content={image} /> */}
       <meta property="og:logo" content={`${DOMAIN}/logo.webp`}></meta>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={`${DOMAIN}/thumbnail-gif.gif`} />
+      {/* <meta property="og:image" content={image} /> */}
 
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@vercel" />
       <meta name="twitter:creator" content="@earthflex" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      {/* <meta name="twitter:image" content={image} /> */}
+      <meta name="twitter:image" content={`${DOMAIN}/thumbnail-gif.gif`} />
     </Head>
   );
 }
