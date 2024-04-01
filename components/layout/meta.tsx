@@ -3,7 +3,7 @@ import React from "react";
 const DOMAIN = "https://earthflex.dev"; /* #production */
 
 export default function Meta({
-  title = "earthflex.dev",
+  title = "earthflex.dev | Apiwat Anekboon",
   description = "Call me Apiwat Anekboon, Earth I'm front-end developer from Thailand, with 4 years of experience in web development.",
   author = "Apiwat Anekboon",
   keyword = "Earth, Apiwat, Anekboon, earthflex, อภิวัฒน์, เอนกบุญ, เอิร์ธ,front-end, UX, UI, Portfolio, Design",
