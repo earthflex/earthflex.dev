@@ -41,8 +41,14 @@ export default function Meta({
       <meta name="description" content={description} />
       <meta name="author" content={author} />
       <meta name="keyword" content={keyword} />
+      <meta name="theme-color" content="#000" />
+      <link rel="manifest" href="/manifest.json" />
       {/* <link rel="icon" href="favicon.ico" type="image/x-icon" /> */}
       <link rel="icon" type="image/webp" href={favicon[currentFavicon]} />
+      <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon-precomposed.png"
+      ></link>
       <link
         rel="apple-touch-icon-precomposed"
         sizes="180x180"
