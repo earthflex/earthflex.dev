@@ -89,9 +89,9 @@ export default function About() {
                           />
                           <motion.span>Hi there !</motion.span>
                         </div>
-                        <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
+                        {/* <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
                           <CardArrowIcon />
-                        </div>
+                        </div> */}
                       </motion.div>
                       <div className="pt-3 pb-1">
                         <motion.h2>
