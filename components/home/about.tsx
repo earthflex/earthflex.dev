@@ -87,7 +87,16 @@ export default function About() {
                             height={50}
                             alt="Hi !"
                           />
-                          <motion.span>Hi there !</motion.span>
+                          <motion.span className="flex items-center gap-2">
+                            Hi there !
+                            <img
+                              className="animate-hand pointer-events-none"
+                              src="/hand-hi.png"
+                              width={20}
+                              height={20}
+                              alt="hand emoji"
+                            />
+                          </motion.span>
                         </div>
                         {/* <div className="bg-white bg-opacity-20 p-1 rounded-full arrow-card">
                           <CardArrowIcon />
