@@ -94,14 +94,15 @@ export default function CardItem({
                       staggerChildren: 0.4,
                     }}
                   >
-                    <Image
-                      src={urlFor(src).url()}
-                      alt={alt}
-                      width={376}
-                      height={424}
-                      className="w-full h-full object-cover"
-                      variants={isDesktop ? imgCardItem : undefined}
-                    />
+                    <motion.div variants={isDesktop ? imgCardItem : undefined}>
+                      <Image
+                        src={urlFor(src).url()}
+                        alt={alt}
+                        width={376}
+                        height={424}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
                   </motion.div>
                 )}
                 <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
