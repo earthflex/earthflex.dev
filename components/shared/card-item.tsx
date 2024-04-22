@@ -7,6 +7,7 @@ import CursorFollower from "@/components/shared/cursor";
 import imageUrlBuilder from "@sanity/image-url";
 import client from "@/client";
 import useWindowSize from "../hook/use-window-size";
+import Image from "next/image";
 
 const builder = imageUrlBuilder(client);
 
@@ -79,7 +80,7 @@ export default function CardItem({
                 onHoverEnd={handleHoverEnd}
                 variants={cardTapProfilio}
                 className={
-                  "card-me min-h-full !border-none !p-0 relative max-h-[400px] md:max-h-[600px] group " +
+                  "card-me min-h-full !border-none !p-0 relative max-h-[400px] md:max-h-[570px] group " +
                   (link ? "online" : "offline")
                 }
               >
@@ -93,14 +94,15 @@ export default function CardItem({
                       staggerChildren: 0.4,
                     }}
                   >
-                    <motion.img
-                      src={urlFor(src).url()}
-                      alt={alt}
-                      width={376}
-                      height={424}
-                      className="w-full h-full object-cover"
-                      variants={isDesktop ? imgCardItem : undefined}
-                    />
+                    <motion.div variants={isDesktop ? imgCardItem : undefined}>
+                      <Image
+                        src={urlFor(src).url()}
+                        alt={alt}
+                        width={376}
+                        height={424}
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
                   </motion.div>
                 )}
                 <div className="absolute rounded-[20px] inset-0 bg-card overflow-hidden opacity-40 hover:opacity-70 ease-out duration-300"></div>
