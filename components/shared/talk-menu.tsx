@@ -60,11 +60,11 @@ export default function TallkMenu() {
                         </div>
                     </div>
                     <DropdownMenu.Separator className="DropdownMenuSeparator" />
-                    <DropdownMenu.Item
+                    {/* <DropdownMenu.Item
                         className="DropdownMenuItem"
                     >
                         <FacebookIcon /><Link target="_blank" href="https://www.facebook.com/apiwat.anekboon" className="list-talk">FB: Apiwat Anekboon</Link >
-                    </DropdownMenu.Item>
+                    </DropdownMenu.Item> */}
                     <DropdownMenu.Item
                         className="DropdownMenuItem"
                     >
